@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@import "@fontsource/anton/400.css";
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+:root {
+  --sb-black: #050506;
+  --sb-black-soft: #0b0b0e;
+  --sb-panel: #101013;
+  --sb-white: #f7f6f3;
+  --sb-lime: #c6ff3d;
+  --sb-orange: #ff5a1f;
+  --sb-pink: #ff3d9a;
+  --sb-purple: #9b3dff;
+  --sb-blue: #3d7bff;
+}
+
+@theme inline {
+  --color-sb-black: var(--sb-black);
+  --color-sb-black-soft: var(--sb-black-soft);
+  --color-sb-panel: var(--sb-panel);
+  --color-sb-white: var(--sb-white);
+  --color-sb-lime: var(--sb-lime);
+  --color-sb-orange: var(--sb-orange);
+  --color-sb-pink: var(--sb-pink);
+  --color-sb-purple: var(--sb-purple);
+  --color-sb-blue: var(--sb-blue);
+  --font-display: "Anton", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--sb-black);
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--sb-black);
+  color: var(--sb-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+::selection {
+  background: var(--sb-lime);
+  color: #050506;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--sb-black);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sb-pink), var(--sb-orange));
+  border-radius: 8px;
+}
+
+/* Utility typography */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--sb-pink), var(--sb-orange) 45%, var(--sb-lime) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(90deg, var(--sb-purple), var(--sb-blue) 50%, var(--sb-pink) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Animated background gradient blobs */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 40;
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.glow-border {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.glow-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: conic-gradient(from var(--angle, 0deg), var(--sb-pink), var(--sb-orange), var(--sb-lime), var(--sb-purple), var(--sb-pink));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotateBorder 5s linear infinite;
+  opacity: 0.9;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes rotateBorder {
+  to { --angle: 360deg; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.text-outline {
+  -webkit-text-stroke: 1.5px rgba(247,246,243,0.5);
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
