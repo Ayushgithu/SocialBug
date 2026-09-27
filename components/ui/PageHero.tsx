@@ -31,7 +31,11 @@ export default function PageHero({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+<<<<<<< HEAD
           className="font-display mt-6 text-4xl leading-[1.05] sm:text-5xl lg:text-[3.5rem]"
+=======
+          className="font-display mt-6 text-[13vw] leading-[0.9] sm:text-6xl lg:text-[5.5vw]"
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         >
           {title}
         </motion.h1>
@@ -41,7 +45,11 @@ export default function PageHero({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
+<<<<<<< HEAD
             className="mt-6 max-w-xl text-sm text-sb-white/60 sm:text-base"
+=======
+            className="mt-6 max-w-xl text-base text-sb-white/60 sm:text-lg"
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
           >
             {description}
           </motion.p>

@@ -7,7 +7,10 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
   const [isTouch, setIsTouch] = useState(true);
   const [hovering, setHovering] = useState(false);
+<<<<<<< HEAD
   const [active, setActive] = useState(false);
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 
   useEffect(() => {
     setIsTouch(window.matchMedia("(pointer: coarse)").matches);
@@ -20,11 +23,15 @@ export default function CustomCursor() {
       ringY = 0;
     let mouseX = 0,
       mouseY = 0;
+<<<<<<< HEAD
     let started = false;
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 
     function onMove(e: MouseEvent) {
       mouseX = e.clientX;
       mouseY = e.clientY;
+<<<<<<< HEAD
       if (!started) {
         // Snap the ring straight to the pointer on the very first move so it
         // doesn't glide in from the (0,0) corner.
@@ -33,6 +40,8 @@ export default function CustomCursor() {
         started = true;
         setActive(true);
       }
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       if (dotRef.current) {
         dotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
       }
@@ -40,10 +49,13 @@ export default function CustomCursor() {
       setHovering(!!target.closest("a, button, [data-cursor='pointer']"));
     }
 
+<<<<<<< HEAD
     function onLeave() {
       setActive(false);
     }
 
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
     function raf() {
       ringX += (mouseX - ringX) * 0.18;
       ringY += (mouseY - ringY) * 0.18;
@@ -54,11 +66,17 @@ export default function CustomCursor() {
     }
 
     window.addEventListener("mousemove", onMove);
+<<<<<<< HEAD
     document.addEventListener("mouseleave", onLeave);
     const id = requestAnimationFrame(raf);
     return () => {
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseleave", onLeave);
+=======
+    const id = requestAnimationFrame(raf);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       cancelAnimationFrame(id);
     };
   }, [isTouch]);
@@ -69,8 +87,12 @@ export default function CustomCursor() {
     <>
       <div
         ref={dotRef}
+<<<<<<< HEAD
         className="pointer-events-none fixed left-0 top-0 z-[999] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sb-lime mix-blend-difference transition-opacity duration-200"
         style={{ opacity: active ? 1 : 0 }}
+=======
+        className="pointer-events-none fixed left-0 top-0 z-[999] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sb-lime mix-blend-difference"
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       />
       <div
         ref={ringRef}
@@ -78,7 +100,11 @@ export default function CustomCursor() {
         style={{
           width: hovering ? 56 : 28,
           height: hovering ? 56 : 28,
+<<<<<<< HEAD
           opacity: active ? (hovering ? 0.9 : 0.5) : 0,
+=======
+          opacity: hovering ? 0.9 : 0.5,
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         }}
       />
     </>

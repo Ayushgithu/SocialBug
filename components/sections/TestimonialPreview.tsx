@@ -6,8 +6,13 @@ import TestimonialsMarquee from "@/components/sections/TestimonialsMarquee";
 
 export default function TestimonialPreview() {
   return (
+<<<<<<< HEAD
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
+=======
+    <section className="relative overflow-hidden px-6 py-28">
+      <div className="mx-auto max-w-6xl">
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         <SectionHeading eyebrow="Social Proof" align="center">
           PEOPLE WHO&apos;VE
           <br />
@@ -15,7 +20,11 @@ export default function TestimonialPreview() {
         </SectionHeading>
       </div>
 
+<<<<<<< HEAD
       <div className="mt-14">
+=======
+      <div className="mt-16">
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         <TestimonialsMarquee />
       </div>
 

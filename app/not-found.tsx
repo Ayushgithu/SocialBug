@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
+=======
+import Link from "next/link";
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import GradientBlobs from "@/components/ui/GradientBlobs";
@@ -41,7 +45,11 @@ function ScrambleWord({ word }: { word: string }) {
 
 export default function NotFound() {
   return (
+<<<<<<< HEAD
     <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
+=======
+    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 py-32 text-center">
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       <GradientBlobs />
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-25 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
@@ -62,6 +70,7 @@ export default function NotFound() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
+<<<<<<< HEAD
         className="relative mb-6 h-20 w-20"
       >
         <motion.div
@@ -76,6 +85,16 @@ export default function NotFound() {
           />
           <RadioTower className="text-sb-lime" size={30} />
         </motion.div>
+=======
+        className="relative mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/5 backdrop-blur-sm"
+      >
+        <motion.span
+          className="absolute inset-0 rounded-full border border-sb-pink/50"
+          animate={{ scale: [1, 1.6, 1.9], opacity: [0.6, 0.2, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut" }}
+        />
+        <RadioTower className="text-sb-lime" size={30} />
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       </motion.div>
 
       <motion.p
@@ -113,7 +132,11 @@ export default function NotFound() {
         transition={{ delay: 0.55, duration: 0.6 }}
         className="mt-4 max-w-md text-sb-white/55"
       >
+<<<<<<< HEAD
         No creators, no campaigns, no buzz here, just a broken link. Let&apos;s
+=======
+        No creators, no campaigns, no buzz here — just a broken link. Let&apos;s
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         get you back to where the conversation is actually happening.
       </motion.p>
 
@@ -139,6 +162,21 @@ export default function NotFound() {
           Contact Us
         </Button>
       </motion.div>
+<<<<<<< HEAD
+=======
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-sb-white/35"
+      >
+        <Link href="/services" className="hover:text-sb-white/70">Services</Link>
+        <Link href="/case-studies" className="hover:text-sb-white/70">Case Studies</Link>
+        <Link href="/network" className="hover:text-sb-white/70">Network</Link>
+        <Link href="/insights" className="hover:text-sb-white/70">Insights</Link>
+      </motion.div>
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
     </section>
   );
 }

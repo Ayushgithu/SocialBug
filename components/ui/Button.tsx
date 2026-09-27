@@ -7,13 +7,20 @@ import { cn } from "@/lib/utils";
 interface ButtonProps {
   href?: string;
   children: ReactNode;
+<<<<<<< HEAD
   variant?: "primary" | "outline" | "outlineDark" | "ghost";
+=======
+  variant?: "primary" | "outline" | "ghost";
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
   disabled?: boolean;
+<<<<<<< HEAD
   /** Small pill-in-pill badge rendered at the end, e.g. "⚡ 2 mins". */
   badge?: ReactNode;
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 }
 
 export default function Button({
@@ -24,7 +31,10 @@ export default function Button({
   onClick,
   type = "button",
   disabled,
+<<<<<<< HEAD
   badge,
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 }: ButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -33,8 +43,13 @@ export default function Button({
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
+<<<<<<< HEAD
     const x = (e.clientX - rect.left - rect.width / 2) * 0.12;
     const y = (e.clientY - rect.top - rect.height / 2) * 0.12;
+=======
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
     setPos({ x, y });
   }
 
@@ -43,6 +58,7 @@ export default function Button({
   }
 
   const base =
+<<<<<<< HEAD
     "relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full pl-6 pr-2.5 py-2.5 font-heading font-semibold text-sm tracking-wide transition-all duration-200 overflow-hidden active:scale-[0.96]";
 
   const variants = {
@@ -53,6 +69,16 @@ export default function Button({
     outlineDark:
       "rounded-full border border-black/20 px-6 text-black bg-black/[0.02] hover:border-sb-orange hover:text-sb-orange hover:bg-sb-orange/5 active:border-sb-orange active:shadow-[0_0_0_8px_rgba(252,132,46,0.15)]",
     ghost: "rounded-full px-6 text-sb-white/80 hover:text-sb-white",
+=======
+    "relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-7 py-3.5 font-heading font-semibold text-sm tracking-wide transition-colors duration-300 overflow-hidden";
+
+  const variants = {
+    primary:
+      "bg-sb-white text-sb-black hover:text-sb-white",
+    outline:
+      "border border-white/25 text-sb-white hover:border-white/60",
+    ghost: "text-sb-white/80 hover:text-sb-white",
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
   };
 
   const content = (
@@ -64,6 +90,7 @@ export default function Button({
       className="transition-transform duration-200 ease-out inline-block"
       data-cursor="pointer"
     >
+<<<<<<< HEAD
       <span className={cn(base, variant !== "ghost" && "sb-btn-sheen", variants[variant], className)}>
         <span className="relative z-10 flex items-center gap-2">{children}</span>
         {badge && (
@@ -71,6 +98,19 @@ export default function Button({
             {badge}
           </span>
         )}
+=======
+      <span className={cn(base, variants[variant], className)}>
+        {variant === "primary" && (
+          <span className="absolute inset-0 -z-0 translate-y-full bg-gradient-to-r from-sb-pink via-sb-orange to-sb-lime transition-transform duration-400 ease-out group-hover:translate-y-0" />
+        )}
+        <span
+          className={cn(
+            "absolute inset-0 origin-bottom scale-y-0 bg-gradient-to-r from-sb-pink via-sb-orange to-sb-lime transition-transform duration-300 ease-out",
+            variant === "primary" && "group-hover:scale-y-100"
+          )}
+        />
+        <span className="relative z-10 flex items-center gap-2">{children}</span>
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       </span>
     </div>
   );

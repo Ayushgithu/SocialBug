@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import { useRef, MouseEvent, useState, ReactNode } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
@@ -21,6 +22,15 @@ export default function FinalCTA({
   secondaryLabel?: string;
   secondaryHref?: string;
 }) {
+=======
+import { useRef, MouseEvent, useState } from "react";
+import { motion } from "framer-motion";
+import Button from "@/components/ui/Button";
+import GradientBlobs from "@/components/ui/GradientBlobs";
+import { ArrowRight } from "lucide-react";
+
+export default function FinalCTA() {
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [active, setActive] = useState(false);
@@ -37,7 +47,11 @@ export default function FinalCTA({
       onMouseMove={handleMove}
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
+<<<<<<< HEAD
       className="relative overflow-hidden px-6 py-10"
+=======
+      className="relative overflow-hidden px-6 py-32"
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
     >
       <GradientBlobs />
 
@@ -48,6 +62,7 @@ export default function FinalCTA({
       />
 
       <div className="relative mx-auto max-w-4xl text-center">
+<<<<<<< HEAD
         {eyebrow && (
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -59,11 +74,14 @@ export default function FinalCTA({
             {eyebrow}
           </motion.p>
         )}
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+<<<<<<< HEAD
           className="font-display text-4xl leading-[1.02] sm:text-5xl lg:text-6xl"
         >
           {heading ?? (
@@ -75,6 +93,15 @@ export default function FinalCTA({
               <span className="gradient-text">BUZZ?</span>
             </>
           )}
+=======
+          className="font-display text-[13vw] leading-[0.92] sm:text-7xl lg:text-8xl"
+        >
+          READY TO
+          <br />
+          CREATE A LITTLE
+          <br />
+          <span className="gradient-text">BUZZ?</span>
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         </motion.h2>
 
         <motion.div
@@ -84,6 +111,7 @@ export default function FinalCTA({
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
+<<<<<<< HEAD
           <Button
             href={primaryHref}
             badge={
@@ -96,6 +124,13 @@ export default function FinalCTA({
           </Button>
           <Button href={secondaryHref} variant="outline">
             {secondaryLabel}
+=======
+          <Button href="/contact">
+            Book a Demo <ArrowRight size={15} />
+          </Button>
+          <Button href="/case-studies" variant="outline">
+            See Our Work
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
           </Button>
         </motion.div>
       </div>

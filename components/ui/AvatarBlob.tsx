@@ -3,11 +3,19 @@
 import { motion } from "framer-motion";
 
 const ACCENTS = {
+<<<<<<< HEAD
   pink: ["#ef2f7a", "#ff6fa5"],
   orange: ["#fc842e", "#ffb26b"],
   lime: ["#d9f24e", "#eefb9c"],
   blue: ["#3fa9ff", "#8ecbff"],
   purple: ["#a855f7", "#d6a8ff"],
+=======
+  pink: ["#ff3d9a", "#ff8fc7"],
+  orange: ["#ff5a1f", "#ffb26b"],
+  lime: ["#c6ff3d", "#e8ff9e"],
+  blue: ["#3d7bff", "#8fb2ff"],
+  purple: ["#9b3dff", "#c79bff"],
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 } as const;
 
 type Accent = keyof typeof ACCENTS;
@@ -26,23 +34,32 @@ export default function AvatarBlob({
   size = 96,
   index = 0,
   className = "",
+<<<<<<< HEAD
   photo,
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 }: {
   initials: string;
   accent?: Accent;
   size?: number;
   index?: number;
   className?: string;
+<<<<<<< HEAD
   /** Optional real photo URL. When provided, it's masked into the same
    *  organic blob shape used for the initials-only version, so a real
    *  founder photo and a placeholder avatar look like one design
    *  language rather than two different components. */
   photo?: string;
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 }) {
   const [c1, c2] = ACCENTS[accent];
   const blob = BLOBS[index % BLOBS.length];
   const gradId = `avatarGrad-${accent}-${index}`;
+<<<<<<< HEAD
   const clipId = `avatarClip-${accent}-${index}`;
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 
   return (
     <motion.div
@@ -64,16 +81,20 @@ export default function AvatarBlob({
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+<<<<<<< HEAD
           {photo && (
             <clipPath id={clipId}>
               <path d={blob} />
             </clipPath>
           )}
+=======
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         </defs>
 
         {/* soft glow behind */}
         <path d={blob} fill={c1} opacity="0.18" filter={`url(#glow-${gradId})`} />
 
+<<<<<<< HEAD
         {photo ? (
           <>
             {/* photo, cropped to the same blob silhouette */}
@@ -120,6 +141,29 @@ export default function AvatarBlob({
             </text>
           </>
         )}
+=======
+        {/* outline ring, matching the reference's hand-drawn cutout look */}
+        <path
+          d={blob}
+          fill="#0b0b0e"
+          stroke={`url(#${gradId})`}
+          strokeWidth="4"
+          strokeLinejoin="round"
+        />
+
+        {/* initials */}
+        <text
+          x="100"
+          y="112"
+          textAnchor="middle"
+          fontSize="52"
+          fontWeight="700"
+          fill={`url(#${gradId})`}
+          fontFamily="var(--font-heading, sans-serif)"
+        >
+          {initials}
+        </text>
+>>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       </svg>
     </motion.div>
   );
