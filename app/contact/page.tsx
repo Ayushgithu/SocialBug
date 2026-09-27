@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-<<<<<<< HEAD
 import { pageOG } from "@/lib/utils";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
@@ -8,16 +7,10 @@ import SideReveal from "@/components/ui/SideReveal";
 import Marquee from "@/components/ui/Marquee";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { partnerLogos, socialLinks } from "@/lib/data";
-=======
-import PageHero from "@/components/ui/PageHero";
-import ContactPanel from "@/components/forms/ContactPanel";
-import { Mail, MapPin, Clock } from "lucide-react";
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-<<<<<<< HEAD
     "Book a demo with SocialBug Media, tell us about your product and what growth looks like for you.",
   ...pageOG(
     "Contact | SocialBug Media",
@@ -28,13 +21,6 @@ export const metadata: Metadata = {
 
 const details = [
   { icon: Mail, label: socialLinks.email },
-=======
-    "Book a demo with SocialBug Media — tell us about your product and what growth looks like for you.",
-};
-
-const details = [
-  { icon: Mail, label: "hello@socialbugmedia.com" },
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
   { icon: Clock, label: "Replies within 1 business day" },
   { icon: MapPin, label: "Working with teams globally" },
 ];
@@ -43,11 +29,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-<<<<<<< HEAD
         eyebrow="Get Started in 2 Minutes"
-=======
-        eyebrow="Book a Demo"
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         title={
           <>
             LET&apos;S MAKE
@@ -55,21 +37,12 @@ export default function ContactPage() {
             SOME <span className="gradient-text">NOISE.</span>
           </>
         }
-<<<<<<< HEAD
         description="Tell us about your product, your stage, and what you need, we'll come back with a plan, not a pitch deck."
       />
 
       <section className="relative px-6 pb-20">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <SideReveal from="left" className="flex min-w-0 flex-col justify-between gap-10">
-=======
-        description="Tell us about your product, your stage, and what you need — we'll come back with a plan, not a pitch deck."
-      />
-
-      <section className="relative px-6 pb-28">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div className="flex min-w-0 flex-col justify-between gap-10">
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
             <div className="flex flex-col gap-5">
               {details.map((d) => (
                 <div key={d.label} className="flex items-center gap-3 text-sm text-sb-white/60">
@@ -81,16 +54,11 @@ export default function ContactPage() {
               ))}
             </div>
 
-<<<<<<< HEAD
             <div className="glow-border rounded-xl bg-white/[0.02] p-7">
-=======
-            <div className="glow-border rounded-3xl bg-white/[0.02] p-7">
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
               <p className="font-heading text-sm font-semibold">What happens next</p>
               <ol className="mt-4 flex flex-col gap-3 text-sm text-sb-white/55">
                 <li>1. We review your project within one business day.</li>
                 <li>2. A short call to understand goals and fit.</li>
-<<<<<<< HEAD
                 <li>3. A tailored plan, creators, timeline, and budget.</li>
               </ol>
             </div>
@@ -126,14 +94,6 @@ export default function ContactPage() {
               ))}
             </Marquee>
           </div>
-=======
-                <li>3. A tailored plan — creators, timeline, and budget.</li>
-              </ol>
-            </div>
-          </div>
-
-          <ContactPanel />
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         </div>
       </section>
     </>
