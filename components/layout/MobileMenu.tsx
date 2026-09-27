@@ -19,7 +19,7 @@ export default function MobileMenu({ onClose }: { onClose: () => void }) {
       animate={{ clipPath: "circle(150% at 92% 5%)" }}
       exit={{ clipPath: "circle(0% at 92% 5%)" }}
       transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[100] flex flex-col overflow-y-auto bg-sb-black px-5 py-6 sm:px-6 sm:py-8"
+      className="fixed inset-0 z-100 flex flex-col overflow-y-auto bg-sb-black px-5 py-6 sm:px-6 sm:py-8"
     >
       <GradientBlobs />
 

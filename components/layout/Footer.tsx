@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-3 flex justify-center">
-          <div className="flex items-center gap-1.5 rounded-full border border-sb-orange/20 bg-sb-orange/[0.06] px-4 py-2 text-center text-[11px] text-sb-white/60">
+          <div className="flex items-center gap-1.5 rounded-full border border-sb-orange/20 bg-sb-orange/6 px-4 py-2 text-center text-[11px] text-sb-white/60">
             <span>Made with</span>
             <span className="text-sb-orange">♥</span>
             <span>

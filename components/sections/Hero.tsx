@@ -19,15 +19,15 @@ const TICKER_ITEMS = [
 export default function Hero() {
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % ROTATING.length), 1800);
-    return () => clearInterval(t);
-  }, []);
+  // useEffect(() => {
+  //   const t = setInterval(() => setIndex((i) => (i + 1) % ROTATING.length), 1800);
+  //   return () => clearInterval(t);
+  // }, []);
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-28 pb-16">
+    <section className="relative flex min-h-svh flex-col justify-center overflow-hidden pt-28 pb-16">
       <GradientBlobs />
-      <div className="grid-lines pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <div className="grid-lines pointer-events-none absolute inset-0 opacity-30 mask-[radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       <motion.div
         initial={{ opacity: 0, y: -14 }}
@@ -129,7 +129,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.25 }}
-          className="relative w-full shrink-0 lg:w-[440px]"
+          className="relative w-full shrink-0 lg:w-110"
         >
           <HeroVisual />
         </motion.div>

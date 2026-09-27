@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/layout/BackToTop";
+import NextTopLoader from 'nextjs-toploader';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://socialbugmedia.in"),
@@ -82,6 +83,7 @@ export default function RootLayout({
           <ScrollProgress />
           <SplashScreen />
           <RouteLoadingBar />
+            <NextTopLoader />
           <Navbar />
           <main>{children}</main>
           <Footer />
