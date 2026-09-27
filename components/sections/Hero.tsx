@@ -1,15 +1,10 @@
 "use client";
 
-<<<<<<< HEAD
-=======
-import dynamic from "next/dynamic";
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 import GradientBlobs from "@/components/ui/GradientBlobs";
-<<<<<<< HEAD
 import HeroVisual from "@/components/ui/HeroVisual";
 import MarqueeTicker from "@/components/ui/MarqueeTicker";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -23,26 +18,12 @@ const TICKER_ITEMS = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-=======
-import { ArrowRight, Sparkles } from "lucide-react";
-
-const NetworkOrb = dynamic(() => import("@/components/three/NetworkOrb"), {
-  ssr: false,
-});
-
-const ROTATING = ["SAAS.", "STARTUPS.", "LAUNCHES.", "GROWTH."];
-
-export default function Hero() {
-  const [index, setIndex] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(false);
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 
   useEffect(() => {
     const t = setInterval(() => setIndex((i) => (i + 1) % ROTATING.length), 1800);
     return () => clearInterval(t);
   }, []);
 
-<<<<<<< HEAD
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-28 pb-16">
       <GradientBlobs />
@@ -58,18 +39,6 @@ export default function Hero() {
       </motion.div>
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-10 px-6 lg:flex-row lg:items-center lg:justify-between">
-=======
-  useEffect(() => {
-    setIsDesktop(window.matchMedia("(min-width: 1024px)").matches);
-  }, []);
-
-  return (
-    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pt-32 pb-16">
-      <GradientBlobs />
-      <div className="grid-lines pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         <div className="max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -81,22 +50,14 @@ export default function Hero() {
             </Badge>
           </motion.div>
 
-<<<<<<< HEAD
           <h1 className="font-display mt-6 text-4xl leading-[1.02] sm:text-5xl lg:text-[3.75rem]">
-=======
-          <h1 className="font-display mt-6 text-[15vw] leading-[0.88] sm:text-7xl lg:text-[5.4vw]">
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
             <motion.span
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="block"
             >
-<<<<<<< HEAD
               WE MAKE
-=======
-              YOUR PRODUCT
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
@@ -104,11 +65,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="block"
             >
-<<<<<<< HEAD
               BRANDS WORTH
-=======
-              DESERVES
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
@@ -116,11 +73,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="gradient-text block"
             >
-<<<<<<< HEAD
               TALKING ABOUT.
-=======
-              BUZZ.
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
             </motion.span>
           </h1>
 
@@ -142,19 +95,12 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-<<<<<<< HEAD
             className="mt-6 max-w-md text-sm text-sb-white/60 sm:text-base"
           >
             Social strategy, creative campaigns and content built for the way{" "}
             <span className="font-semibold text-sb-orange">people</span> actually{" "}
             <span className="font-semibold text-sb-lime">consume</span> the{" "}
             <span className="font-semibold text-sb-pink">internet</span>.
-=======
-            className="mt-6 max-w-md text-base text-sb-white/60 sm:text-lg"
-          >
-            We help ambitious products get seen, talked about, and shared
-            through strategy, creator networks, and campaigns built to move.
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
           </motion.p>
 
           <motion.div
@@ -163,7 +109,6 @@ export default function Hero() {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="mt-9 flex flex-wrap items-center gap-4"
           >
-<<<<<<< HEAD
             <Button
               href="/contact"
               badge={
@@ -173,10 +118,6 @@ export default function Hero() {
               }
             >
               Book Your Campaign <ArrowRight size={15} />
-=======
-            <Button href="/contact">
-              Book a Demo <ArrowRight size={15} />
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
             </Button>
             <Button href="/case-studies" variant="outline">
               Explore Our Work
@@ -185,46 +126,12 @@ export default function Hero() {
         </div>
 
         <motion.div
-<<<<<<< HEAD
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.25 }}
           className="relative w-full shrink-0 lg:w-[440px]"
         >
           <HeroVisual />
-=======
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="relative h-[280px] w-full shrink-0 sm:h-[360px] lg:h-[460px] lg:w-[460px]"
-        >
-          {isDesktop ? (
-            <NetworkOrb />
-          ) : (
-            <div className="relative flex h-full w-full items-center justify-center">
-              <div className="absolute h-52 w-52 rounded-full bg-gradient-to-br from-sb-pink via-sb-orange to-sb-lime opacity-20 blur-2xl" />
-              <svg viewBox="0 0 300 300" className="h-64 w-64 animate-[spin_18s_linear_infinite]">
-                {Array.from({ length: 14 }).map((_, i) => {
-                  const angle = (i / 14) * Math.PI * 2;
-                  const x = 150 + Math.cos(angle) * 110;
-                  const y = 150 + Math.sin(angle) * 110;
-                  return (
-                    <circle
-                      key={i}
-                      cx={x}
-                      cy={y}
-                      r={i % 3 === 0 ? 5 : 3}
-                      fill={i % 2 === 0 ? "#ff3d9a" : "#c6ff3d"}
-                      opacity={0.85}
-                    />
-                  );
-                })}
-                <circle cx="150" cy="150" r="110" fill="none" stroke="#ffffff22" strokeWidth="1" />
-                <circle cx="150" cy="150" r="70" fill="none" stroke="#ffffff14" strokeWidth="1" />
-              </svg>
-            </div>
-          )}
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         </motion.div>
       </div>
     </section>

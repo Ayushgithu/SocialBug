@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-<<<<<<< HEAD
 import { pageOG } from "@/lib/utils";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -9,18 +8,10 @@ import Reveal from "@/components/ui/Reveal";
 import Counter from "@/components/ui/Counter";
 import CrossMarquee from "@/components/sections/CrossMarquee";
 import { Check } from "lucide-react";
-=======
-import PageHero from "@/components/ui/PageHero";
-import SectionHeading from "@/components/ui/SectionHeading";
-import ServiceCard from "@/components/ui/ServiceCard";
-import EngagementTable from "@/components/sections/EngagementTable";
-import { services } from "@/lib/data";
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-<<<<<<< HEAD
     "LinkedIn & X creator campaigns, Instagram/YT tech & fintech campaigns, LinkedIn founder amplification, engagement at scale, viral amplification, Product Hunt launches, personal branding, and meme marketing.",
   ...pageOG(
     "Services | SocialBug Media",
@@ -59,11 +50,6 @@ const stats = [
   { value: "1", label: "Day to go live, within a few hours" },
 ];
 
-=======
-    "Influencer campaigns, SaaS growth, Product Hunt launches, creator sourcing, content, launch strategy, community activation, and reporting.",
-};
-
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 export default function ServicesPage() {
   return (
     <>
@@ -78,7 +64,6 @@ export default function ServicesPage() {
             <span className="gradient-text">MOMENTUM.</span>
           </>
         }
-<<<<<<< HEAD
         description="Eight ways we help ambitious products get seen, talked about and shared, pick one, or let us run the whole thing."
       />
 
@@ -94,27 +79,10 @@ export default function ServicesPage() {
               </p>
               <p className="mt-2 text-xs uppercase tracking-[0.15em] text-sb-white/50">{s.label}</p>
             </div>
-=======
-        description="Eight ways we help ambitious products get seen, talked about, and shared — pick one, or let us run the whole loop."
-      />
-
-      <section className="relative px-6 pb-28">
-        <div className="mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <ServiceCard
-              key={s.slug}
-              number={s.number}
-              title={s.title}
-              short={s.short}
-              slug={s.slug}
-              index={i}
-            />
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
           ))}
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* what's included, light section */}
       <section className="sb-light relative px-6 py-10">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">
@@ -195,20 +163,6 @@ export default function ServicesPage() {
         }
         primaryLabel="Start a Project"
       />
-=======
-      <section className="relative px-6 pb-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow="Engagement Models">
-            PICK YOUR
-            <br />
-            <span className="gradient-text">PACE.</span>
-          </SectionHeading>
-          <div className="mt-14">
-            <EngagementTable />
-          </div>
-        </div>
-      </section>
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
     </>
   );
 }

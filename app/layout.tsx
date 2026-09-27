@@ -1,20 +1,12 @@
-<<<<<<< HEAD
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import SplashScreen from "@/components/layout/SplashScreen";
 import RouteLoadingBar from "@/components/layout/RouteLoadingBar";
-=======
-import type { Metadata } from "next";
-import "./globals.css";
-import SmoothScroll from "@/components/layout/SmoothScroll";
-import SplashScreen from "@/components/layout/SplashScreen";
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-<<<<<<< HEAD
 import BackToTop from "@/components/layout/BackToTop";
 
 export const metadata: Metadata = {
@@ -22,14 +14,6 @@ export const metadata: Metadata = {
   title: {
     default: "SocialBug Media | Strategy. Content. Growth.",
     template: "%s | SocialBug Media",
-=======
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://socialbugmedia.com"),
-  title: {
-    default: "SocialBug Media — Strategy. Content. Growth.",
-    template: "%s — SocialBug Media",
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
   },
   description:
     "SocialBug Media helps SaaS companies, startups, and product launches grow through a curated network of 1000+ influencers, creators, and tech professionals.",
@@ -41,7 +25,6 @@ export const metadata: Metadata = {
     "startup marketing agency",
   ],
   openGraph: {
-<<<<<<< HEAD
     title: "SocialBug Media | Strategy. Content. Growth.",
     description:
       "We help ambitious products get seen, talked about, and shared through strategy, creator networks, and campaigns built to move.",
@@ -78,18 +61,6 @@ export const viewport: Viewport = {
   maximumScale: 5,
   viewportFit: "cover",
   themeColor: "#050505",
-=======
-    title: "SocialBug Media — Strategy. Content. Growth.",
-    description:
-      "We help ambitious products get seen, talked about, and shared through strategy, creator networks, and campaigns built to move.",
-    url: "https://socialbugmedia.com",
-    siteName: "SocialBug Media",
-    type: "website",
-  },
-  icons: {
-    icon: "/logo/socialbug-icon.png",
-  },
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
 };
 
 export default function RootLayout({
@@ -97,7 +68,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-<<<<<<< HEAD
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -106,24 +76,16 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-=======
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       <body className="bg-noise antialiased">
         <SmoothScroll>
           <CustomCursor />
           <ScrollProgress />
           <SplashScreen />
-<<<<<<< HEAD
           <RouteLoadingBar />
           <Navbar />
           <main>{children}</main>
           <Footer />
           <BackToTop />
-=======
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
         </SmoothScroll>
       </body>
     </html>

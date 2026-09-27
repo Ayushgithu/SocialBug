@@ -19,11 +19,7 @@ export default function HowItWorks() {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-<<<<<<< HEAD
     <section className="relative px-6 py-16 sm:py-20 lg:py-24">
-=======
-    <section className="relative px-6 py-28">
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
       <div className="mx-auto max-w-4xl">
         <SectionHeading eyebrow="How It Works" align="center">
           FROM STRATEGY
@@ -42,28 +38,17 @@ export default function HowItWorks() {
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}
-<<<<<<< HEAD
                 initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-=======
-                initial={{ opacity: 0.3, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.6 }}
-                transition={{ duration: 0.5 }}
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
                 className="relative"
               >
                 <span className="absolute -left-10 top-1 h-4 w-4 rounded-full border-2 border-sb-lime bg-sb-black" />
                 <p className="font-heading text-xs uppercase tracking-[0.2em] text-sb-white/40">
                   0{i + 1}
                 </p>
-<<<<<<< HEAD
                 <h3 className="font-display mt-2 text-3xl sm:text-4xl">{step.title.toUpperCase()}</h3>
-=======
-                <h3 className="font-display mt-2 text-4xl sm:text-5xl">{step.title.toUpperCase()}</h3>
->>>>>>> 6b81a0d4e236a5067c50a0ddff3171c6cdad7525
                 <p className="mt-3 max-w-md text-sb-white/55">{step.desc}</p>
               </motion.div>
             ))}
