@@ -9,6 +9,7 @@ import Button from "@/components/ui/Button";
 import MobileMenu from "@/components/layout/MobileMenu";
 import { Menu, Sparkles } from "lucide-react";
 import NavIcon from "@/components/ui/NavIcon";
+import { CLD } from "@/lib/cloudinary";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +49,7 @@ export default function Navbar() {
             <div className="sb-logo-badge relative flex h-11 w-11 shrink-0 items-center justify-center">
               <div className="relative h-full w-full">
                 <Image
-                  src="/logo/sb-icon-dark.png"
+                  src={CLD.logo.iconDark}
                   alt="SocialBug Media logo"
                   fill
                   sizes="44px"

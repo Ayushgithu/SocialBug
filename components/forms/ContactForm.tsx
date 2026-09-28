@@ -110,7 +110,7 @@ export default function ContactForm() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <Field label="Name" error={errors.name?.message}>
-          <input {...register("name")} className={inputClass} placeholder="Jordan Lee" />
+          <input {...register("name")} className={inputClass} placeholder="your name" />
         </Field>
         <Field label="Work Email" error={errors.email?.message}>
           <input {...register("email")} className={inputClass} placeholder="you@company.com" />
@@ -157,7 +157,7 @@ export default function ContactForm() {
         <input
           {...register("budget")}
           className={inputClass}
-          placeholder="e.g. $5k–$15k / month"
+          
         />
       </Field>
 

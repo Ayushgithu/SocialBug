@@ -1,3 +1,5 @@
+import { CLD } from "@/lib/cloudinary";
+
 // Single source of truth for every outbound contact/social link on the
 // site, update here and it's correct everywhere (navbar, footer, mobile
 // menu, contact page, email templates).
@@ -63,7 +65,7 @@ export const founders = [
     bio: "Mansi is the founder of SocialBug Media. She built the agency around one belief, good content builds great brands, and leads the vision, client relationships and creative standards behind every campaign we run.",
     initials: "MG",
     accent: "pink" as const,
-    photo: "/founders/divya-chhiroliya.jpeg",
+    photo: CLD.founders.divya,
     linkedin: "https://www.linkedin.com/in/mansi-gupta",
     showLinkedin: false,
   },
@@ -74,7 +76,7 @@ export const founders = [
     bio: "Shivam is an AI engineer turned marketer with a 200K+ LinkedIn following. Ex-Qualcomm and Ex-ISRO, an IISc Bangalore graduate, he has been featured at Times Square NY, on Favikon and by Ms. Isha Ambani. He built the 1000+ creator network that powers every SocialBug campaign.",
     initials: "SC",
     accent: "lime" as const,
-    photo: "/founders/shivam-chhirolya.jpeg",
+    photo: CLD.founders.shivam,
     linkedin: "https://www.linkedin.com/in/shivam-chhirolya",
     showLinkedin: true,
   },
@@ -242,7 +244,7 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "myntra-friendshipday",
-    brandLogo: "/partners/myntra.png",
+    brandLogo: CLD.partners.myntra,
     result: { value: "Highly", label: "Shareable" },
     stats: [
       { value: "Print", label: "Format" },
@@ -260,10 +262,10 @@ export const caseStudies: CaseStudy[] = [
     name: "Myntra",
     logo: "M",
     industry: "Friendship Day Campaign",
-    image: "/work/myntra-cover.webp",
+    image: CLD.work.covers.myntra,
     imageWidth: 1036,
     imageHeight: 1263,
-    bodyImage: "/work/details/myntra-body.webp",
+    bodyImage: CLD.work.bodies.myntra,
     bodyCaption:
       "Marketers and founders calling out the campaign's insight as instantly relatable.",
     challenge:
@@ -284,7 +286,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "flipkart",
-    brandLogo: "/partners/flipkart-giftcard.png",
+    brandLogo: CLD.partners.flipkartGiftcard,
     result: { value: "3.9M", label: "Impressions" },
     stats: [
       { value: "3.9M", label: "Impressions" },
@@ -302,10 +304,10 @@ export const caseStudies: CaseStudy[] = [
     name: "Flipkart",
     logo: "F",
     industry: "Gift Card Campaign",
-    image: "/work/flipkart-cover.webp",
+    image: CLD.work.covers.flipkart,
     imageWidth: 1179,
     imageHeight: 2556,
-    bodyImage: "/work/details/flipkart-body.webp",
+    bodyImage: CLD.work.bodies.flipkart,
     bodyCaption:
       "Real LinkedIn posts from HR and marketing voices, reacting to #FlipkartGiftCards.",
     challenge: "Make a functional product like a gift card feel relevant and relatable.",
@@ -326,7 +328,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "amazon-prime-video",
-    brandLogo: "/partners/prime-video.png",
+    brandLogo: CLD.partners.primeVideo,
     result: { value: "Launch-Week", label: "Buzz" },
     stats: [
       { value: "OOH", label: "Format" },
@@ -344,10 +346,10 @@ export const caseStudies: CaseStudy[] = [
     name: "Amazon Prime",
     logo: "P",
     industry: "Everyday Value × Social Content",
-    image: "/work/amazon-prime.webp",
+    image: CLD.work.covers.amazonPrime,
     imageWidth: 1108,
     imageHeight: 1123,
-    bodyImage: "/work/details/amazon-prime-body.webp",
+    bodyImage: CLD.work.bodies.amazonPrime,
     challenge:
       "Communicate the value of Prime without turning the content into a list of features.",
     idea: "We approached Prime through everyday consumer behaviour — focusing on the moments where the service becomes useful in real life.",
@@ -364,7 +366,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "latentforce",
-    brandLogo: "/partners/latentforce-ai.png",
+    brandLogo: CLD.partners.latentforceAi,
     result: { value: "20K", label: "Likes" },
     stats: [
       { value: "20K", label: "Likes" },
@@ -382,10 +384,10 @@ export const caseStudies: CaseStudy[] = [
     name: "Latent Force AI",
     logo: "L",
     industry: "AI × Social Storytelling",
-    image: "/work/latentforce-cover.webp",
+    image: CLD.work.covers.latentforce,
     imageWidth: 964,
     imageHeight: 1270,
-    bodyImage: "/work/details/latentforce-body.webp",
+    bodyImage: CLD.work.bodies.latentforce,
     bodyCaption: "AI engineers and founders debating Latent Force in the comments, unprompted.",
     challenge:
       "AI products can quickly become difficult to communicate when the messaging gets buried under technical language.",
@@ -403,7 +405,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "boat-snapdragon-campaign",
-    brandLogo: "/partners/amd.png", // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogo: CLD.partners.amd, // placeholder — no boAt logo asset yet, swap when supplied
     result: { value: "1.2M", label: "Reach" },
     stats: [
       { value: "1.2M", label: "Reach" },
@@ -421,10 +423,10 @@ export const caseStudies: CaseStudy[] = [
     name: "boAt × Snapdragon",
     logo: "B",
     industry: "Technology × Product Story",
-    image: "/work/boat-snapdragon-cover.webp",
+    image: CLD.work.covers.boatSnapdragon,
     imageWidth: 768,
     imageHeight: 1376,
-    bodyImage: "/work/details/boat-snapdragon-body.webp",
+    bodyImage: CLD.work.bodies.boatSnapdragon,
     challenge: "Make technical performance feel interesting to a social audience.",
     idea: "Instead of treating technology specifications as the story, we connected product performance with the way people actually use the product.",
     flow: [
@@ -441,7 +443,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "boat-slazer-grooming",
-    brandLogo: "/partners/xiaomi.png", // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogo: CLD.partners.xiaomi, // placeholder — no boAt logo asset yet, swap when supplied
     result: { value: "2.8M", label: "Reach" },
     stats: [
       { value: "2.8M", label: "Reach" },
@@ -459,10 +461,10 @@ export const caseStudies: CaseStudy[] = [
     name: "boAt Trimmer",
     logo: "B",
     industry: "Grooming × Relatable Content",
-    image: "/work/boat-slazer-cover.webp",
+    image: CLD.work.covers.boatSlazer,
     imageWidth: 848,
     imageHeight: 1264,
-    bodyImage: "/work/details/boat-slazer-body.webp",
+    bodyImage: CLD.work.bodies.boatSlazer,
     challenge:
       "Make a grooming product feel like part of everyday culture rather than another product advertisement.",
     idea: "Start with the grooming behaviour people already recognise and build the product into that moment.",
@@ -481,14 +483,14 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "supertails",
-    brandLogo: "/partners/supertails.png",
+    brandLogo: CLD.partners.supertails,
     name: "Supertails",
     logo: "S",
     industry: "Pet Parents × Emotional Storytelling",
-    image: "/work/supertails-cover.webp",
+    image: CLD.work.covers.supertails,
     imageWidth: 848,
     imageHeight: 1264,
-    bodyImage: "/work/details/supertails-body.webp",
+    bodyImage: CLD.work.bodies.supertails,
     challenge:
       "Talk about pet care without making the communication feel like a conventional pet-care advertisement.",
     idea: "We approached the category through the relationship between pets and their humans.",
@@ -507,15 +509,15 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "suzlon",
-    brandLogo: "/partners/gritzo.png", // placeholder — no Suzlon logo asset yet, swap when supplied
+    brandLogo: CLD.partners.gritzo, // placeholder — no Suzlon logo asset yet, swap when supplied
     name: "Suzlon",
     logo: "S",
     industry: "Sustainability × Simple Storytelling",
-    image: "/work/suzlon-cover.webp",
+    image: CLD.work.covers.suzlon,
     imageWidth: 1080,
     imageHeight: 1920,
-    bodyImage: "/work/details/suzlon-body.webp",
-    bodyVideo: "/work/details/suzlon-video.mp4",
+    bodyImage: CLD.work.bodies.suzlon,
+    bodyVideo: CLD.work.suzlonVideo,
     bodyCaption: "The Suzlon AI campaign, translating renewable-energy work into content for a wider audience.",
     challenge:
       "Make a large sustainability story understandable and relevant to everyday audiences.",
@@ -534,7 +536,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "hk-vitals-skin-radiance",
-    brandLogo: "/partners/aurm.png", // placeholder — no HK Vitals logo asset yet, swap when supplied
+    brandLogo: CLD.partners.aurm, // placeholder — no HK Vitals logo asset yet, swap when supplied
     result: { value: "2.1M", label: "Reach" },
     stats: [
       { value: "2.1M", label: "Reach" },
@@ -552,10 +554,10 @@ export const caseStudies: CaseStudy[] = [
     name: "HK Vitals",
     logo: "H",
     industry: "Health × Everyday Wellness",
-    image: "/work/hkvitals-cover.webp",
+    image: CLD.work.covers.hkvitals,
     imageWidth: 704,
     imageHeight: 1527,
-    bodyImage: "/work/details/hkvitals-body.webp",
+    bodyImage: CLD.work.bodies.hkvitals,
     challenge:
       "Health communication can easily become clinical, repetitive or overly promotional.",
     idea: "Start with everyday wellness concerns that people already think about and turn them into accessible social content.",
@@ -574,7 +576,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "coinswitch-real-growth",
-    brandLogo: "/partners/coinswitch.png",
+    brandLogo: CLD.partners.coinswitch,
     result: { value: "3.4M", label: "Views" },
     stats: [
       { value: "3.4M", label: "Views" },
@@ -592,10 +594,10 @@ export const caseStudies: CaseStudy[] = [
     name: "CoinSwitch",
     logo: "C",
     industry: "Finance × Simplified Communication",
-    image: "/work/coinswitch-cover.webp",
+    image: CLD.work.covers.coinswitch,
     imageWidth: 704,
     imageHeight: 1209,
-    bodyImage: "/work/details/coinswitch-body.webp",
+    bodyImage: CLD.work.bodies.coinswitch,
     challenge:
       "Financial and crypto topics can feel intimidating because of complicated terminology.",
     idea: "Take a complex financial conversation and translate it into a simpler social-first narrative.",
@@ -614,7 +616,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "nebius-ai-builder",
-    brandLogo: "/partners/nebius.png",
+    brandLogo: CLD.partners.nebius,
     result: { value: "1.8K+", label: "Reach" },
     stats: [
       { value: "1.8K+", label: "Room Reach" },
@@ -632,10 +634,10 @@ export const caseStudies: CaseStudy[] = [
     name: "Nebius",
     logo: "N",
     industry: "AI Infrastructure × Storytelling",
-    image: "/work/nebius-cover.webp",
+    image: CLD.work.covers.nebius,
     imageWidth: 1376,
     imageHeight: 768,
-    bodyImage: "/work/details/nebius-body.webp",
+    bodyImage: CLD.work.bodies.nebius,
     challenge:
       "AI infrastructure is highly technical — making it difficult to communicate without losing the audience.",
     idea: "Instead of leading with technical terminology, we focused on the larger story of what AI infrastructure makes possible.",
@@ -654,7 +656,7 @@ export const caseStudies: CaseStudy[] = [
   /* BlackBerry case study hidden for now. Delete this comment wrapper to bring it back.
   {
     slug: "blackberry",
-    brandLogo: "/partners/blackberrys.png", // placeholder (closest name match), swap when the real BlackBerry logo is supplied
+    brandLogo: CLD.partners.blackberrys, // placeholder (closest name match), swap when the real BlackBerry logo is supplied
     name: "BlackBerry",
     logo: "B",
     industry: "Product × Brand Storytelling",
@@ -891,25 +893,24 @@ export const networkCreators = [
 // Each PNG already has its own die-cut/shadow styling baked in, so
 // these render as plain images, no extra card frame needed.
 export const partnerLogos = [
-  { name: "Prime Video", src: "/partners/prime-video.png" },
-  { name: "vivo", src: "/partners/vivo.png" },
-  { name: "Lay's", src: "/partners/lays.png" },
-  { name: "Xiaomi", src: "/partners/xiaomi.png" },
-  { name: "HAABUILD", src: "/partners/haabuild.png" },
-  { name: "CoinSwitch", src: "/partners/coinswitch.png" },
-  { name: "Nebius", src: "/partners/nebius.png" },
-  { name: "Flipkart Gift Card", src: "/partners/flipkart-giftcard.png" },
-  { name: "Latent Force AI", src: "/partners/latentforce-ai.png" },
-  { name: "Myntra", src: "/partners/myntra.png" },
-  { name: "Supertails", src: "/partners/supertails.png" },
-  { name: "AMD", src: "/partners/amd.png" },
-  { name: "Kurkure", src: "/partners/kurkure.png" },
-  { name: "GeeksforGeeks", src: "/partners/geeksforgeeks.png" },
-  { name: "Blackberrys", src: "/partners/blackberrys.png" },
-  { name: "Duroflex", src: "/partners/duroflex.png" },
-  { name: "Gritzo", src: "/partners/gritzo.png" },
-  { name: "Cleartrip", src: "/partners/cleartrip.png" },
-  { name: "AURM", src: "/partners/aurm.png" },
-  { name: "Zeiss", src: "/partners/zeiss.png" },
+  { name: "Prime Video", src: CLD.partners.primeVideo },
+  { name: "vivo", src: CLD.partners.vivo },
+  { name: "Lay's", src: CLD.partners.lays },
+  { name: "Xiaomi", src: CLD.partners.xiaomi },
+  { name: "HAABUILD", src: CLD.partners.haabuild },
+  { name: "CoinSwitch", src: CLD.partners.coinswitch },
+  { name: "Nebius", src: CLD.partners.nebius },
+  { name: "Flipkart Gift Card", src: CLD.partners.flipkartGiftcard },
+  { name: "Latent Force AI", src: CLD.partners.latentforceAi },
+  { name: "Myntra", src: CLD.partners.myntra },
+  { name: "Supertails", src: CLD.partners.supertails },
+  { name: "AMD", src: CLD.partners.amd },
+  { name: "Kurkure", src: CLD.partners.kurkure },
+  { name: "GeeksforGeeks", src: CLD.partners.geeksforgeeks },
+  { name: "Blackberrys", src: CLD.partners.blackberrys },
+  { name: "Duroflex", src: CLD.partners.duroflex },
+  { name: "Gritzo", src: CLD.partners.gritzo },
+  { name: "Cleartrip", src: CLD.partners.cleartrip },
+  { name: "AURM", src: CLD.partners.aurm },
+  { name: "Zeiss", src: CLD.partners.zeiss },
 ];
-

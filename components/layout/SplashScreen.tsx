@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, animate, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import { CLD } from "@/lib/cloudinary";
 
 /**
  * Splash screen, clean black stage, no curtain.
@@ -86,7 +87,7 @@ export default function SplashScreen() {
         className="fixed inset-0 z-[200] flex items-center justify-center bg-sb-black"
       >
         <div className="sb-logo-badge relative h-16 w-24">
-          <Image src="/logo/sb-logo-full.png" alt="SocialBug Media" fill sizes="96px" className="object-contain" priority />
+          <Image src={CLD.logo.full} alt="SocialBug Media" fill sizes="96px" className="object-contain" priority />
         </div>
       </motion.div>
     );
@@ -123,7 +124,7 @@ export default function SplashScreen() {
             style={{ filter: "drop-shadow(0 14px 26px rgba(0,0,0,0.5))" }}
           >
             <Image
-              src="/logo/sb-logo-full.png"
+              src={CLD.logo.full}
               alt="SocialBug Media"
               fill
               className="object-contain"

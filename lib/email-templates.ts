@@ -1,7 +1,8 @@
 import type { ContactFormValues } from "@/lib/schema";
+import { CLD } from "@/lib/cloudinary";
 
 const SITE_URL = "https://socialbugmedia.in";
-const LOGO_URL = `${SITE_URL}/logo/sb-icon-dark.png`;
+const LOGO_URL = CLD.logo.iconDark;
 const INSTAGRAM_URL = "https://www.instagram.com/shivam_chhirolya_97/";
 const LINKEDIN_URL = "https://www.linkedin.com/company/socialbugmedia/";
 
