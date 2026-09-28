@@ -12,32 +12,32 @@
  */
 export const CLD = {
   logo: {
-    full: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/logo-sb-logo-full.png",
-    iconDark: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/logo-sb-icon-dark.png",
+    full: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-logo-full.png",
+    iconDark: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-icon-dark.png",
   },
 
   ogImage: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/og-image.png",
 
   founders: {
-    divya: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/founders-divya-chhiroliya.jpeg",
-    shivam: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/founders-shivam-chhirolya.jpeg",
+    divya: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575047/divya-chhiroliya.jpg",
+    shivam: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575047/shivam-chhirolya.jpg",
   },
 
   creatorPosts: [
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-01.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-02.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-03.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-04.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-05.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-06.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-07.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-08.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-09.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-10.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-11.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-12.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-13.webp",
-    "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/creator-posts-post-14.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-01.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-02.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-03.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-04.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-05.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-06.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-07.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-08.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-09.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-10.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-11.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-12.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-13.webp",
+    "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-14.webp",
   ],
 
   partners: {
@@ -65,20 +65,20 @@ export const CLD = {
 
   work: {
     covers: {
-      myntra: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-myntra-cover.webp",
+      myntra: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575782/myntra-cover.webp",
       flipkart: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575797/flipkart-cover.webp",
-      amazonPrime: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-amazon-prime.webp",
-      latentforce: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-latentforce-cover.webp",
-      boatSnapdragon: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-boat-snapdragon-cover.webp",
-      boatSlazer: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-boat-slazer-cover.webp",
-      supertails: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-supertails-cover.webp",
-      suzlon: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-suzlon-cover.webp",
-      hkvitals: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-hkvitals-cover.webp",
-      coinswitch: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-coinswitch-cover.webp",
-      nebius: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-nebius-cover.webp",
+      amazonPrime: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575764/amazon-prime.webp",
+      latentforce: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575785/latentforce-cover.webp",
+      boatSnapdragon: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575780/boat-snapdragon-cover.webp",
+      boatSlazer: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575765/boat-slazer-cover.webp",
+      supertails: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575786/supertails-cover.webp",
+      suzlon: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575775/suzlon-cover.webp",
+      hkvitals: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575796/hkvitals-cover.webp",
+      coinswitch: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575779/coinswitch-cover.webp",
+      nebius: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575783/nebius-cover.webp",
     },
     bodies: {
-      myntra: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-details-myntra-body.webp",
+      myntra: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575795/supertails-body.webp",
       flipkart: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-details-flipkart-body.webp",
       amazonPrime: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-details-amazon-prime-body.webp",
       latentforce: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/work-details-latentforce-body.webp",
