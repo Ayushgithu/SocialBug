@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const details = [
   { icon: Mail, label: socialLinks.email },
-  { icon: Clock, label: "Replies within 1 business day" },
+  { icon: Clock, label: "Replies within minutes" },
   { icon: MapPin, label: "Working with teams globally" },
 ];
 

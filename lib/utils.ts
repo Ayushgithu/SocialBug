@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import type { Metadata } from "next";
+import { CLD } from "@/lib/cloudinary";
 
 export function cn(...inputs: ClassValue[]) {
   return clsx(inputs);
@@ -7,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 /**
  * Per-page openGraph + twitter metadata, sharing the one branded OG image
- * (public/og-image.png) so every page gets a proper title/description on
+ * (Cloudinary: CLD.ogImage) so every page gets a proper title/description on
  * social previews instead of falling back to the site-wide default.
  * `path` is the route, e.g. "/about" (leave empty for the homepage).
  */
@@ -19,7 +20,7 @@ export function pageOG(
 ): Pick<Metadata, "openGraph" | "twitter"> {
   const url = `https://socialbugmedia.in${path}`;
   const image = {
-    url: imageUrl || "/og-image.png",
+    url: imageUrl || CLD.ogImage,
     width: 1200,
     height: 630,
     alt: title,

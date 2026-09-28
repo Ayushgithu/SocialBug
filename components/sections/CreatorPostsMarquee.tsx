@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { CLD } from "@/lib/cloudinary";
 
 /**
  * Real screenshots of network creators posting about brand campaigns.
@@ -14,8 +15,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
  * Plain horizontal ticker, scrolling left in a straight line and looping
  * seamlessly — not the old 3D rotateY wheel.
  */
-const posts = Array.from({ length: 14 }, (_, i) => ({
-  src: `/creator-posts/post-${String(i + 1).padStart(2, "0")}.webp`,
+const posts = CLD.creatorPosts.map((src, i) => ({
+  src,
   alt: `Creator LinkedIn post example ${i + 1}`,
 }));
 

@@ -8,6 +8,7 @@ import { navLinks, legalLinks, socialLinks } from "@/lib/data";
 import { InstagramIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
 import NavIcon from "@/components/ui/NavIcon";
 import CopyRow from "@/components/ui/CopyRow";
+import { CLD } from "@/lib/cloudinary";
 
 export default function Footer() {
   return (
@@ -32,7 +33,7 @@ export default function Footer() {
           <div className="flex flex-col gap-5">
             <Link href="/" data-cursor="pointer" className="sb-logo-hop flex w-fit items-center">
               <div className="sb-logo-badge relative h-36 w-52 shrink-0">
-                <Image src="/logo/sb-logo-full.png" alt="SocialBug Media" fill sizes="208px" className="object-contain" />
+                <Image src={CLD.logo.full} alt="SocialBug Media" fill sizes="208px" className="object-contain" />
               </div>
             </Link>
             <p className="max-w-xs text-sm text-sb-white/50">
@@ -50,8 +51,7 @@ export default function Footer() {
                 { Icon: InstagramIcon, href: socialLinks.instagram, label: "Instagram" },
                 { Icon: LinkedInIcon, href: socialLinks.linkedinCompany, label: "LinkedIn" },
               ].map(({ Icon, href, label }) => (
-                <a
-                  key={label}
+                <a key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -137,8 +137,7 @@ export default function Footer() {
             <span className="text-sb-orange">♥</span>
             <span>
               created by{" "}
-              <a
-                href="https://lexicalsoftware.in"
+              <a href="https://lexicalsoftware.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="pointer"
