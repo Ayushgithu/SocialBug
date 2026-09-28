@@ -10,6 +10,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/layout/BackToTop";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import NextTopLoader from 'nextjs-toploader';
+import MobileCTABar from "@/components/ui/MobileCTABar";
 import { CLD } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
@@ -85,12 +86,15 @@ export default function RootLayout({
           <ScrollProgress />
           <SplashScreen />
           <RouteLoadingBar />
-            <NextTopLoader />
+          <NextTopLoader />
           <Navbar />
           <main>{children}</main>
           <Footer />
+          {/* spacer so the sticky mobile bar never covers the footer's last line */}
+          <div className="h-20 sm:hidden" aria-hidden />
           <BackToTop />
           <WhatsAppButton />
+          <MobileCTABar />
         </SmoothScroll>
       </body>
     </html>

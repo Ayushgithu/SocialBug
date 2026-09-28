@@ -8,6 +8,7 @@ import { navLinks, legalLinks, socialLinks } from "@/lib/data";
 import { InstagramIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
 import NavIcon from "@/components/ui/NavIcon";
 import CopyRow from "@/components/ui/CopyRow";
+import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import { CLD } from "@/lib/cloudinary";
 import { business } from "@/lib/business";
 
@@ -40,6 +41,8 @@ export default function Footer() {
             <p className="max-w-xs text-sm text-sb-white/50">
               Strategy, creators, and content built to turn ambitious products into conversations.
             </p>
+
+            <AvailabilityBadge />
 
             {/* contact, tap to open, copy button beside each */}
             <div className="flex max-w-xs flex-col gap-3">

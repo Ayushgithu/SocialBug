@@ -2,20 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 /**
  * Floating WhatsApp button (bottom-right, sits just above the Back-to-top button).
- * Tap it and WhatsApp opens with our number and a ready-made message,
- * so the visitor only has to press Send.
- *
- * To change the number or the message, edit the two constants below.
+ * Hidden on phones — the sticky bottom bar (MobileCTABar) already has WhatsApp there.
+ * To change the number or the message, edit lib/whatsapp.ts.
  */
-const WHATSAPP_NUMBER = "918817558400"; // country code + number, digits only (no + or spaces)
-const WHATSAPP_MESSAGE =
-  "Hi SocialBug Media! I found your website and I'd like to talk about a campaign for my brand.";
-
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
 export default function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
 
@@ -37,7 +30,7 @@ export default function WhatsAppButton() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="group fixed bottom-20 right-5 z-40 flex items-center gap-3 sm:bottom-24 sm:right-8"
+          className="group fixed bottom-20 right-5 z-40 hidden items-center gap-3 sm:bottom-24 sm:right-8 sm:flex"
         >
           {/* label, desktop hover only */}
           <span className="pointer-events-none hidden translate-x-2 whitespace-nowrap rounded-full border border-white/15 bg-sb-black/90 px-4 py-2 font-heading text-xs font-medium text-sb-white opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 lg:block">

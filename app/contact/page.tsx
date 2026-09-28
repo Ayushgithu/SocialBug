@@ -7,6 +7,7 @@ import SideReveal from "@/components/ui/SideReveal";
 import Marquee from "@/components/ui/Marquee";
 import { Mail, MapPin, Clock } from "lucide-react";
 import GstinRow from "@/components/ui/GstinRow";
+import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import { business } from "@/lib/business";
 import { partnerLogos, socialLinks } from "@/lib/data";
 
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 
 const details = [
   { icon: Mail, label: socialLinks.email },
-  { icon: Clock, label: "Replies within a minutes" },
+  { icon: Clock, label: "Replies within 1 business day" },
   { icon: MapPin, label: "Working with teams globally" },
 ];
 
@@ -46,6 +47,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <SideReveal from="left" className="flex min-w-0 flex-col justify-between gap-10">
             <div className="flex flex-col gap-5">
+              <AvailabilityBadge />
               {details.map((d) => (
                 <div key={d.label} className="flex items-center gap-3 text-sm text-sb-white/60">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15">
