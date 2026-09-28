@@ -52,7 +52,7 @@ function Sticker({
       style={{ animationDelay: `${(index % 6) * 0.5}s` }}
     >
       <span
-        className="relative block h-[128px] w-[96px] transition-transform duration-300 ease-out group-hover:scale-110 group-focus-visible:scale-110 sm:h-[150px] sm:w-[112px] lg:h-[176px] lg:w-[132px]"
+        className="relative block h-32 w-24 transition-transform duration-300 ease-out group-hover:scale-110 group-focus-visible:scale-110 sm:h-37.5 sm:w-28 lg:h-44 lg:w-33"
         style={{
           filter: active
             ? `${CONTOUR} drop-shadow(0 0 18px rgba(252,132,46,0.8))`
@@ -64,13 +64,13 @@ function Sticker({
           style={{ clipPath: SHAPES[index % SHAPES.length] }}
         >
           {!loaded && !broken && (
-            <span className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/[0.03] via-white/[0.09] to-white/[0.03]" />
+            <span className="absolute inset-0 animate-pulse bg-linear-to-br from-white/3 via-white/9 to-white/3" />
           )}
           {broken ? (
             // Graceful fallback if the photo fails to load, instead of a
             // broken-image icon with the alt text spilling out of the shape.
             <span
-              className={`flex h-full w-full items-center justify-center bg-gradient-to-br from-sb-orange/70 via-sb-pink/60 to-sb-purple/60 font-heading text-xl font-bold text-white transition-all duration-500 ${
+              className={`flex h-full w-full items-center justify-center bg-linear-to-br from-sb-orange/70 via-sb-pink/60 to-sb-purple/60 font-heading text-xl font-bold text-white transition-all duration-500 ${
                 active ? "grayscale-0" : "grayscale contrast-110"
               }`}
             >
@@ -89,7 +89,7 @@ function Sticker({
               } ${loaded ? "opacity-100" : "opacity-0"}`}
             />
           )}
-          <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black/70 to-transparent" />
           <span className="sb-sheen pointer-events-none absolute inset-0" />
         </span>
       </span>
@@ -123,7 +123,7 @@ function Label({
   );
 
   const text = (
-    <div className="max-w-[140px] px-1 text-center">
+    <div className="max-w-35 px-1 text-center">
       <p
         className={`font-heading text-[12px] font-bold leading-snug transition-colors sm:text-[13px] ${
           active ? "text-sb-white" : "text-sb-orange"
@@ -139,7 +139,7 @@ function Label({
 
   return (
     <div
-      className={`flex h-[84px] flex-col items-center gap-2 sm:h-[104px] ${
+      className={`flex h-21 flex-col items-center gap-2 sm:h-26 ${
         align === "top" ? "justify-end" : "justify-start"
       }`}
     >
@@ -181,7 +181,7 @@ function CreatorModal({ creator, onClose }: { creator: Creator | null; onClose: 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 z-[120] flex items-end justify-center bg-black/85 p-4 backdrop-blur-md sm:items-center"
+          className="fixed inset-0 z-120 flex items-end justify-center bg-black/85 p-4 backdrop-blur-md sm:items-center"
         >
           <motion.div
             initial={{ y: 40, scale: 0.95, opacity: 0 }}
@@ -226,7 +226,7 @@ function CreatorModal({ creator, onClose }: { creator: Creator | null; onClose: 
             <p className="relative mt-5 text-sm leading-relaxed text-sb-white/70">{creator.bio}</p>
 
             <div className="relative mt-6 flex items-center gap-3">
-              <span className="flex flex-1 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-xs text-sb-white/60">
+              <span className="flex flex-1 items-center gap-2 rounded-xl border border-white/10 bg-white/3 px-4 py-3 text-xs text-sb-white/60">
                 <Sparkles size={14} className="shrink-0 text-sb-orange" />
                 Available for brand campaigns through SocialBug
               </span>
@@ -237,7 +237,7 @@ function CreatorModal({ creator, onClose }: { creator: Creator | null; onClose: 
                   setCopied(true);
                 }}
                 aria-label="Copy handle"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-sb-white/70 transition-colors hover:border-sb-orange/60 hover:text-sb-orange"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/3 text-sb-white/70 transition-colors hover:border-sb-orange/60 hover:text-sb-orange"
               >
                 {copied ? <Check size={16} /> : <Copy size={16} />}
               </button>
@@ -287,7 +287,7 @@ export default function CreatorShowcase() {
               {top ? (
                 <Label creator={creator} active={active} align="top" />
               ) : (
-                <div className="h-[84px] sm:h-[104px]" aria-hidden />
+                <div className="h-21 sm:h-26" aria-hidden />
               )}
 
               <Sticker
@@ -300,7 +300,7 @@ export default function CreatorShowcase() {
               {!top ? (
                 <Label creator={creator} active={active} align="bottom" />
               ) : (
-                <div className="h-[84px] sm:h-[104px]" aria-hidden />
+                <div className="h-21 sm:h-26" aria-hidden />
               )}
             </motion.div>
           );

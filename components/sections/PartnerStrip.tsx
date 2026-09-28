@@ -46,7 +46,7 @@ export default function PartnerStrip({
       }
     >
       {!compact && (
-        <div className="pointer-events-none absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-sb-orange/25 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-linear-to-r from-transparent via-sb-orange/25 to-transparent" />
       )}
       <p className="mb-7 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.3em] text-sb-white/40">
         {label}

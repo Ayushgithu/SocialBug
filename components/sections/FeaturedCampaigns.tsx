@@ -78,21 +78,21 @@ export default function FeaturedCampaigns({
               <Link
                 href={`/case-studies/${cs.slug}`}
                 data-cursor="pointer"
-                className="group sb-card-shine relative flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] transition-all duration-400 hover:-translate-y-1.5 hover:border-sb-orange/60"
+                className="group sb-card-shine relative flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/2 transition-all duration-400 hover:-translate-y-1.5 hover:border-sb-orange/60"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-black/20">
+                <div className="relative aspect-4/3 w-full overflow-hidden bg-black/20">
                   {cs.image ? (
                     <Image
                       src={cs.image}
                       alt={`${cs.name} campaign`}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-110"
+                      className="object-cover object-top transition-transform duration-900 ease-out group-hover:scale-110"
                     />
                   ) : (
                     <CaseCover name={cs.name} logo={cs.logo} industry={cs.industry} />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-sb-black via-sb-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-sb-black via-sb-black/20 to-transparent" />
                   <span className="absolute right-3 top-3 flex h-8 w-8 translate-y-2 items-center justify-center rounded-full bg-sb-orange text-sb-black opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     <ArrowUpRight size={14} />
                   </span>
@@ -175,9 +175,9 @@ export default function FeaturedCampaigns({
             <Link
               href="/case-studies"
               data-cursor="pointer"
-              className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full border border-sb-orange/40 bg-sb-orange/[0.06] px-7 py-3.5 font-heading text-sm font-semibold text-sb-white transition-all duration-300 hover:border-sb-orange hover:bg-sb-orange hover:text-sb-black"
+              className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full border border-sb-orange/40 bg-sb-orange/6 px-7 py-3.5 font-heading text-sm font-semibold text-sb-white transition-all duration-300 hover:border-sb-orange hover:bg-sb-orange hover:text-sb-black"
             >
-              <span className="absolute inset-0 -z-10 translate-x-[-105%] bg-gradient-to-r from-sb-pink via-sb-orange to-sb-lime transition-transform duration-500 group-hover:translate-x-0" />
+              <span className="absolute inset-0 -z-10 translate-x-[-105%] bg-linear-to-r from-sb-pink via-sb-orange to-sb-lime transition-transform duration-500 group-hover:translate-x-0" />
               View All Campaigns
               <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>

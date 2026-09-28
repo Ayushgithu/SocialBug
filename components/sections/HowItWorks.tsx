@@ -28,10 +28,10 @@ export default function HowItWorks() {
         </SectionHeading>
 
         <div ref={ref} className="relative mt-20 pl-10">
-          <div className="absolute left-[7px] top-0 h-full w-[2px] bg-white/10" />
+          <div className="absolute left-1.75 top-0 h-full w-0.5 bg-white/10" />
           <motion.div
             style={{ height }}
-            className="absolute left-[7px] top-0 w-[2px] bg-gradient-to-b from-sb-pink via-sb-orange to-sb-lime"
+            className="absolute left-1.75 top-0 w-0.5 bg-linear-to-b from-sb-pink via-sb-orange to-sb-lime"
           />
 
           <div className="flex flex-col gap-14">

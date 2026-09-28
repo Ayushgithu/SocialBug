@@ -197,7 +197,7 @@ export default function ServiceVisual({ type }: { type: string }) {
   const Visual = VISUALS[type] ?? NetworkVisual;
   return (
     <div className="relative flex aspect-square w-full items-center justify-center">
-      <div className="absolute h-2/3 w-2/3 rounded-full bg-gradient-to-br from-sb-pink/20 via-sb-orange/10 to-sb-lime/10 blur-3xl" />
+      <div className="absolute h-2/3 w-2/3 rounded-full bg-linear-to-br from-sb-pink/20 via-sb-orange/10 to-sb-lime/10 blur-3xl" />
       <div className="relative h-full w-full">
         <Visual />
       </div>

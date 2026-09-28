@@ -65,7 +65,7 @@ export default function WhyBrands() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6 }}
-              className="group rounded-xl border border-black/10 bg-black/[0.03] p-5 shadow-[0_10px_22px_-16px_rgba(0,0,0,0.25)] transition-all duration-300 hover:border-sb-orange/60 hover:shadow-[0_18px_32px_-16px_rgba(252,132,46,0.35)]"
+              className="group rounded-xl border border-black/10 bg-black/3 p-5 shadow-[0_10px_22px_-16px_rgba(0,0,0,0.25)] transition-all duration-300 hover:border-sb-orange/60 hover:shadow-[0_18px_32px_-16px_rgba(252,132,46,0.35)]"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sb-orange text-black transition-transform duration-500 ease-out group-hover:-rotate-6 group-hover:scale-110">
                 <p.icon size={18} />

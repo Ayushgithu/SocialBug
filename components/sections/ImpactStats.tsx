@@ -53,10 +53,10 @@ export default function ImpactStats() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6 }}
-              className="sb-card-shine group relative flex flex-col gap-3.5 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-5 transition-colors duration-300 hover:border-sb-orange/50"
+              className="sb-card-shine group relative flex flex-col gap-3.5 overflow-hidden rounded-xl border border-white/10 bg-white/2 p-5 transition-colors duration-300 hover:border-sb-orange/50"
             >
               <span
-                className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${s.accent} text-sb-black shadow-[0_8px_20px_-6px_rgba(252,132,46,0.5)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}
+                className={`flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br ${s.accent} text-sb-black shadow-[0_8px_20px_-6px_rgba(252,132,46,0.5)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}
               >
                 <s.icon size={16} />
               </span>

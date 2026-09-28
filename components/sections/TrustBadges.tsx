@@ -25,7 +25,7 @@ export default function TrustBadges({ className = "" }: { className?: string }) 
           "radial-gradient(120% 160% at 0% 0%, rgba(252,132,46,0.16), transparent 60%), radial-gradient(120% 160% at 100% 100%, rgba(242,97,31,0.14), transparent 60%), #141210",
       }}
     >
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:20px_20px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle,#fff_1px,transparent_1px)] bg-size-[20px_20px]" />
       <div className="relative flex flex-wrap items-center justify-center gap-x-14 gap-y-8 sm:justify-between">
         <p className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-sb-white/45">
           Trusted &amp; recognised

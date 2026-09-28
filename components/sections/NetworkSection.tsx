@@ -75,7 +75,7 @@ export default function NetworkSection() {
             </div>
           </div>
 
-          <div className="glow-border rounded-3xl bg-white/[0.02] p-8 backdrop-blur-sm">
+          <div className="glow-border rounded-3xl bg-white/2 p-8 backdrop-blur-sm">
             <p className="mb-8 font-heading text-xs uppercase tracking-[0.2em] text-sb-white/40">
               How the network moves
             </p>
@@ -83,14 +83,14 @@ export default function NetworkSection() {
               {flow.map((step, i) => (
                 <div key={step} className="relative flex items-center gap-4 pb-8 last:pb-0">
                   {i < flow.length - 1 && (
-                    <span className="absolute left-[15px] top-8 h-full w-px bg-gradient-to-b from-sb-pink/60 to-transparent" />
+                    <span className="absolute left-3.75 top-8 h-full w-px bg-linear-to-b from-sb-pink/60 to-transparent" />
                   )}
                   <motion.span
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, type: "spring" }}
-                    className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sb-pink to-sb-orange text-xs font-bold text-sb-black"
+                    className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-sb-pink to-sb-orange text-xs font-bold text-sb-black"
                   >
                     {i + 1}
                   </motion.span>

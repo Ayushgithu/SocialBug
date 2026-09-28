@@ -36,9 +36,9 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
         ref={ref}
         onMouseMove={handleMove}
         onMouseLeave={handleLeave}
-        className="group relative block h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-7 transition-[transform,border-color] duration-200 ease-out hover:border-white/25"
+        className="group relative block h-full overflow-hidden rounded-3xl border border-white/10 bg-white/2 p-7 transition-[transform,border-color] duration-200 ease-out hover:border-white/25"
       >
-        <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-sb-pink to-sb-orange opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30" />
+        <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-linear-to-br from-sb-pink to-sb-orange opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30" />
         <div className="relative flex items-start justify-between">
           <span className="font-display text-sm text-sb-white/30">{service.number}</span>
           <ArrowUpRight

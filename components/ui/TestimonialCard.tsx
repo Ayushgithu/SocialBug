@@ -37,7 +37,7 @@ export default function TestimonialCard({
       transition={{ duration: 0.6, delay: (index % 6) * 0.07 }}
       style={{ "--tilt": `${tilt}deg` } as CSSProperties}
       className={cn(
-        "sb-tilt glow-border relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-white/[0.02] p-5",
+        "sb-tilt glow-border relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-white/2 p-5",
         className
       )}
     >
@@ -46,7 +46,7 @@ export default function TestimonialCard({
         &ldquo;{quote}&rdquo;
       </p>
       <div className="mt-4 flex items-center gap-2.5">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sb-pink to-sb-orange font-heading text-xs font-bold text-sb-black">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-sb-pink to-sb-orange font-heading text-xs font-bold text-sb-black">
           {brand.charAt(0)}
         </div>
         <p className="font-heading text-sm font-semibold">{brand}</p>

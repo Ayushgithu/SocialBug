@@ -13,7 +13,7 @@ export default function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed left-0 top-0 z-[70] h-[3px] w-full origin-left bg-gradient-to-r from-sb-pink via-sb-orange to-sb-lime"
+      className="fixed left-0 top-0 z-70 h-0.75 w-full origin-left bg-linear-to-r from-sb-pink via-sb-orange to-sb-lime"
     />
   );
 }

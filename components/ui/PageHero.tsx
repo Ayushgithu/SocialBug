@@ -20,7 +20,7 @@ export default function PageHero({
   return (
     <section className={cn("relative overflow-hidden px-6 pb-20 pt-40", className)}>
       <GradientBlobs className="opacity-70" />
-      <div className="grid-lines pointer-events-none absolute inset-0 opacity-25 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <div className="grid-lines pointer-events-none absolute inset-0 opacity-25 mask-[radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       <div className="relative mx-auto max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

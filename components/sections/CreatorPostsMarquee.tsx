@@ -53,7 +53,7 @@ export default function CreatorPostsMarquee({
           data-cursor="pointer"
           onClick={() => setOpenSrc(post.src)}
           aria-label={`Open ${post.alt}`}
-          className="post-shadow block h-[260px] w-[132px] shrink-0 cursor-pointer overflow-hidden rounded-2xl border-0 bg-transparent p-0 sm:h-[320px] sm:w-[162px]"
+          className="post-shadow block h-65 w-33 shrink-0 cursor-pointer overflow-hidden rounded-2xl border-0 bg-transparent p-0 sm:h-80 sm:w-40.5"
         >
           <Image
             src={post.src}
@@ -100,7 +100,7 @@ export default function CreatorPostsMarquee({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setOpenSrc(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-6 backdrop-blur-sm"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/85 p-6 backdrop-blur-sm"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

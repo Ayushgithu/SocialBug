@@ -109,7 +109,7 @@ export default function LegalLayout({
             ))}
 
             {/* contact card */}
-            <div className="glow-border rounded-xl bg-white/[0.02] p-7 sm:p-8">
+            <div className="glow-border rounded-xl bg-white/2 p-7 sm:p-8">
               <p className="font-heading text-xs uppercase tracking-[0.2em] text-sb-orange">
                 Questions about this policy?
               </p>

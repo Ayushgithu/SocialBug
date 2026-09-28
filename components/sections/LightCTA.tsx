@@ -37,7 +37,7 @@ export default function LightCTA({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative overflow-hidden rounded-2xl border border-black/10 bg-gradient-to-br from-[#eef0fb] via-[#f3f2fb] to-[#eef2fc] px-6 py-6 sm:px-8 sm:py-7"
+      className="relative overflow-hidden rounded-2xl border border-black/10 bg-linear-to-br from-[#eef0fb] via-[#f3f2fb] to-[#eef2fc] px-6 py-6 sm:px-8 sm:py-7"
     >
       {/* decorative dash accent, top right, echoes the hand-drawn sparkle */}
       <span
@@ -63,7 +63,7 @@ export default function LightCTA({
         <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
           <Button
             href={buttonHref}
-            className="!bg-[#0a0a0f] !text-white hover:!bg-black"
+            className="bg-[#0a0a0f]! text-white! hover:bg-black!"
             badge={
               <>
                 <Sparkles size={10} /> 2 mins

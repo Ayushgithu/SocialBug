@@ -37,13 +37,13 @@ export default function RouteLoadingBar() {
       {active && (
         <motion.div
           key="route-loading-bar"
-          className="pointer-events-none fixed inset-x-0 top-0 z-[300] h-[2.5px] overflow-hidden bg-white/10"
+          className="pointer-events-none fixed inset-x-0 top-0 z-300 h-[2.5px] overflow-hidden bg-white/10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.25 } }}
         >
           <motion.div
-            className="h-full w-1/3 bg-gradient-to-r from-sb-pink via-sb-orange to-sb-lime"
+            className="h-full w-1/3 bg-linear-to-r from-sb-pink via-sb-orange to-sb-lime"
             initial={{ x: "-100%" }}
             animate={{ x: ["-100%", "140%", "320%"] }}
             transition={{ duration: 0.48, ease: [0.16, 1, 0.3, 1] }}
