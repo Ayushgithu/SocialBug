@@ -3,15 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import CaseCover from "@/components/ui/CaseCover";
-import Sparkle from "@/components/ui/Sparkle";
 import { caseStudies } from "@/lib/data";
 import { cardAccentFor } from "@/lib/cardAccents";
 
 /**
- * Full campaign grid for the /case-studies ("Work") page. Same cream-card
- * language as the Services grid: coloured top strip, soft corner circle,
- * sparkle bullets and a centred accent-coloured link.
+ * Full campaign grid for the /case-studies ("Work") page.
+ * Cream card, image on top with a white brand badge, result numbers as
+ * mini stat boxes, and a gradient arrow button in the footer.
  */
 export default function WorkGrid({
   eyebrow = "Featured",
@@ -33,10 +33,10 @@ export default function WorkGrid({
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((cs, i) => {
             const a = cardAccentFor(i);
-            const bullets = cs.stats
-              ? cs.stats.map((st) => `${st.value} ${st.label}`)
+            const stats: { value: string; label: string }[] = cs.stats
+              ? cs.stats.slice(0, 3)
               : cs.result
-                ? [`${cs.result.value} ${cs.result.label}`]
+                ? [{ value: cs.result.value, label: cs.result.label }]
                 : [];
 
             return (
@@ -50,18 +50,10 @@ export default function WorkGrid({
                 <Link
                   href={`/case-studies/${cs.slug}`}
                   data-cursor="pointer"
-                  className="group relative flex h-full flex-col overflow-hidden rounded-[28px] bg-[#faf9f8] shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)]"
+                  className="group relative flex h-full flex-col rounded-[28px] bg-[#faf9f8] p-3 shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)]"
                 >
-                  <span
-                    className="absolute inset-x-0 top-0 z-10 h-1.5 opacity-60"
-                    style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
-                  />
-                  <span
-                    className="pointer-events-none absolute -right-14 -top-14 h-48 w-48 rounded-full"
-                    style={{ background: a.soft }}
-                  />
-
-                  <div className="relative mx-3 mt-5 aspect-[16/10] overflow-hidden rounded-[20px] bg-black/5">
+                  {/* image */}
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-black/5">
                     {cs.image ? (
                       <Image
                         src={cs.image}
@@ -73,60 +65,73 @@ export default function WorkGrid({
                     ) : (
                       <CaseCover name={cs.name} logo={cs.logo} industry={cs.industry} />
                     )}
-                    <span
-                      className="absolute left-3 top-3 rounded-full px-3 py-1 font-heading text-[10px] font-bold uppercase tracking-[0.06em] text-white"
-                      style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
-                    >
+
+                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 font-heading text-[10px] font-bold uppercase tracking-[0.06em] text-[#2b1b3d] backdrop-blur">
                       {cs.industry}
                     </span>
-                  </div>
 
-                  <div className="relative flex flex-1 flex-col px-6 pb-7 pt-5">
-                    <div className="flex items-center gap-3">
+                    {/* brand badge */}
+                    <span className="absolute bottom-3 left-3 flex h-11 min-w-11 items-center justify-center rounded-2xl bg-white px-2 shadow-[0_8px_20px_-6px_rgba(0,0,0,0.3)]">
                       {cs.brandLogo ? (
-                        <span className="relative h-8 w-16 shrink-0">
+                        <span className="relative h-6 w-14">
                           <Image
                             src={cs.brandLogoWhite}
                             alt={cs.name}
                             fill
-                            sizes="64px"
-                            className="object-contain object-left"
+                            sizes="56px"
+                            className="object-contain"
                           />
                         </span>
                       ) : (
-                        <span
-                          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl font-heading text-xs font-bold text-white"
-                          style={{ background: `linear-gradient(135deg, ${a.from}, ${a.to})` }}
-                        >
+                        <span className="font-heading text-xs font-bold" style={{ color: a.text }}>
                           {cs.logo}
                         </span>
                       )}
-                      <h3 className="truncate font-heading text-lg font-bold leading-tight text-[#2b1b3d]">
-                        {cs.name}
-                      </h3>
-                    </div>
+                    </span>
+                  </div>
 
-                    {bullets.length > 0 ? (
-                      <ul className="mt-5 flex flex-col gap-2.5">
-                        {bullets.map((b) => (
-                          <li key={b} className="flex items-start gap-3 text-[15px] leading-snug text-[#2b1b3d]">
-                            <Sparkle />
-                            {b}
-                          </li>
+                  <div className="flex flex-1 flex-col px-3 pb-3 pt-5 sm:px-4">
+                    <h3 className="font-heading text-lg font-bold leading-tight text-[#2b1b3d]">
+                      {cs.name}
+                    </h3>
+
+                    {stats.length > 0 ? (
+                      <div
+                        className="mt-4 grid gap-2"
+                        style={{ gridTemplateColumns: `repeat(${stats.length}, minmax(0, 1fr))` }}
+                      >
+                        {stats.map((st) => (
+                          <div
+                            key={st.label}
+                            className="rounded-xl px-2 py-3 text-center"
+                            style={{ background: a.soft }}
+                          >
+                            <p className="font-heading text-lg font-bold leading-none" style={{ color: a.text }}>
+                              {st.value}
+                            </p>
+                            <p className="mt-1.5 truncate text-[10px] uppercase tracking-wider text-[#6b5b78]">
+                              {st.label}
+                            </p>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     ) : (
-                      <p className="mt-4 line-clamp-3 text-[15px] leading-relaxed text-[#6b5b78]">
+                      <p className="mt-3 line-clamp-3 text-[15px] leading-relaxed text-[#6b5b78]">
                         {cs.challenge}
                       </p>
                     )}
 
-                    <span
-                      className="mt-auto pt-8 text-center font-heading text-base font-semibold underline-offset-4 group-hover:underline"
-                      style={{ color: a.text }}
-                    >
-                      Read the story
-                    </span>
+                    <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5 [margin-top:1.75rem]">
+                      <span className="font-heading text-[15px] font-semibold" style={{ color: a.text }}>
+                        Read the story
+                      </span>
+                      <span
+                        className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45"
+                        style={{ background: `linear-gradient(135deg, ${a.from}, ${a.to})` }}
+                      >
+                        <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:-rotate-45" />
+                      </span>
+                    </div>
                   </div>
                 </Link>
               </motion.article>

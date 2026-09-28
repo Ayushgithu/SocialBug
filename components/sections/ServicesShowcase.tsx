@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { services } from "@/lib/data";
 import { cardAccentFor } from "@/lib/cardAccents";
-import ServiceIconTile from "@/components/ui/ServiceIconTile";
-import Sparkle from "@/components/ui/Sparkle";
+import ServicePlatformIcons from "@/components/ui/ServicePlatformIcons";
 import LightCTA from "@/components/sections/LightCTA";
 
 const STATS_BY_SLUG: Record<string, { label: string; value: string }[]> = {
@@ -52,7 +52,8 @@ export default function ServicesShowcase({
         <div className={`mt-10 grid gap-5 ${gridCols}`}>
           {items.map((s, i) => {
             const a = cardAccentFor(i);
-            const bullets = s.workflow.slice(0, 4);
+            const pills = s.workflow.slice(0, 4);
+            const more = s.workflow.length - pills.length;
             const stats = STATS_BY_SLUG[s.slug];
 
             return (
@@ -66,49 +67,75 @@ export default function ServicesShowcase({
                 <Link
                   href={`/services/${s.slug}`}
                   data-cursor="pointer"
-                  className="group relative flex h-full flex-col overflow-hidden rounded-[28px] bg-[#faf9f8] px-6 pb-7 pt-9 shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)] sm:px-7"
+                  className="group relative flex h-full flex-col rounded-[28px] bg-[#faf9f8] p-3 shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)]"
                 >
-                  <span
-                    className="absolute inset-x-0 top-0 h-1.5 opacity-60"
-                    style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
-                  />
-                  <span
-                    className="pointer-events-none absolute -right-14 -top-14 h-48 w-48 rounded-full"
-                    style={{ background: a.soft }}
-                  />
+                  {/* tinted icon zone */}
+                  <div
+                    className="relative flex h-32 items-center justify-between rounded-[20px] px-5"
+                    style={{ background: `linear-gradient(135deg, ${a.from}26, ${a.to}0d)` }}
+                  >
+                    <ServicePlatformIcons slug={s.slug} />
+                    <span
+                      className="self-start pt-4 font-display text-3xl leading-none opacity-40"
+                      style={{ color: a.text }}
+                    >
+                      {s.number}
+                    </span>
+                  </div>
 
-                  <ServiceIconTile slug={s.slug} accentIndex={i} />
+                  <div className="flex flex-1 flex-col px-3 pb-3 pt-5 sm:px-4">
+                    <h3 className="font-heading text-xl font-bold leading-snug text-[#2b1b3d]">
+                      {s.title}
+                    </h3>
+                    <p className="mt-2.5 text-[15px] leading-relaxed text-[#6b5b78]">{s.short}</p>
 
-                  <h3 className="relative mt-6 font-heading text-xl font-bold leading-snug text-[#2b1b3d]">
-                    {s.title}
-                  </h3>
-                  <p className="relative mt-3 text-[15px] leading-relaxed text-[#6b5b78]">{s.short}</p>
-
-                  <ul className="relative mt-6 flex flex-col gap-3">
-                    {bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-[15px] leading-snug text-[#2b1b3d]">
-                        <Sparkle />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {stats && (
-                    <div className="relative mt-5 flex flex-wrap gap-x-3.5 gap-y-1 border-t border-black/5 pt-4">
-                      {stats.map((st) => (
-                        <span key={st.label} className="text-[12px] text-[#6b5b78]">
-                          <strong className="font-heading text-[#2b1b3d]">{st.value}</strong> {st.label}
+                    {/* workflow steps as pills */}
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {pills.map((b) => (
+                        <span
+                          key={b}
+                          className="rounded-full border border-black/10 bg-white px-3 py-1 text-[12px] text-[#2b1b3d]"
+                        >
+                          {b}
                         </span>
                       ))}
+                      {more > 0 && (
+                        <span
+                          className="rounded-full px-3 py-1 text-[12px] font-semibold"
+                          style={{ background: a.soft, color: a.text }}
+                        >
+                          +{more} more
+                        </span>
+                      )}
                     </div>
-                  )}
 
-                  <span
-                    className="relative mt-auto pt-9 text-center font-heading text-base font-semibold underline-offset-4 group-hover:underline"
-                    style={{ color: a.text }}
-                  >
-                    Learn More
-                  </span>
+                    {stats && (
+                      <div className="mt-5 grid grid-cols-3 gap-2 sm:grid-cols-4">
+                        {stats.map((st) => (
+                          <div key={st.label} className="rounded-xl bg-white px-2 py-2 text-center">
+                            <p className="font-heading text-[13px] font-bold" style={{ color: a.text }}>
+                              {st.value}
+                            </p>
+                            <p className="mt-0.5 text-[10px] uppercase tracking-wider text-[#6b5b78]">
+                              {st.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5 [margin-top:1.75rem]">
+                      <span className="font-heading text-[15px] font-semibold" style={{ color: a.text }}>
+                        Learn more
+                      </span>
+                      <span
+                        className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45"
+                        style={{ background: `linear-gradient(135deg, ${a.from}, ${a.to})` }}
+                      >
+                        <ArrowUpRight size={18} className="-rotate-0 transition-transform duration-300 group-hover:-rotate-45" />
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               </motion.div>
             );

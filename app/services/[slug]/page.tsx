@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUpRight,
   Sparkles,
   Target,
   Settings2,
@@ -18,7 +19,7 @@ import FaqAccordion, { type FaqItem } from "@/components/ui/FaqAccordion";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Reveal from "@/components/ui/Reveal";
 import Counter from "@/components/ui/Counter";
-import ServiceIconTile from "@/components/ui/ServiceIconTile";
+import ServicePlatformIcons from "@/components/ui/ServicePlatformIcons";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -47,8 +48,7 @@ const STATS = [
   { value: "1", label: "Team, start to finish" },
 ];
 
-const CARD_SHADOW =
-  "shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)]";
+const CARD_SHADOW = "shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)]";
 
 export default async function ServiceDetailPage({
   params,
@@ -75,6 +75,7 @@ export default async function ServiceDetailPage({
 
   return (
     <div className="sb-light">
+      {/* Hero */}
       <section className="relative overflow-hidden px-6 pb-16 pt-40">
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.35fr_0.65fr]">
           <Reveal direction="left">
@@ -87,7 +88,10 @@ export default async function ServiceDetailPage({
             </Link>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <ServiceIconTile slug={svc.slug} accentIndex={currentIndex} />
+              {/* real platform icons (group lets them fan out on hover) */}
+              <div className="group">
+                <ServicePlatformIcons slug={svc.slug} />
+              </div>
               <span
                 className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 font-heading text-[11px] font-bold uppercase tracking-[0.15em] text-white"
                 style={{ background: `linear-gradient(90deg, ${accent.from}, ${accent.to})` }}
@@ -137,15 +141,25 @@ export default async function ServiceDetailPage({
           </Reveal>
         </div>
 
-        <Reveal direction="up" delay={0.15} className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-3xl bg-black/10 sm:grid-cols-4">
-          {STATS.map((s) => (
-            <div key={s.label} className="bg-[#faf9f8] px-5 py-6 text-center sm:text-left">
-              <p className="font-display gradient-text-alt text-2xl sm:text-3xl">
-                <Counter value={s.value} />
-              </p>
-              <p className="mt-1.5 text-xs leading-snug text-[#6b5b78]">{s.label}</p>
-            </div>
-          ))}
+        <Reveal
+          direction="up"
+          delay={0.15}
+          className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-4"
+        >
+          {STATS.map((s, i) => {
+            const a = cardAccentFor(currentIndex + i);
+            return (
+              <div
+                key={s.label}
+                className={`rounded-[22px] bg-[#faf9f8] px-5 py-6 text-center sm:text-left ${CARD_SHADOW}`}
+              >
+                <p className="font-display text-2xl sm:text-3xl" style={{ color: a.text }}>
+                  <Counter value={s.value} />
+                </p>
+                <p className="mt-1.5 text-xs leading-snug text-[#6b5b78]">{s.label}</p>
+              </div>
+            );
+          })}
         </Reveal>
       </section>
 
@@ -162,17 +176,11 @@ export default async function ServiceDetailPage({
               const a = cardAccentFor(currentIndex + i);
               return (
                 <Reveal key={b.label} direction={i % 2 === 0 ? "left" : "right"} delay={(i % 2) * 0.08}>
-                  <div className={`relative h-full overflow-hidden rounded-[28px] bg-[#faf9f8] px-6 pb-7 pt-9 sm:px-7 ${CARD_SHADOW}`}>
+                  <div
+                    className={`flex h-full items-start gap-5 rounded-[28px] bg-[#faf9f8] p-6 transition-all duration-300 hover:-translate-y-1 sm:p-7 ${CARD_SHADOW}`}
+                  >
                     <span
-                      className="absolute inset-x-0 top-0 h-1.5 opacity-60"
-                      style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
-                    />
-                    <span
-                      className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full"
-                      style={{ background: a.soft }}
-                    />
-                    <span
-                      className="relative flex h-14 w-14 items-center justify-center rounded-[18px] text-white"
+                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-white"
                       style={{
                         background: `linear-gradient(135deg, ${a.from}, ${a.to})`,
                         boxShadow: `0 12px 24px -8px ${a.glow}`,
@@ -180,15 +188,15 @@ export default async function ServiceDetailPage({
                     >
                       <b.icon size={24} />
                     </span>
-                    <p
-                      className="relative mt-5 font-heading text-[11px] font-bold uppercase tracking-[0.15em]"
-                      style={{ color: a.text }}
-                    >
-                      {b.label}
-                    </p>
-                    <p className="relative mt-2 text-[15px] leading-relaxed text-[#2b1b3d]/80">
-                      {b.text}
-                    </p>
+                    <div>
+                      <p
+                        className="font-heading text-[11px] font-bold uppercase tracking-[0.15em]"
+                        style={{ color: a.text }}
+                      >
+                        {b.label}
+                      </p>
+                      <p className="mt-2 text-[15px] leading-relaxed text-[#2b1b3d]/80">{b.text}</p>
+                    </div>
                   </div>
                 </Reveal>
               );
@@ -216,8 +224,8 @@ export default async function ServiceDetailPage({
                 <Reveal key={step} direction={i % 2 === 0 ? "left" : "right"} delay={(i % 3) * 0.06}>
                   <div className={`flex items-center gap-4 rounded-[22px] bg-[#faf9f8] p-4 ${CARD_SHADOW}`}>
                     <span
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] font-heading text-sm font-bold text-white"
-                      style={{ background: `linear-gradient(135deg, ${a.from}, ${a.to})` }}
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full font-heading text-sm font-bold"
+                      style={{ background: a.soft, color: a.text }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -268,27 +276,33 @@ export default async function ServiceDetailPage({
                   <Link
                     href={`/services/${r.slug}`}
                     data-cursor="pointer"
-                    className={`group relative flex h-full flex-col overflow-hidden rounded-[28px] bg-[#faf9f8] px-6 pb-7 pt-9 transition-all duration-300 hover:-translate-y-1.5 ${CARD_SHADOW}`}
+                    className={`group relative flex h-full flex-col rounded-[28px] bg-[#faf9f8] p-3 transition-all duration-300 hover:-translate-y-1.5 ${CARD_SHADOW}`}
                   >
-                    <span
-                      className="absolute inset-x-0 top-0 h-1.5 opacity-60"
-                      style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
-                    />
-                    <span
-                      className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full"
-                      style={{ background: a.soft }}
-                    />
-                    <ServiceIconTile slug={r.slug} accentIndex={idxR} />
-                    <p className="relative mt-5 font-heading text-lg font-bold leading-snug text-[#2b1b3d]">
-                      {r.title}
-                    </p>
-                    <p className="relative mt-2 text-[14px] leading-relaxed text-[#6b5b78]">{r.short}</p>
-                    <span
-                      className="relative mt-auto pt-7 text-center font-heading text-base font-semibold underline-offset-4 group-hover:underline"
-                      style={{ color: a.text }}
+                    <div
+                      className="flex h-28 items-center rounded-[20px] px-5"
+                      style={{ background: `linear-gradient(135deg, ${a.from}26, ${a.to}0d)` }}
                     >
-                      Learn More
-                    </span>
+                      <ServicePlatformIcons slug={r.slug} />
+                    </div>
+
+                    <div className="flex flex-1 flex-col px-3 pb-3 pt-5">
+                      <p className="font-heading text-lg font-bold leading-snug text-[#2b1b3d]">
+                        {r.title}
+                      </p>
+                      <p className="mt-2 text-[14px] leading-relaxed text-[#6b5b78]">{r.short}</p>
+
+                      <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5 [margin-top:1.5rem]">
+                        <span className="font-heading text-[15px] font-semibold" style={{ color: a.text }}>
+                          Learn more
+                        </span>
+                        <span
+                          className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45"
+                          style={{ background: `linear-gradient(135deg, ${a.from}, ${a.to})` }}
+                        >
+                          <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:-rotate-45" />
+                        </span>
+                      </div>
+                    </div>
                   </Link>
                 </Reveal>
               );
