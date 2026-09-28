@@ -45,7 +45,7 @@ export default function ServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: (index % 6) * 0.06 }}
-      className={cn("[perspective:1000px]", className)}
+      className={cn("perspective-[1000px]", className)}
     >
       <Link href={`/services/${slug}`} data-cursor="pointer">
         <div
@@ -55,9 +55,9 @@ export default function ServiceCard({
           style={{
             transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
           }}
-          className="group glow-border relative flex h-full min-h-[220px] flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] p-7 transition-transform duration-300 ease-out"
+          className="group glow-border relative flex h-full min-h-55 flex-col justify-between overflow-hidden rounded-3xl bg-white/2 p-7 transition-transform duration-300 ease-out"
         >
-          <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-sb-pink/0 to-sb-orange/0 opacity-0 blur-2xl transition-opacity duration-500 group-hover:from-sb-pink/40 group-hover:to-sb-orange/30 group-hover:opacity-100" />
+          <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-linear-to-br from-sb-pink/0 to-sb-orange/0 opacity-0 blur-2xl transition-opacity duration-500 group-hover:from-sb-pink/40 group-hover:to-sb-orange/30 group-hover:opacity-100" />
 
           <div className="relative z-10 flex items-start justify-between">
             <span className="font-heading text-sm text-sb-white/40">{number}</span>

@@ -42,7 +42,7 @@ export default function FinalCTA({
       <GradientBlobs />
 
       <motion.div
-        className="pointer-events-none absolute h-16 w-16 rounded-full bg-gradient-to-br from-sb-pink to-sb-lime opacity-0 blur-xl"
+        className="pointer-events-none absolute h-16 w-16 rounded-full bg-linear-to-br from-sb-pink to-sb-lime opacity-0 blur-xl"
         animate={{ x: pos.x - 32, y: pos.y - 32, opacity: active ? 0.5 : 0 }}
         transition={{ type: "spring", damping: 20, stiffness: 200 }}
       />

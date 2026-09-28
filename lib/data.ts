@@ -66,7 +66,7 @@ export const founders = [
     initials: "MG",
     accent: "pink" as const,
     photo: CLD.founders.divya,
-    linkedin: "https://www.linkedin.com/in/mansi-gupta",
+    linkedin: "https://www.linkedin.com/in/mansi-gupta" ,
     showLinkedin: false,
   },
   {

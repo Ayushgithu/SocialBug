@@ -20,7 +20,7 @@ export default function TrustBadge({
             const fill =
               i + 1 <= filledStars ? 1 : i < filledStars ? filledStars - i : 0;
             return (
-              <span key={i} className="relative inline-block h-[15px] w-[15px]">
+              <span key={i} className="relative inline-block h-3.75 w-3.75">
                 <Star size={15} className="absolute inset-0 text-[#caa227]" strokeWidth={1.5} />
                 <span
                   className="absolute inset-0 overflow-hidden"

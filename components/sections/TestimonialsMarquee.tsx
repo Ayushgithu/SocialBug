@@ -6,11 +6,11 @@ import { testimonials } from "@/lib/data";
 
 function QuoteChip({ brand, quote }: { brand: string; quote: string }) {
   return (
-    <div className="glow-border flex w-[320px] shrink-0 flex-col justify-between rounded-lg bg-white/[0.02] p-6 sm:w-[380px]">
+    <div className="glow-border flex w-[320px] shrink-0 flex-col justify-between rounded-lg bg-white/2 p-6 sm:w-95">
       <Quote className="mb-3 text-sb-lime/60" size={18} />
       <p className="text-sm leading-relaxed text-sb-white/80">&ldquo;{quote}&rdquo;</p>
       <div className="mt-5 flex items-center gap-2.5">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sb-pink to-sb-orange font-heading text-xs font-bold text-sb-black">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-sb-pink to-sb-orange font-heading text-xs font-bold text-sb-black">
           {brand.charAt(0)}
         </div>
         <p className="font-heading text-xs font-semibold">{brand}</p>

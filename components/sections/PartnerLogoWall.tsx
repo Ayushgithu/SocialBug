@@ -54,7 +54,7 @@ export default function PartnerLogoWall() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: (i % 8) * 0.05, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6, scale: 1.03 }}
-              className="flex h-20 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] px-5 backdrop-blur-sm transition-colors duration-300 hover:border-sb-orange/30 hover:bg-white/[0.09] sm:h-24"
+              className="flex h-20 items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 backdrop-blur-sm transition-colors duration-300 hover:border-sb-orange/30 hover:bg-white/9 sm:h-24"
             >
               <Image
                 src={logo.src}
