@@ -6,6 +6,8 @@ import ContactPanel from "@/components/forms/ContactPanel";
 import SideReveal from "@/components/ui/SideReveal";
 import Marquee from "@/components/ui/Marquee";
 import { Mail, MapPin, Clock } from "lucide-react";
+import GstinRow from "@/components/ui/GstinRow";
+import { business } from "@/lib/business";
 import { partnerLogos, socialLinks } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
 
 const details = [
   { icon: Mail, label: socialLinks.email },
-  { icon: Clock, label: "Replies within minutes" },
+  { icon: Clock, label: "Replies within a minutes" },
   { icon: MapPin, label: "Working with teams globally" },
 ];
 
@@ -52,6 +54,9 @@ export default function ContactPage() {
                   {d.label}
                 </div>
               ))}
+              <div className="max-w-sm">
+                <GstinRow value={business.gstin} href={business.gstVerifyUrl} />
+              </div>
             </div>
 
             <div className="glow-border rounded-xl bg-white/[0.02] p-7">

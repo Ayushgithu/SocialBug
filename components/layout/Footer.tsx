@@ -9,6 +9,7 @@ import { InstagramIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
 import NavIcon from "@/components/ui/NavIcon";
 import CopyRow from "@/components/ui/CopyRow";
 import { CLD } from "@/lib/cloudinary";
+import { business } from "@/lib/business";
 
 export default function Footer() {
   return (
@@ -123,7 +124,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-5 text-xs text-sb-white/40 sm:flex-row">
-          <p>© {new Date().getFullYear()} SocialBug Media. All rights reserved.</p>
+          <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-3">
+            <p>© {new Date().getFullYear()} SocialBug Media. All rights reserved.</p>
+            <span className="hidden h-3 w-px bg-white/15 sm:block" />
+            <p>GSTIN: {business.gstin}</p>
+          </div>
           <p className="font-logo text-sm normal-case tracking-[0.02em]">
             <span style={{ color: "#ef2f7a" }}>Strategy.</span>{" "}
             <span style={{ color: "#fc842e" }}>Content.</span>{" "}
