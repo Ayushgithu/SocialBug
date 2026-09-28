@@ -57,7 +57,7 @@ export default function ContactPage() {
             <div className="glow-border rounded-xl bg-white/[0.02] p-7">
               <p className="font-heading text-sm font-semibold">What happens next</p>
               <ol className="mt-4 flex flex-col gap-3 text-sm text-sb-white/55">
-                <li>1. We review your project within one business day.</li>
+                <li>1. We review your project and reply within minutes.</li>
                 <li>2. A short call to understand goals and fit.</li>
                 <li>3. A tailored plan, creators, timeline, and budget.</li>
               </ol>
