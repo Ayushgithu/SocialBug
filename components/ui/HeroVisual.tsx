@@ -4,6 +4,7 @@ import { useState, type CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { TrendingUp, Heart, MessageCircle } from "lucide-react";
 import { networkCreators } from "@/lib/data";
+import Image from "next/image";
 
 const POOL = networkCreators.slice(0, 12);
 const COLUMNS = [POOL.slice(0, 4), POOL.slice(4, 8), POOL.slice(8, 12)];
@@ -34,10 +35,11 @@ function Tile({ creator }: { creator: (typeof POOL)[number] }) {
           {initialsOf(creator.name)}
         </div>
       ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           src={creator.photo}
-          alt=""
+          alt="images at the right section"
+          fill
+          sizes="(max-width: 640px) 30vw, 140px"
           aria-hidden
           loading="eager"
           onError={() => setBroken(true)}

@@ -124,7 +124,7 @@ export default async function ServiceDetailPage({
           <Reveal
             direction="right"
             delay={0.1}
-            className="relative mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[28px] shadow-[0_22px_50px_-18px_rgba(60,30,80,0.35)] lg:max-w-none"
+            className="relative mx-auto aspect-4/5 w-full max-w-70 overflow-hidden rounded-[28px] shadow-[0_22px_50px_-18px_rgba(60,30,80,0.35)] lg:max-w-none"
           >
             <Image
               src={svc.image}
@@ -137,7 +137,7 @@ export default async function ServiceDetailPage({
           </Reveal>
         </div>
 
-        <Reveal direction="up" delay={0.15} className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-[24px] bg-black/10 sm:grid-cols-4">
+        <Reveal direction="up" delay={0.15} className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-3xl bg-black/10 sm:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.label} className="bg-[#faf9f8] px-5 py-6 text-center sm:text-left">
               <p className="font-display gradient-text-alt text-2xl sm:text-3xl">

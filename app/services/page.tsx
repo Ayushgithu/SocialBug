@@ -70,7 +70,7 @@ export default function ServicesPage() {
       <ServicesShowcase />
 
       {/* stats */}
-      <section className="relative border-y border-white/10 bg-white/[0.02] px-6 py-14">
+      <section className="relative border-y border-white/10 bg-white/2 px-6 py-14">
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 text-center sm:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label}>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
           <ul className="grid gap-3">
             {included.map((item, i) => (
               <Reveal key={item} direction="right" delay={i * 0.05}>
-                <li className="flex items-start gap-3 rounded-xl border border-black/10 bg-black/[0.03] px-4 py-3.5">
+                <li className="flex items-start gap-3 rounded-xl border border-black/10 bg-black/3 px-4 py-3.5">
                   <Check size={16} className="mt-0.5 shrink-0 text-sb-orange" />
                   <span className="text-sm text-black/75">{item}</span>
                 </li>
@@ -123,7 +123,7 @@ export default function ServicesPage() {
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {timeline.map((t, i) => (
               <Reveal key={t.step} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.06}>
-                <div className="sb-card-shine h-full rounded-xl border border-white/10 bg-white/[0.02] p-6">
+                <div className="sb-card-shine h-full rounded-xl border border-white/10 bg-white/2 p-6">
                   <span className="font-display gradient-text-alt text-3xl">{t.step}</span>
                   <h3 className="font-heading mt-3 text-lg font-semibold">{t.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-sb-white/55">{t.text}</p>

@@ -71,7 +71,7 @@ export default function ContactPage() {
       </section>
 
       {/* Partner logos, white strip under the form */}
-      <section className="bg-black/2 relative px-6 py-10">
+      <section className="bg-black/2 relative px-6 py-10 mix-blend-screen">
         <div className="mx-auto max-w-6xl">
           <p className="text-center font-heading text-[11px] font-semibold uppercase tracking-[0.3em] text-black/40">
             Trusted by teams at

@@ -51,7 +51,7 @@ export default function PartnerStrip({
       <p className="mb-7 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.3em] text-sb-white/40">
         {label}
       </p>
-      <div className="posts-mask">
+      <div className="posts-mask mix-blend-screen">
         <Row speed={38} />
       </div>
     </section>

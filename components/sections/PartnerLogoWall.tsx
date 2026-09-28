@@ -22,19 +22,19 @@ export default function PartnerLogoWall() {
           OUR <span className="gradient-text">PARTNERS.</span>
         </SectionHeading>
 
-        <div className="mt-14">
+        <div className="mt-14 mix-blend-screen">
           <Marquee speed={38} reverse>
             {partnerLogos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex h-20 w-36 shrink-0 items-center justify-center p-3 sm:h-24 sm:w-48"
+                className="flex h-20 mix-blend-screen w-36 shrink-0 items-center justify-center p-3 sm:h-24 sm:w-48"
               >
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   width={200}
                   height={100}
-                  className="h-auto max-h-12 w-auto max-w-full object-contain sm:max-h-16"
+                  className="h-auto max-h-12 mix-blend-screen w-auto max-w-full object-contain sm:max-h-16"
                 />
               </div>
             ))}
