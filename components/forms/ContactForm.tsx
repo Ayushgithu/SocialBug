@@ -72,7 +72,7 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glow-border flex flex-col items-center rounded-xl bg-white/[0.02] p-12 text-center"
+        className="glow-border flex flex-col items-center rounded-xl bg-white/2 p-12 text-center"
       >
         <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sb-lime text-sb-black">
           <Check size={26} />
@@ -189,7 +189,7 @@ export default function ContactForm() {
         data-cursor="pointer"
         className="group relative mt-2 inline-flex w-fit items-center gap-2 overflow-hidden rounded-full bg-sb-white px-8 py-4 font-heading text-sm font-semibold text-sb-black transition-opacity disabled:opacity-60"
       >
-        <span className="absolute inset-0 origin-bottom scale-y-0 bg-gradient-to-r from-sb-pink via-sb-orange to-sb-lime transition-transform duration-300 ease-out group-hover:scale-y-100" />
+        <span className="absolute inset-0 origin-bottom scale-y-0 bg-linear-to-r from-sb-pink via-sb-orange to-sb-lime transition-transform duration-300 ease-out group-hover:scale-y-100" />
         <span className="relative z-10 flex items-center gap-2">
           {status === "loading" ? (
             <>

@@ -118,7 +118,7 @@ export default async function ServiceDetailPage({
           <Reveal
             direction="right"
             delay={0.1}
-            className="relative mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-xl border border-black/10 shadow-[0_16px_36px_-18px_rgba(0,0,0,0.35)] lg:max-w-none"
+            className="relative mx-auto aspect-4/5 w-full max-w-70 overflow-hidden rounded-xl border border-black/10 shadow-[0_16px_36px_-18px_rgba(0,0,0,0.35)] lg:max-w-none"
           >
             <Image
               src={svc.image}
@@ -251,7 +251,7 @@ export default async function ServiceDetailPage({
                       <p className="mt-2 text-[13px] leading-relaxed text-black/55">{r.short}</p>
                     </div>
                     <span
-                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.1em] transition-transform duration-300 group-hover:translate-x-1"
+                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest transition-transform duration-300 group-hover:translate-x-1"
                       style={{ color: accentR.hex }}
                     >
                       Learn more <ArrowRight size={13} />

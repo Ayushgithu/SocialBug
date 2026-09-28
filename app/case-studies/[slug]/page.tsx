@@ -66,14 +66,14 @@ export default async function CaseStudyDetailPage({
 
             <div className="flex flex-wrap items-center gap-3">
               <span
-                className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 font-heading text-[11px] font-bold uppercase tracking-[0.1em]"
+                className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 font-heading text-[11px] font-bold uppercase tracking-widest"
                 style={{ background: accent.hex, color: accent.on }}
               >
                 {cs.industry}
               </span>
-              {cs.brandLogo && (
+              {cs.brandLogoWhite && (
                 <span className="relative inline-block h-8 w-28">
-                  <Image src={cs.brandLogo} alt={cs.name} fill sizes="112px" className="object-contain object-left" />
+                  <Image src={cs.brandLogoWhite} alt={cs.name} fill sizes="112px" className="object-contain mix-blend-multiply object-left" />
                 </span>
               )}
             </div>
@@ -106,7 +106,7 @@ export default async function CaseStudyDetailPage({
                 fill
                 priority
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover object-top"
+                className="object-cover object-top "
               />
             ) : (
               <CaseCover name={cs.name} logo={cs.logo} industry={cs.industry} large />
@@ -254,7 +254,7 @@ export default async function CaseStudyDetailPage({
               </p>
             </div>
             <div className="card-shiny sb-auto-shine overflow-hidden rounded-xl border border-black/10 bg-white p-3 sm:p-4">
-              <div className="relative mx-auto aspect-[9/16] max-w-xs overflow-hidden rounded-lg">
+              <div className="relative mx-auto aspect-9/16 max-w-xs overflow-hidden rounded-lg">
                 {cs.bodyVideo ? (
                   <video
                     src={cs.bodyVideo}
@@ -330,7 +330,7 @@ export default async function CaseStudyDetailPage({
                         <p className="font-heading mt-2 text-lg font-bold leading-tight text-black">{cs2.name}</p>
                       </div>
                       <span
-                        className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.1em] transition-transform duration-300 group-hover:translate-x-1"
+                        className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest transition-transform duration-300 group-hover:translate-x-1"
                         style={{ color: accent2.hex }}
                       >
                         Read the story <ArrowUpRight size={13} />

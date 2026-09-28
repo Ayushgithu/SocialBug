@@ -66,7 +66,7 @@ export const founders = [
     initials: "MG",
     accent: "pink" as const,
     photo: CLD.founders.divya,
-    linkedin: "https://www.linkedin.com/in/mansi-gupta" ,
+    linkedin: "https://www.linkedin.com/in/mansi-gupta",
     showLinkedin: false,
   },
   {
@@ -207,6 +207,7 @@ export interface CaseStudy {
   logo: string;
   /** Real client logo image (from /partners) shown on the case-study detail page. */
   brandLogo?: string;
+  brandLogoWhite:string;
   /** Campaign type line, e.g. "Ad Film + Pre-Buzz". */
   industry: string;
   /** Cover image. Omit to get the typographic fallback tile. */
@@ -237,6 +238,8 @@ export interface CaseStudy {
   quote?: string;
   author?: string;
   takeaway: string;
+  slugStatus:boolean
+
 }
 
 // Case studies shown on the home page (first 3) and /case-studies.
@@ -244,7 +247,9 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "myntra-friendshipday",
-    brandLogo: CLD.partners.myntra,
+    brandLogo: CLD.partners_dark.myntra,
+    brandLogoWhite:CLD.partners.myntra,
+    slugStatus: true,
     result: { value: "Highly", label: "Shareable" },
     stats: [
       { value: "Print", label: "Format" },
@@ -286,7 +291,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "flipkart",
-    brandLogo: CLD.partners.flipkartGiftcard,
+    brandLogo: CLD.partners_dark.flipkartGiftcard,
+    brandLogoWhite: CLD.partners.flipkartGiftcard,
+    slugStatus: true,
     result: { value: "3.9M", label: "Impressions" },
     stats: [
       { value: "3.9M", label: "Impressions" },
@@ -328,7 +335,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "amazon-prime-video",
-    brandLogo: CLD.partners.primeVideo,
+    brandLogo: CLD.partners_dark.primeVideo,
+    brandLogoWhite: CLD.partners.primeVideo,
+    slugStatus: true,
     result: { value: "Launch-Week", label: "Buzz" },
     stats: [
       { value: "OOH", label: "Format" },
@@ -367,6 +376,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "latentforce",
     brandLogo: CLD.partners.latentforceAi,
+    brandLogoWhite: CLD.partners.latentforceAi,
+    slugStatus: true,
     result: { value: "20K", label: "Likes" },
     stats: [
       { value: "20K", label: "Likes" },
@@ -405,7 +416,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "boat-snapdragon-campaign",
-    brandLogo: CLD.partners.amd, // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogo: CLD.partners.boat, // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogoWhite: CLD.partners.boat,
+    slugStatus: true,
     result: { value: "1.2M", label: "Reach" },
     stats: [
       { value: "1.2M", label: "Reach" },
@@ -443,7 +456,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "boat-slazer-grooming",
-    brandLogo: CLD.partners.xiaomi, // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogo: CLD.partners.boat, // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogoWhite: CLD.partners.boat,
+    slugStatus: true,
     result: { value: "2.8M", label: "Reach" },
     stats: [
       { value: "2.8M", label: "Reach" },
@@ -484,6 +499,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "supertails",
     brandLogo: CLD.partners.supertails,
+    brandLogoWhite: CLD.partners.supertails,
+    slugStatus: true,
     name: "Supertails",
     logo: "S",
     industry: "Pet Parents × Emotional Storytelling",
@@ -509,7 +526,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "suzlon",
-    brandLogo: CLD.partners.gritzo, // placeholder — no Suzlon logo asset yet, swap when supplied
+    brandLogo: CLD.partners.suzlon, // placeholder — no Suzlon logo asset yet, swap when supplied
+    brandLogoWhite: CLD.partners.suzlon,
+    slugStatus: true,
     name: "Suzlon",
     logo: "S",
     industry: "Sustainability × Simple Storytelling",
@@ -537,6 +556,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "hk-vitals-skin-radiance",
     brandLogo: CLD.partners.aurm, // placeholder — no HK Vitals logo asset yet, swap when supplied
+    brandLogoWhite: CLD.partners.aurm,
+    slugStatus: true,
     result: { value: "2.1M", label: "Reach" },
     stats: [
       { value: "2.1M", label: "Reach" },
@@ -577,6 +598,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "coinswitch-real-growth",
     brandLogo: CLD.partners.coinswitch,
+    brandLogoWhite: CLD.partners.coinswitch,
+    slugStatus: true,
     result: { value: "3.4M", label: "Views" },
     stats: [
       { value: "3.4M", label: "Views" },
@@ -617,6 +640,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "nebius-ai-builder",
     brandLogo: CLD.partners.nebius,
+    brandLogoWhite: CLD.partners.nebius,
+    slugStatus: true,
     result: { value: "1.8K+", label: "Reach" },
     stats: [
       { value: "1.8K+", label: "Room Reach" },
@@ -893,24 +918,32 @@ export const networkCreators = [
 // Each PNG already has its own die-cut/shadow styling baked in, so
 // these render as plain images, no extra card frame needed.
 export const partnerLogos = [
-  { name: "Prime Video", src: CLD.partners.primeVideo },
-  { name: "vivo", src: CLD.partners.vivo },
-  { name: "Lay's", src: CLD.partners.lays },
-  { name: "Xiaomi", src: CLD.partners.xiaomi },
-  { name: "HAABUILD", src: CLD.partners.haabuild },
-  { name: "CoinSwitch", src: CLD.partners.coinswitch },
-  { name: "Nebius", src: CLD.partners.nebius },
-  { name: "Flipkart Gift Card", src: CLD.partners.flipkartGiftcard },
-  { name: "Latent Force AI", src: CLD.partners.latentforceAi },
-  { name: "Myntra", src: CLD.partners.myntra },
-  { name: "Supertails", src: CLD.partners.supertails },
-  { name: "AMD", src: CLD.partners.amd },
-  { name: "Kurkure", src: CLD.partners.kurkure },
-  { name: "GeeksforGeeks", src: CLD.partners.geeksforgeeks },
-  { name: "Blackberrys", src: CLD.partners.blackberrys },
-  { name: "Duroflex", src: CLD.partners.duroflex },
-  { name: "Gritzo", src: CLD.partners.gritzo },
-  { name: "Cleartrip", src: CLD.partners.cleartrip },
-  { name: "AURM", src: CLD.partners.aurm },
-  { name: "Zeiss", src: CLD.partners.zeiss },
+  { name: "Prime Video", src: CLD.partners_dark.primeVideo },
+  { name: "vivo", src: CLD.partners_dark.vivo },
+  { name: "Lay's", src: CLD.partners_dark.lays },
+  { name: "Xiaomi", src: CLD.partners_dark.xiaomi },
+  { name: "HAABUILD", src: CLD.partners_dark.haabuild },
+  { name: "CoinSwitch", src: CLD.partners_dark.coinswitch },
+  { name: "Nebius", src: CLD.partners_dark.nebius },
+  { name: "Flipkart Gift Card", src: CLD.partners_dark.flipkartGiftcard },
+  { name: "Latent Force AI", src: CLD.partners_dark.latentforceAi },
+  { name: "Myntra", src: CLD.partners_dark.myntra },
+  { name: "Supertails", src: CLD.partners_dark.supertails },
+  { name: "AMD", src: CLD.partners_dark.amd },
+  { name: "Kurkure", src: CLD.partners_dark.kurkure },
+  { name: "GeeksforGeeks", src: CLD.partners_dark.geeksforgeeks },
+  { name: "Blackberrys", src: CLD.partners_dark.blackberrys },
+  { name: "Duroflex", src: CLD.partners_dark.duroflex },
+  { name: "Gritzo", src: CLD.partners_dark.gritzo },
+  { name: "Cleartrip", src: CLD.partners_dark.cleartrip },
+  { name: "AURM", src: CLD.partners_dark.aurm },
+  { name: "Zeiss", src: CLD.partners_dark.zeiss },
+  {name:"Lava",src:CLD.partners_dark.lava},
+  {name:"Lemonn",src:CLD.partners_dark.lemonn},
+  {name:"PocketFM",src:CLD.partners_dark.pocketFM},
+  {name:"Samsung",src:CLD.partners_dark.samsung},
+  {name:"Chemist At Play",src:CLD.partners_dark.chemistAtplay},
+  {name:"Razor Pay",src:CLD.partners_dark.razorPay},
+  {name:"Pin Lab",src:CLD.partners_dark.pinLab},
+  {name:"Lens Kart",src:CLD.partners_dark.lensKart},
 ];

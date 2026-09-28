@@ -33,7 +33,7 @@ export default function CaseStudyCard({
       className={cn(className)}
     >
       <Link href={`/case-studies/${slug}`} data-cursor="pointer" className="group block">
-        <div className="glow-border relative overflow-hidden rounded-3xl bg-white/[0.02] p-8 transition-colors duration-300 hover:bg-white/[0.04] sm:p-10">
+        <div className="glow-border relative overflow-hidden rounded-3xl bg-white/2 p-8 transition-colors duration-300 hover:bg-white/4 sm:p-10">
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-sb-purple/10 blur-[100px] transition-opacity duration-500 group-hover:opacity-100" />
 
           <div className="relative z-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">

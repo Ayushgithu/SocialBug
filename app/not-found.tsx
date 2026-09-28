@@ -41,9 +41,9 @@ function ScrambleWord({ word }: { word: string }) {
 
 export default function NotFound() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
+    <section className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
       <GradientBlobs />
-      <div className="grid-lines pointer-events-none absolute inset-0 opacity-25 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+      <div className="grid-lines pointer-events-none absolute inset-0 opacity-25 mask-[radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
       {/* floating signal nodes */}
       <div className="pointer-events-none absolute inset-0">

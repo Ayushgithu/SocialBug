@@ -10,14 +10,14 @@ function Row({ speed }: { speed: number }) {
       {partnerLogos.map((logo) => (
         <div
           key={logo.name}
-          className="flex h-16 w-32 shrink-0 items-center justify-center p-2.5 sm:h-20 sm:w-44 sm:p-3"
+          className="flex mix-blend-screen h-16 w-32 shrink-0 items-center justify-center p-2.5 sm:h-20 sm:w-44 sm:p-3"
         >
           <Image
             src={logo.src}
             alt={logo.name}
             width={200}
             height={100}
-            className="h-auto max-h-10 w-auto max-w-full object-contain transition-transform duration-300 hover:scale-110 sm:max-h-14"
+            className="h-auto max-h-10 w-auto max-w-full mix-blend-screen object-contain transition-transform duration-300 hover:scale-110 sm:max-h-14"
           />
         </div>
       ))}

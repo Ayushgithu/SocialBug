@@ -70,7 +70,7 @@ export default function WorkGrid({
                       {cs.brandLogo ? (
                         <span className="relative h-8 w-16 shrink-0">
                           <Image
-                            src={cs.brandLogo}
+                            src={cs.brandLogoWhite}
                             alt={cs.name}
                             fill
                             sizes="64px"

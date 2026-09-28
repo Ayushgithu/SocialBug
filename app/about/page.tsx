@@ -48,7 +48,7 @@ export default function AboutPage() {
       />
 
       {/* Quick trust stats, up front, before the story unfolds */}
-      <section className="relative border-y border-white/10 bg-white/[0.02] px-6 py-12">
+      <section className="relative border-y border-white/10 bg-white/2 px-6 py-12">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 sm:grid-cols-3">
           {stats.map((s) => (
             <div key={s.label}>
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
       {/* Product Hunt callout */}
       <section className="relative px-6 py-14">
-        <div className="glow-border mx-auto max-w-6xl rounded-xl bg-white/[0.02] p-8 sm:p-12">
+        <div className="glow-border mx-auto max-w-6xl rounded-xl bg-white/2 p-8 sm:p-12">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="font-heading text-xs uppercase tracking-[0.25em] text-sb-orange">
