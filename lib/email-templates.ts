@@ -1,5 +1,6 @@
 import type { ContactFormValues } from "@/lib/schema";
 import { CLD } from "@/lib/cloudinary";
+import { business } from "@/lib/business";
 
 const SITE_URL = "https://socialbugmedia.in";
 const LOGO_URL = CLD.logo.iconDark;
@@ -137,6 +138,7 @@ function shell(bodyHtml: string) {
         <p class="footer-text">
           SocialBug Media &middot; <a href="${SITE_URL}" style="color:rgba(247,246,243,0.5);">socialbugmedia.in</a>
         </p>
+        <p class="footer-text">GSTIN: ${business.gstin}</p>
         <p class="footer-text">This is a transactional email sent because you contacted us.</p>
       </div>
     </div>

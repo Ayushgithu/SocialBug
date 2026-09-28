@@ -45,7 +45,7 @@ export default function PartnerLogoWall() {
             and so the full set is visible without waiting on the loop. Each
             logo sits on its own soft "tile" instead of floating bare on the
             page background, which is what made this section feel flat. */}
-        <div className="mt-10 bg-black grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+        <div className="mt-10 mix-blend-screen bg-black grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
           {partnerLogos.map((logo, i) => (
             <motion.div
               key={logo.name}
@@ -54,14 +54,14 @@ export default function PartnerLogoWall() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: (i % 8) * 0.05, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6, scale: 1.03 }}
-              className="flex h-20 items-center justify-center rounded-2xl border border-white/10  px-5 backdrop-blur-sm transition-colors duration-300 hover:border-sb-orange/30  sm:h-24"
+              className="flex mix-blend-screen h-20 items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 backdrop-blur-sm transition-colors duration-300 hover:border-sb-orange/30 hover:bg-white/9 sm:h-24"
             >
               <Image
                 src={logo.src}
                 alt={logo.name}
                 width={200}
                 height={100}
-                className="h-auto mix-blend-multiply max-h-12 w-auto max-w-full object-contain sm:max-h-16"
+                className="h-auto mix-blend-screen  max-h-12 w-auto max-w-full object-contain sm:max-h-16"
               />
             </motion.div>
           ))}

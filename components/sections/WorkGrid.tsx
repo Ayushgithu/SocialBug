@@ -3,14 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import CaseCover from "@/components/ui/CaseCover";
-import { caseStudies, accentFor } from "@/lib/data";
+import Sparkle from "@/components/ui/Sparkle";
+import { caseStudies } from "@/lib/data";
+import { cardAccentFor } from "@/lib/cardAccents";
 
 /**
- * Full campaign grid for the /case-studies ("Work") page. Same light-theme,
- * white-card language as the Services grid, each card keyed to its own
- * rotating accent color for the industry tag, number and hover state.
+ * Full campaign grid for the /case-studies ("Work") page. Same cream-card
+ * language as the Services grid: coloured top strip, soft corner circle,
+ * sparkle bullets and a centred accent-coloured link.
  */
 export default function WorkGrid({
   eyebrow = "Featured",
@@ -29,9 +30,15 @@ export default function WorkGrid({
           {note}
         </p>
 
-        <div className="mt-8 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((cs, i) => {
-            const accent = accentFor(i);
+            const a = cardAccentFor(i);
+            const bullets = cs.stats
+              ? cs.stats.map((st) => `${st.value} ${st.label}`)
+              : cs.result
+                ? [`${cs.result.value} ${cs.result.label}`]
+                : [];
+
             return (
               <motion.article
                 key={cs.slug}
@@ -43,9 +50,18 @@ export default function WorkGrid({
                 <Link
                   href={`/case-studies/${cs.slug}`}
                   data-cursor="pointer"
-                  className="card-shiny sb-auto-shine group flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[28px] bg-[#faf9f8] shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)]"
                 >
-                  <div className="relative aspect-16/10 w-full overflow-hidden bg-black/5">
+                  <span
+                    className="absolute inset-x-0 top-0 z-10 h-1.5 opacity-60"
+                    style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
+                  />
+                  <span
+                    className="pointer-events-none absolute -right-14 -top-14 h-48 w-48 rounded-full"
+                    style={{ background: a.soft }}
+                  />
+
+                  <div className="relative mx-3 mt-5 aspect-[16/10] overflow-hidden rounded-[20px] bg-black/5">
                     {cs.image ? (
                       <Image
                         src={cs.image}
@@ -58,15 +74,15 @@ export default function WorkGrid({
                       <CaseCover name={cs.name} logo={cs.logo} industry={cs.industry} />
                     )}
                     <span
-                      className="absolute left-3 top-3 rounded-full px-3 py-1 font-heading text-[10px] font-bold uppercase tracking-[0.06em]"
-                      style={{ background: accent.hex, color: accent.on }}
+                      className="absolute left-3 top-3 rounded-full px-3 py-1 font-heading text-[10px] font-bold uppercase tracking-[0.06em] text-white"
+                      style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
                     >
                       {cs.industry}
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-4">
-                    <div className="flex items-center gap-2.5">
+                  <div className="relative flex flex-1 flex-col px-6 pb-7 pt-5">
+                    <div className="flex items-center gap-3">
                       {cs.brandLogo ? (
                         <span className="relative h-8 w-16 shrink-0">
                           <Image
@@ -79,40 +95,37 @@ export default function WorkGrid({
                         </span>
                       ) : (
                         <span
-                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-heading text-xs font-bold"
-                          style={{ background: accent.soft, color: accent.hex }}
+                          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl font-heading text-xs font-bold text-white"
+                          style={{ background: `linear-gradient(135deg, ${a.from}, ${a.to})` }}
                         >
                           {cs.logo}
                         </span>
                       )}
-                      <h3 className="truncate font-heading text-[15px] font-bold leading-tight text-black transition-colors group-hover:text-sb-orange">
+                      <h3 className="truncate font-heading text-lg font-bold leading-tight text-[#2b1b3d]">
                         {cs.name}
                       </h3>
                     </div>
 
-                    {cs.stats ? (
-                      <div className="mt-3.5 flex flex-wrap gap-x-3.5 gap-y-1 rounded-lg bg-black/3 px-3 py-2.5">
-                        {cs.stats.map((st) => (
-                          <span key={st.label} className="text-[11px] text-black/50">
-                            <strong className="font-heading text-black">{st.value}</strong> {st.label}
-                          </span>
+                    {bullets.length > 0 ? (
+                      <ul className="mt-5 flex flex-col gap-2.5">
+                        {bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-3 text-[15px] leading-snug text-[#2b1b3d]">
+                            <Sparkle />
+                            {b}
+                          </li>
                         ))}
-                      </div>
-                    ) : cs.result ? (
-                      <div className="mt-3.5 flex items-baseline gap-2 rounded-lg bg-black/3 px-3 py-2.5">
-                        <span className="font-heading text-sm font-bold" style={{ color: accent.hex }}>
-                          {cs.result.value}
-                        </span>
-                        <span className="text-[11px] text-black/50">{cs.result.label}</span>
-                      </div>
+                      </ul>
                     ) : (
-                      <p className="mt-2.5 line-clamp-2 text-[13px] leading-relaxed text-black/55">
+                      <p className="mt-4 line-clamp-3 text-[15px] leading-relaxed text-[#6b5b78]">
                         {cs.challenge}
                       </p>
                     )}
 
-                    <span className="mt-3.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-black/40 transition-all duration-300 group-hover:gap-2.5 group-hover:text-sb-orange">
-                      Read the story <ArrowUpRight size={13} />
+                    <span
+                      className="mt-auto pt-8 text-center font-heading text-base font-semibold underline-offset-4 group-hover:underline"
+                      style={{ color: a.text }}
+                    >
+                      Read the story
                     </span>
                   </div>
                 </Link>

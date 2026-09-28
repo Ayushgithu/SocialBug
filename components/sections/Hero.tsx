@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
+import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import GradientBlobs from "@/components/ui/GradientBlobs";
 import HeroVisual from "@/components/ui/HeroVisual";
 import MarqueeTicker from "@/components/ui/MarqueeTicker";
@@ -44,10 +45,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="flex flex-wrap items-center gap-2.5"
           >
             <Badge>
               <Sparkles size={12} className="text-sb-lime" /> 1000+ Curated Creators
             </Badge>
+            <AvailabilityBadge />
           </motion.div>
 
           <h1 className="font-display mt-6 text-4xl leading-[1.02] sm:text-5xl lg:text-[3.75rem]">

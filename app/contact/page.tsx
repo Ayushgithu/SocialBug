@@ -54,7 +54,7 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="glow-border rounded-xl bg-white/2 p-7">
+            <div className="glow-border rounded-xl bg-black/2 p-7">
               <p className="font-heading text-sm font-semibold">What happens next</p>
               <ol className="mt-4 flex flex-col gap-3 text-sm text-sb-white/55">
                 <li>1. We review your project and reply within minutes.</li>
@@ -71,7 +71,7 @@ export default function ContactPage() {
       </section>
 
       {/* Partner logos, white strip under the form */}
-      <section className=" bg-black relative px-6 py-10">
+      <section className="bg-black/2 relative px-6 py-10">
         <div className="mx-auto max-w-6xl">
           <p className="text-center font-heading text-[11px] font-semibold uppercase tracking-[0.3em] text-black/40">
             Trusted by teams at
@@ -88,7 +88,7 @@ export default function ContactPage() {
                     alt={logo.name}
                     width={180}
                     height={90}
-                    className="h-auto max-h-12 w-auto max-w-full object-contain opacity-80  transition-all duration-300 sm:max-h-14"
+                    className="h-auto max-h-12 mix-blend-screen w-auto max-w-full object-contain opacity-80  transition-all duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 sm:max-h-14"
                   />
                 </div>
               ))}
