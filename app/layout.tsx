@@ -8,7 +8,10 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/layout/BackToTop";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import NextTopLoader from 'nextjs-toploader';
+import MobileCTABar from "@/components/ui/MobileCTABar";
+import { CLD } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://socialbugmedia.in"),
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-image.png",
+        url: CLD.ogImage,
         width: 1200,
         height: 630,
         alt: "SocialBug Media — Strategy. Content. Growth.",
@@ -47,7 +50,7 @@ export const metadata: Metadata = {
     title: "SocialBug Media | Strategy. Content. Growth.",
     description:
       "We help ambitious products get seen, talked about, and shared through strategy, creator networks, and campaigns built to move.",
-    images: ["/og-image.png"],
+    images: [CLD.ogImage],
   },
   robots: {
     index: true,
@@ -83,11 +86,15 @@ export default function RootLayout({
           <ScrollProgress />
           <SplashScreen />
           <RouteLoadingBar />
-            <NextTopLoader />
+          <NextTopLoader />
           <Navbar />
           <main>{children}</main>
           <Footer />
+          {/* spacer so the sticky mobile bar never covers the footer's last line */}
+          <div className="h-20 sm:hidden" aria-hidden />
           <BackToTop />
+          <WhatsAppButton />
+          <MobileCTABar />
         </SmoothScroll>
       </body>
     </html>

@@ -2,63 +2,24 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  TrendingUp,
-  Eye,
-  Rocket,
-  UserCircle,
-  Smile,
-  Share2,
-  Video,
-  type LucideIcon,
-} from "lucide-react";
 import { services } from "@/lib/data";
-import { LinkedInIcon, XIcon } from "@/components/ui/SocialIcons";
+import { cardAccentFor } from "@/lib/cardAccents";
+import ServiceIconTile from "@/components/ui/ServiceIconTile";
+import Sparkle from "@/components/ui/Sparkle";
 import LightCTA from "@/components/sections/LightCTA";
 
-const ICON_BG: Record<string, string> = {
-  blue: "bg-blue-50 text-blue-600",
-  green: "bg-emerald-50 text-emerald-600",
-  red: "bg-rose-50 text-rose-500",
-  purple: "bg-violet-50 text-violet-600",
-  yellow: "bg-amber-50 text-amber-500",
-  pink: "bg-pink-50 text-pink-500",
-  orange: "bg-orange-50 text-orange-500",
-};
-
-interface CardMeta {
-  tint: keyof typeof ICON_BG;
-  icon?: LucideIcon;
-  stats?: { label: string; value: string }[];
-  dual?: boolean;
-}
-
-const META: Record<string, CardMeta> = {
-  "linkedin-x-creator-campaigns": { tint: "blue", dual: true },
-  "instagram-youtube-tech-fintech-campaigns": { tint: "pink", icon: Video },
-  "linkedin-founder-brand-amplification": {
-    tint: "purple",
-    icon: TrendingUp,
-    stats: [
-      { label: "Likes", value: "5,000+" },
-      { label: "Comments", value: "500+" },
-      { label: "Reposts", value: "500+" },
-    ],
-  },
-  "one-partner-all-platforms": { tint: "green", icon: Share2 },
-  "instagram-x-viral-amplification": {
-    tint: "pink",
-    icon: Eye,
-    stats: [
-      { label: "Views", value: "1M+" },
-      { label: "Likes", value: "100K+" },
-      { label: "Comments", value: "10K+" },
-      { label: "Shares", value: "5K+" },
-    ],
-  },
-  "product-hunt-launches": { tint: "orange", icon: Rocket },
-  "founder-personal-branding": { tint: "purple", icon: UserCircle },
-  "meme-marketing": { tint: "green", icon: Smile },
+const STATS_BY_SLUG: Record<string, { label: string; value: string }[]> = {
+  "linkedin-founder-brand-amplification": [
+    { label: "Likes", value: "5,000+" },
+    { label: "Comments", value: "500+" },
+    { label: "Reposts", value: "500+" },
+  ],
+  "instagram-x-viral-amplification": [
+    { label: "Views", value: "1M+" },
+    { label: "Likes", value: "100K+" },
+    { label: "Comments", value: "10K+" },
+    { label: "Shares", value: "5K+" },
+  ],
 };
 
 export default function ServicesShowcase({
@@ -88,10 +49,12 @@ export default function ServicesShowcase({
           </p>
         </div>
 
-        <div className={`mt-10 grid gap-3.5 ${gridCols}`}>
+        <div className={`mt-10 grid gap-5 ${gridCols}`}>
           {items.map((s, i) => {
-            const meta = META[s.slug] ?? { tint: "blue" as const };
-            const Icon = meta.icon;
+            const a = cardAccentFor(i);
+            const bullets = s.workflow.slice(0, 4);
+            const stats = STATS_BY_SLUG[s.slug];
+
             return (
               <motion.div
                 key={s.slug}
@@ -103,51 +66,56 @@ export default function ServicesShowcase({
                 <Link
                   href={`/services/${s.slug}`}
                   data-cursor="pointer"
-                  className="card-shiny group flex h-full flex-col rounded-xl border border-black/10 bg-white p-4"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[28px] bg-[#faf9f8] px-6 pb-7 pt-9 shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)] sm:px-7"
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2.5">
-                        {meta.dual ? (
-                          <div className="flex gap-1.5">
-                            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0A66C2] text-white">
-                              <LinkedInIcon size={16} />
-                            </span>
-                            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-black text-white">
-                              <XIcon size={14} />
-                            </span>
-                          </div>
-                        ) : (
-                          Icon && (
-                            <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${ICON_BG[meta.tint]}`}>
-                              <Icon size={18} />
-                            </span>
-                          )
-                        )}
-                        <h3 className="font-heading text-[15px] font-bold leading-tight text-black transition-colors group-hover:text-sb-orange">
-                          {s.title}
-                        </h3>
-                      </div>
-                      <p className="mt-2 text-[13px] leading-relaxed text-black/55">{s.short}</p>
-                    </div>
-                  </div>
+                  <span
+                    className="absolute inset-x-0 top-0 h-1.5 opacity-60"
+                    style={{ background: `linear-gradient(90deg, ${a.from}, ${a.to})` }}
+                  />
+                  <span
+                    className="pointer-events-none absolute -right-14 -top-14 h-48 w-48 rounded-full"
+                    style={{ background: a.soft }}
+                  />
 
-                  {meta.stats && (
-                    <div className="mt-3.5 flex flex-wrap gap-x-3.5 gap-y-1 rounded-lg bg-black/3 px-3 py-2.5">
-                      {meta.stats.map((st) => (
-                        <span key={st.label} className="text-[11px] text-black/50">
-                          <strong className="font-heading text-black">{st.value}</strong> {st.label}
+                  <ServiceIconTile slug={s.slug} accentIndex={i} />
+
+                  <h3 className="relative mt-6 font-heading text-xl font-bold leading-snug text-[#2b1b3d]">
+                    {s.title}
+                  </h3>
+                  <p className="relative mt-3 text-[15px] leading-relaxed text-[#6b5b78]">{s.short}</p>
+
+                  <ul className="relative mt-6 flex flex-col gap-3">
+                    {bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-[15px] leading-snug text-[#2b1b3d]">
+                        <Sparkle />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {stats && (
+                    <div className="relative mt-5 flex flex-wrap gap-x-3.5 gap-y-1 border-t border-black/5 pt-4">
+                      {stats.map((st) => (
+                        <span key={st.label} className="text-[12px] text-[#6b5b78]">
+                          <strong className="font-heading text-[#2b1b3d]">{st.value}</strong> {st.label}
                         </span>
                       ))}
                     </div>
                   )}
+
+                  <span
+                    className="relative mt-auto pt-9 text-center font-heading text-base font-semibold underline-offset-4 group-hover:underline"
+                    style={{ color: a.text }}
+                  >
+                    Learn More
+                  </span>
                 </Link>
               </motion.div>
             );
           })}
         </div>
 
-        <div className="mt-6">
+        <div className="mt-8">
           <LightCTA
             eyebrow="Ready To Grow Your Brand?"
             heading="Let's launch your campaign."

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageOG } from "@/lib/utils";
 import LegalLayout from "@/components/ui/LegalLayout";
+import { business } from "@/lib/business";
+import { socialLinks } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
@@ -161,6 +163,20 @@ export default function TermsPage() {
               terms in place when that agreement was signed, unless we agree to an update in
               writing.
             </p>
+          ),
+        },
+        {
+          id: "business-details",
+          title: "Business Details",
+          content: (
+            <>
+              <p>The business behind these terms and all invoices we issue:</p>
+              <ul className="list-disc space-y-2 pl-5">
+                <li>Business name: {business.legalName}</li>
+                <li>GSTIN: {business.gstin}</li>
+                <li>Billing and legal queries: {socialLinks.email}</li>
+              </ul>
+            </>
           ),
         },
       ]}
