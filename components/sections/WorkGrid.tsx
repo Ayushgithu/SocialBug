@@ -45,7 +45,7 @@ export default function WorkGrid({
                   data-cursor="pointer"
                   className="card-shiny sb-auto-shine group flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/5">
+                  <div className="relative aspect-16/10 w-full overflow-hidden bg-black/5">
                     {cs.image ? (
                       <Image
                         src={cs.image}
@@ -91,7 +91,7 @@ export default function WorkGrid({
                     </div>
 
                     {cs.stats ? (
-                      <div className="mt-3.5 flex flex-wrap gap-x-3.5 gap-y-1 rounded-lg bg-black/[0.03] px-3 py-2.5">
+                      <div className="mt-3.5 flex flex-wrap gap-x-3.5 gap-y-1 rounded-lg bg-black/3 px-3 py-2.5">
                         {cs.stats.map((st) => (
                           <span key={st.label} className="text-[11px] text-black/50">
                             <strong className="font-heading text-black">{st.value}</strong> {st.label}
@@ -99,7 +99,7 @@ export default function WorkGrid({
                         ))}
                       </div>
                     ) : cs.result ? (
-                      <div className="mt-3.5 flex items-baseline gap-2 rounded-lg bg-black/[0.03] px-3 py-2.5">
+                      <div className="mt-3.5 flex items-baseline gap-2 rounded-lg bg-black/3 px-3 py-2.5">
                         <span className="font-heading text-sm font-bold" style={{ color: accent.hex }}>
                           {cs.result.value}
                         </span>
@@ -111,7 +111,7 @@ export default function WorkGrid({
                       </p>
                     )}
 
-                    <span className="mt-3.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-black/40 transition-all duration-300 group-hover:gap-2.5 group-hover:text-sb-orange">
+                    <span className="mt-3.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-black/40 transition-all duration-300 group-hover:gap-2.5 group-hover:text-sb-orange">
                       Read the story <ArrowUpRight size={13} />
                     </span>
                   </div>

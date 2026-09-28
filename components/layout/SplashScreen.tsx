@@ -74,7 +74,7 @@ export default function SplashScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!mounted) return <div className="fixed inset-0 z-[200] bg-sb-black" />;
+  if (!mounted) return <div className="fixed inset-0 z-200 bg-sb-black" />;
   if (!show) return null;
 
   if (reducedMotion) {
@@ -84,7 +84,7 @@ export default function SplashScreen() {
         animate={{ opacity: 0 }}
         transition={{ duration: 0.4, delay: 0.1 }}
         onAnimationComplete={() => setShow(false)}
-        className="fixed inset-0 z-[200] flex items-center justify-center bg-sb-black"
+        className="fixed inset-0 z-200 flex items-center justify-center bg-sb-black"
       >
         <div className="sb-logo-badge relative h-16 w-24">
           <Image src={CLD.logo.full} alt="SocialBug Media" fill sizes="96px" className="object-contain" priority />
@@ -95,7 +95,7 @@ export default function SplashScreen() {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[200] overflow-hidden bg-sb-black"
+      className="fixed inset-0 z-200 overflow-hidden bg-sb-black"
       style={{ pointerEvents: exiting ? "none" : "auto" }}
       animate={{ opacity: exiting ? 0 : 1 }}
       transition={{ duration: exiting ? 1.1 : 0.3, ease: "easeInOut" }}
@@ -169,7 +169,7 @@ export default function SplashScreen() {
           <span style={{ color: CORAL }}>%</span>
         </span>
       </div>
-      <div className="absolute inset-x-0 bottom-0 z-20 h-[3px] bg-white/10">
+      <div className="absolute inset-x-0 bottom-0 z-20 h-0.75 bg-white/10">
         <div
           className="h-full"
           style={{

@@ -25,12 +25,12 @@ function Tile({ creator }: { creator: (typeof POOL)[number] }) {
   const [broken, setBroken] = useState(false);
   const [loaded, setLoaded] = useState(false);
   return (
-    <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900">
+    <div className="relative aspect-3/4 w-full overflow-hidden bg-neutral-900">
       {!loaded && !broken && (
-        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/[0.03] via-white/[0.09] to-white/[0.03]" />
+        <div className="absolute inset-0 animate-pulse bg-linear-to-br from-white/3 via-white/9 to-white/3" />
       )}
       {broken ? (
-        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-sb-orange/70 via-sb-pink/60 to-sb-purple/60 font-heading text-lg font-bold text-white">
+        <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-sb-orange/70 via-sb-pink/60 to-sb-purple/60 font-heading text-lg font-bold text-white">
           {initialsOf(creator.name)}
         </div>
       ) : (
@@ -45,7 +45,7 @@ function Tile({ creator }: { creator: (typeof POOL)[number] }) {
           className={`h-full w-full object-cover object-top grayscale transition-all duration-500 hover:grayscale-0 ${loaded ? "opacity-100" : "opacity-0"}`}
         />
       )}
-      <span className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
+      <span className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/80 to-transparent" />
       <span className="absolute bottom-2 left-2 font-heading text-[9px] uppercase tracking-wide text-sb-white/70">
         {creator.category.split(" ")[0]}
       </span>
@@ -92,14 +92,14 @@ function Column({
 
 export default function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-[420px]">
-      <div className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-br from-sb-pink/30 via-sb-orange/20 to-transparent blur-[70px]" />
+    <div className="relative mx-auto w-full max-w-105">
+      <div className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-linear-to-br from-sb-pink/30 via-sb-orange/20 to-transparent blur-[70px]" />
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="grid h-[300px] grid-cols-3 gap-2.5 sm:h-[360px] sm:gap-3"
+        className="grid h-75 grid-cols-3 gap-2.5 sm:h-90 sm:gap-3"
         style={{
           WebkitMaskImage: "linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)",
           maskImage: "linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)",

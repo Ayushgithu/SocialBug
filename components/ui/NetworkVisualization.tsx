@@ -42,12 +42,12 @@ export default function NetworkVisualization() {
               className={`sb-card-shine flex items-center gap-2.5 rounded-xl border px-3.5 py-3.5 text-left transition-all duration-300 ${
                 isActive
                   ? "border-sb-orange/70 bg-sb-orange/10"
-                  : "border-white/10 bg-white/[0.02] hover:border-white/25"
+                  : "border-white/10 bg-white/2 hover:border-white/25"
               }`}
             >
               <span
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors ${
-                  isActive ? "bg-sb-orange text-sb-black" : "bg-white/[0.05] text-sb-orange"
+                  isActive ? "bg-sb-orange text-sb-black" : "bg-white/5 text-sb-orange"
                 }`}
               >
                 <Icon size={16} />
@@ -65,7 +65,7 @@ export default function NetworkVisualization() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.07] to-transparent p-7 sm:p-9"
+        className="rounded-2xl border border-white/10 bg-linear-to-br from-white/[0.07] to-transparent p-7 sm:p-9"
       >
         <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-sb-orange text-sb-black">
           <ActiveIcon size={22} />

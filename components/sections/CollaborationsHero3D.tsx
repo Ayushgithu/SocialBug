@@ -15,12 +15,12 @@ export default function CollaborationsHero3D() {
   }, []);
 
   return (
-    <div className="relative mx-auto h-[260px] w-full max-w-lg sm:h-[320px]">
+    <div className="relative mx-auto h-65 w-full max-w-lg sm:h-80">
       {isDesktop ? (
         <MarketingOrbit3D />
       ) : (
         <div className="relative flex h-full w-full items-center justify-center">
-          <div className="absolute h-40 w-40 rounded-full bg-gradient-to-br from-sb-pink via-sb-orange to-sb-lime opacity-25 blur-2xl" />
+          <div className="absolute h-40 w-40 rounded-full bg-linear-to-br from-sb-pink via-sb-orange to-sb-lime opacity-25 blur-2xl" />
           <div className="grid grid-cols-3 gap-4">
             {["bg-sb-pink", "bg-sb-orange", "bg-sb-lime", "bg-sb-blue", "bg-sb-purple", "bg-sb-pink"].map(
               (c, i) => (

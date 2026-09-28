@@ -133,7 +133,7 @@ export default function ServicesShowcase({
                   </div>
 
                   {meta.stats && (
-                    <div className="mt-3.5 flex flex-wrap gap-x-3.5 gap-y-1 rounded-lg bg-black/[0.03] px-3 py-2.5">
+                    <div className="mt-3.5 flex flex-wrap gap-x-3.5 gap-y-1 rounded-lg bg-black/3 px-3 py-2.5">
                       {meta.stats.map((st) => (
                         <span key={st.label} className="text-[11px] text-black/50">
                           <strong className="font-heading text-black">{st.value}</strong> {st.label}

@@ -31,7 +31,7 @@ export default function CaseCover({
       <span
         aria-hidden
         className={cn(
-          "font-display pointer-events-none absolute select-none leading-none text-white/[0.05]",
+          "font-display pointer-events-none absolute select-none leading-none text-white/5",
           large ? "text-[22rem]" : "text-[11rem]",
         )}
       >
