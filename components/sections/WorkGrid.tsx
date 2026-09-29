@@ -10,7 +10,7 @@ import { cardAccentFor } from "@/lib/cardAccents";
 
 /**
  * Full campaign grid for the /case-studies ("Work") page.
- * Cream card, image on top with a white brand badge, result numbers as
+ * Cream card, image on top, brand logo below, result numbers as
  * mini stat boxes, and a gradient arrow button in the footer.
  */
 export default function WorkGrid({
@@ -33,6 +33,7 @@ export default function WorkGrid({
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((cs, i) => {
             const a = cardAccentFor(i);
+            const logoSrc = cs.brandLogoWhite || cs.brandLogo;
             const stats: { value: string; label: string }[] = cs.stats
               ? cs.stats.slice(0, 3)
               : cs.result
@@ -52,7 +53,7 @@ export default function WorkGrid({
                   data-cursor="pointer"
                   className="group relative flex h-full flex-col rounded-[28px] bg-[#faf9f8] p-3 shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)]"
                 >
-                  {/* image */}
+                  {/* image (white logo badge removed) */}
                   <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-black/5">
                     {cs.image ? (
                       <Image
@@ -69,31 +70,25 @@ export default function WorkGrid({
                     <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 font-heading text-[10px] font-bold uppercase tracking-[0.06em] text-[#2b1b3d] backdrop-blur">
                       {cs.industry}
                     </span>
-
-                    {/* brand badge */}
-                    <span className="absolute bottom-3 left-3 flex h-11 min-w-11 items-center justify-center rounded-2xl bg-white px-2 shadow-[0_8px_20px_-6px_rgba(0,0,0,0.3)]">
-                      {cs.brandLogo ? (
-                        <span className="relative h-6 w-14">
-                          <Image
-                            src={cs.brandLogoWhite}
-                            alt={cs.name}
-                            fill
-                            sizes="56px"
-                            className="object-contain"
-                          />
-                        </span>
-                      ) : (
-                        <span className="font-heading text-xs font-bold" style={{ color: a.text }}>
-                          {cs.logo}
-                        </span>
-                      )}
-                    </span>
                   </div>
 
                   <div className="flex flex-1 flex-col px-3 pb-3 pt-5 sm:px-4">
-                    <h3 className="font-heading text-lg font-bold leading-tight text-[#2b1b3d]">
-                      {cs.name}
-                    </h3>
+                    {/* brand logo (falls back to the brand name if no logo is set) */}
+                    <span className="relative flex h-10 w-32 items-center">
+                      {logoSrc ? (
+                        <Image
+                          src={logoSrc}
+                          alt={cs.name}
+                          fill
+                          sizes="128px"
+                          className="object-contain object-left"
+                        />
+                      ) : (
+                        <span className="truncate font-heading text-lg font-bold text-[#2b1b3d]">
+                          {cs.name}
+                        </span>
+                      )}
+                    </span>
 
                     {stats.length > 0 ? (
                       <div

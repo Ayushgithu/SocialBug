@@ -248,7 +248,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "myntra-friendshipday",
     brandLogo: CLD.partners_dark.myntra,
-    brandLogoWhite:CLD.partners.myntra,
+    brandLogoWhite: CLD.partners.myntra,
     slugStatus: true,
     result: { value: "Highly", label: "Shareable" },
     stats: [
@@ -262,7 +262,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Amplification", value: "LinkedIn" },
       { label: "Occasion", value: "Friendship Day" },
     ],
-    quote: "Every line felt like it came straight out of a friends' WhatsApp group.",
+    quote:
+      "Every line felt like it came straight out of a friends' WhatsApp group.",
     author: "Marketer reaction, LinkedIn",
     name: "Myntra",
     logo: "M",
@@ -275,7 +276,8 @@ export const caseStudies: CaseStudy[] = [
       "Marketers and founders calling out the campaign's insight as instantly relatable.",
     challenge:
       "Make a Friendship Day communication feel culturally familiar rather than like another predictable festive ad.",
-    idea: "We built the campaign around the ridiculous but relatable things friends do together — from travelling to starting businesses and even getting matching tattoos.",
+    idea:
+      "We built the campaign around the ridiculous but relatable things friends do together, from travelling to starting businesses and even getting matching tattoos.",
     executionIntro: [
       "A print-led creative brought these friendship behaviours to life in a playful format.",
       "The idea was then taken to social, allowing the print execution to travel beyond its original medium.",
@@ -287,8 +289,10 @@ export const caseStudies: CaseStudy[] = [
       "Social Distribution",
       "Conversation",
     ],
-    takeaway: "The strongest festive ideas often start with something people already do.",
+    takeaway:
+      "The strongest festive ideas often start with something people already do.",
   },
+
   {
     slug: "flipkart",
     brandLogo: CLD.partners_dark.flipkartGiftcard,
@@ -306,7 +310,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Likes", value: "30.3K" },
       { label: "Platform", value: "LinkedIn" },
     ],
-    quote: "Scale without losing the human voice, that was the whole brief, and they landed it.",
+    quote:
+      "Scale without losing the human voice, that was the whole brief, and they landed it.",
     author: "Brand Marketing, Flipkart",
     name: "Flipkart",
     logo: "F",
@@ -317,9 +322,12 @@ export const caseStudies: CaseStudy[] = [
     bodyImage: CLD.work.bodies.flipkart,
     bodyCaption:
       "Real LinkedIn posts from HR and marketing voices, reacting to #FlipkartGiftCards.",
-    challenge: "Make a functional product like a gift card feel relevant and relatable.",
-    idea: "We centred the communication around one very real gifting problem:",
-    ideaQuote: "What do I gift someone who already has everything?",
+    challenge:
+      "Make a functional product like a gift card feel relevant and relatable.",
+    idea:
+      "We centred the communication around one very real gifting problem:",
+    ideaQuote:
+      "What do I gift someone who already has everything?",
     executionIntro: [
       "Instead of making the communication product-heavy, the campaign started with the consumer problem and naturally introduced the gift card as the solution.",
     ],
@@ -331,8 +339,10 @@ export const caseStudies: CaseStudy[] = [
       "Social Communication",
       "Distribution",
     ],
-    takeaway: "Sometimes the best product story starts with the problem, not the product.",
+    takeaway:
+      "Sometimes the best product story starts with the problem, not the product.",
   },
+
   {
     slug: "amazon-prime-video",
     brandLogo: CLD.partners_dark.primeVideo,
@@ -350,7 +360,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Release", value: "July 24" },
       { label: "Platform", value: "Prime Video" },
     ],
-    quote: "It read like a meme first and an ad second, which is exactly why people shared it.",
+    quote:
+      "It read like a meme first and an ad second, which is exactly why people shared it.",
     author: "Creative Team, SocialBug Media",
     name: "Amazon Prime",
     logo: "P",
@@ -361,7 +372,8 @@ export const caseStudies: CaseStudy[] = [
     bodyImage: CLD.work.bodies.amazonPrime,
     challenge:
       "Communicate the value of Prime without turning the content into a list of features.",
-    idea: "We approached Prime through everyday consumer behaviour — focusing on the moments where the service becomes useful in real life.",
+    idea:
+      "We approached Prime through everyday consumer behaviour, focusing on the moments where the service becomes useful in real life.",
     flow: [
       "Consumer Moment",
       "Prime Benefit",
@@ -371,8 +383,10 @@ export const caseStudies: CaseStudy[] = [
     executionNote: [
       "The focus was on making the benefit instantly understandable rather than over-explaining the product.",
     ],
-    takeaway: "People don’t remember features. They remember how a product fits into their life.",
+    takeaway:
+      "People don’t remember features. They remember how a product fits into their life.",
   },
+
   {
     slug: "latentforce",
     brandLogo: CLD.partners.latentforceAi,
@@ -390,7 +404,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Comments", value: "1.2K" },
       { label: "Audience", value: "Technical" },
     ],
-    quote: "The comments were engineers arguing about the product. That's the win.",
+    quote:
+      "The comments were engineers arguing about the product. That's the win.",
     author: "Founding Team, LatentForce",
     name: "Latent Force AI",
     logo: "L",
@@ -399,10 +414,12 @@ export const caseStudies: CaseStudy[] = [
     imageWidth: 964,
     imageHeight: 1270,
     bodyImage: CLD.work.bodies.latentforce,
-    bodyCaption: "AI engineers and founders debating Latent Force in the comments, unprompted.",
+    bodyCaption:
+      "AI engineers and founders debating Latent Force in the comments, unprompted.",
     challenge:
       "AI products can quickly become difficult to communicate when the messaging gets buried under technical language.",
-    idea: "Turn the technology story into something the audience could understand without needing a technical background.",
+    idea:
+      "Turn the technology story into something the audience could understand without needing a technical background.",
     flow: [
       "Technology Insight",
       "Simplified Narrative",
@@ -412,11 +429,13 @@ export const caseStudies: CaseStudy[] = [
     executionNote: [
       "The communication focused on the human relevance of AI, rather than simply talking about the technology itself.",
     ],
-    takeaway: "Complex technology deserves simple storytelling.",
+    takeaway:
+      "Complex technology deserves simple storytelling.",
   },
+
   {
     slug: "boat-snapdragon-campaign",
-    brandLogo: CLD.partners.boat, // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogo: CLD.partners.boat,
     brandLogoWhite: CLD.partners.boat,
     slugStatus: true,
     result: { value: "1.2M", label: "Reach" },
@@ -431,7 +450,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Media Mentions", value: "20+" },
       { label: "Platform", value: "boAt" },
     ],
-    quote: "The panel gave the launch a point of view instead of just a press release.",
+    quote:
+      "The panel gave the launch a point of view instead of just a press release.",
     author: "Brand Team, boAt",
     name: "boAt × Snapdragon",
     logo: "B",
@@ -440,8 +460,10 @@ export const caseStudies: CaseStudy[] = [
     imageWidth: 768,
     imageHeight: 1376,
     bodyImage: CLD.work.bodies.boatSnapdragon,
-    challenge: "Make technical performance feel interesting to a social audience.",
-    idea: "Instead of treating technology specifications as the story, we connected product performance with the way people actually use the product.",
+    challenge:
+      "Make technical performance feel interesting to a social audience.",
+    idea:
+      "Instead of treating technology specifications as the story, we connected product performance with the way people actually use the product.",
     flow: [
       "Product Technology",
       "Performance Benefit",
@@ -452,11 +474,13 @@ export const caseStudies: CaseStudy[] = [
     executionNote: [
       "The campaign translated the technology story into a more accessible consumer narrative.",
     ],
-    takeaway: "Specs tell you what a product has. Stories tell you why you should care.",
+    takeaway:
+      "Specs tell you what a product has. Stories tell you why you should care.",
   },
+
   {
     slug: "boat-slazer-grooming",
-    brandLogo: CLD.partners.boat, // placeholder — no boAt logo asset yet, swap when supplied
+    brandLogo: CLD.partners.boat,
     brandLogoWhite: CLD.partners.boat,
     slugStatus: true,
     result: { value: "2.8M", label: "Reach" },
@@ -482,7 +506,8 @@ export const caseStudies: CaseStudy[] = [
     bodyImage: CLD.work.bodies.boatSlazer,
     challenge:
       "Make a grooming product feel like part of everyday culture rather than another product advertisement.",
-    idea: "Start with the grooming behaviour people already recognise and build the product into that moment.",
+    idea:
+      "Start with the grooming behaviour people already recognise and build the product into that moment.",
     flow: [
       "Everyday Grooming Insight",
       "Relatable Situation",
@@ -496,6 +521,7 @@ export const caseStudies: CaseStudy[] = [
     takeaway:
       "A product becomes more memorable when people recognise themselves in the situation.",
   },
+
   {
     slug: "supertails",
     brandLogo: CLD.partners.supertails,
@@ -510,7 +536,8 @@ export const caseStudies: CaseStudy[] = [
     bodyImage: CLD.work.bodies.supertails,
     challenge:
       "Talk about pet care without making the communication feel like a conventional pet-care advertisement.",
-    idea: "We approached the category through the relationship between pets and their humans.",
+    idea:
+      "We approached the category through the relationship between pets and their humans.",
     flow: [
       "Pet-Parent Insight",
       "Emotional Moment",
@@ -524,9 +551,10 @@ export const caseStudies: CaseStudy[] = [
     takeaway:
       "When the audience feels the story before they notice the brand, the communication becomes more natural.",
   },
+
   {
     slug: "suzlon",
-    brandLogo: CLD.partners.suzlon, // placeholder — no Suzlon logo asset yet, swap when supplied
+    brandLogo: CLD.partners.suzlon,
     brandLogoWhite: CLD.partners.suzlon,
     slugStatus: true,
     name: "Suzlon",
@@ -537,10 +565,12 @@ export const caseStudies: CaseStudy[] = [
     imageHeight: 1920,
     bodyImage: CLD.work.bodies.suzlon,
     bodyVideo: CLD.work.suzlonVideo,
-    bodyCaption: "The Suzlon AI campaign, translating renewable-energy work into content for a wider audience.",
+    bodyCaption:
+      "The Suzlon AI campaign, translating renewable-energy work into content for a wider audience.",
     challenge:
       "Make a large sustainability story understandable and relevant to everyday audiences.",
-    idea: "Break down the bigger sustainability narrative into simple, human and social-first communication.",
+    idea:
+      "Break down the bigger sustainability narrative into simple, human and social-first communication.",
     flow: [
       "Sustainability Insight",
       "Human Context",
@@ -551,11 +581,13 @@ export const caseStudies: CaseStudy[] = [
     executionNote: [
       "Rather than overwhelming the audience with industry terminology, the communication focused on making the subject easier to understand.",
     ],
-    takeaway: "Big subjects don’t always need big words.",
+    takeaway:
+      "Big subjects don’t always need big words.",
   },
+
   {
     slug: "hk-vitals-skin-radiance",
-    brandLogo: CLD.partners.aurm, // placeholder — no HK Vitals logo asset yet, swap when supplied
+    brandLogo: CLD.partners.aurm,
     brandLogoWhite: CLD.partners.aurm,
     slugStatus: true,
     result: { value: "2.1M", label: "Reach" },
@@ -570,7 +602,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Saves", value: "6.5K" },
       { label: "Platform", value: "HK Vitals" },
     ],
-    quote: "It finally looked like something people would actually want on their table.",
+    quote:
+      "It finally looked like something people would actually want on their table.",
     author: "Brand Team, HK Vitals",
     name: "HK Vitals",
     logo: "H",
@@ -581,7 +614,8 @@ export const caseStudies: CaseStudy[] = [
     bodyImage: CLD.work.bodies.hkvitals,
     challenge:
       "Health communication can easily become clinical, repetitive or overly promotional.",
-    idea: "Start with everyday wellness concerns that people already think about and turn them into accessible social content.",
+    idea:
+      "Start with everyday wellness concerns that people already think about and turn them into accessible social content.",
     flow: [
       "Consumer Concern",
       "Relatable Insight",
@@ -595,6 +629,7 @@ export const caseStudies: CaseStudy[] = [
     takeaway:
       "Make health information easier to understand, easier to relate to and easier to remember.",
   },
+
   {
     slug: "coinswitch-real-growth",
     brandLogo: CLD.partners.coinswitch,
@@ -612,7 +647,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Shares", value: "1.1K" },
       { label: "Platform", value: "CoinSwitch" },
     ],
-    quote: "Felt like a friend explaining charts, not an exchange selling them.",
+    quote:
+      "Felt like a friend explaining charts, not an exchange selling them.",
     author: "Marketing Team, CoinSwitch",
     name: "CoinSwitch",
     logo: "C",
@@ -623,7 +659,8 @@ export const caseStudies: CaseStudy[] = [
     bodyImage: CLD.work.bodies.coinswitch,
     challenge:
       "Financial and crypto topics can feel intimidating because of complicated terminology.",
-    idea: "Take a complex financial conversation and translate it into a simpler social-first narrative.",
+    idea:
+      "Take a complex financial conversation and translate it into a simpler social-first narrative.",
     flow: [
       "Complex Topic",
       "Consumer Question",
@@ -637,6 +674,7 @@ export const caseStudies: CaseStudy[] = [
     takeaway:
       "If the audience needs a dictionary to understand the content, the content needs work.",
   },
+
   {
     slug: "nebius-ai-builder",
     brandLogo: CLD.partners.nebius,
@@ -654,7 +692,8 @@ export const caseStudies: CaseStudy[] = [
       { label: "Builders Engaged", value: "40+" },
       { label: "Platform", value: "Nebius" },
     ],
-    quote: "People signed up before they'd even sat back down.",
+    quote:
+      "People signed up before they'd even sat back down.",
     author: "Program Team, Nebius",
     name: "Nebius",
     logo: "N",
@@ -664,8 +703,9 @@ export const caseStudies: CaseStudy[] = [
     imageHeight: 768,
     bodyImage: CLD.work.bodies.nebius,
     challenge:
-      "AI infrastructure is highly technical — making it difficult to communicate without losing the audience.",
-    idea: "Instead of leading with technical terminology, we focused on the larger story of what AI infrastructure makes possible.",
+      "AI infrastructure is highly technical, making it difficult to communicate without losing the audience.",
+    idea:
+      "Instead of leading with technical terminology, we focused on the larger story of what AI infrastructure makes possible.",
     flow: [
       "Technology",
       "Context",
@@ -676,18 +716,23 @@ export const caseStudies: CaseStudy[] = [
     executionNote: [
       "The communication translated a technical category into a story that could work for a broader digital audience.",
     ],
-    takeaway: "You don’t make technology interesting by making it more complicated.",
+    takeaway:
+      "You don’t make technology interesting by making it more complicated.",
   },
-  /* BlackBerry case study hidden for now. Delete this comment wrapper to bring it back.
+
+  /*
+  BlackBerry case study hidden for now. Delete this comment wrapper to bring it back.
+
   {
     slug: "blackberry",
-    brandLogo: CLD.partners.blackberrys, // placeholder (closest name match), swap when the real BlackBerry logo is supplied
+    brandLogo: CLD.partners.blackberrys,
     name: "BlackBerry",
     logo: "B",
     industry: "Product × Brand Storytelling",
     challenge:
       "Build a product-led communication that feels relevant in a social-first environment.",
-    idea: "Use the product story as the starting point, then build a creative narrative around its relevance to the audience.",
+    idea:
+      "Use the product story as the starting point, then build a creative narrative around its relevance to the audience.",
     flow: [
       "Product Insight",
       "Creative Concept",
@@ -698,7 +743,8 @@ export const caseStudies: CaseStudy[] = [
     executionNote: [
       "The approach put the product at the centre without letting the communication become a conventional product catalogue.",
     ],
-    takeaway: "Product communication works better when there is an actual story around the product.",
+    takeaway:
+      "Product communication works better when there is an actual story around the product.",
   },
   */
 ];
@@ -716,49 +762,90 @@ export const testimonials = [
   {
     brand: "Flipkart",
     quote:
-      "52 creators, one narrative, zero chaos. They ran it like an in-house team that happened to have a better rolodex.",
+      "Honestly, kaafi easy experience raha. We’d share the idea, and SocialBug would actually understand where we were going with it.",
     category: "Creators",
     format: "quote",
     rating: 5,
   },
+
   {
     brand: "LatentForce",
     quote:
-      "Developers don't clap for marketing. This campaign got them arguing in the comments, that's credibility we couldn't buy.",
+      "I wasn’t expecting much initially, but the team actually got our tone. That was probably the biggest win for us.",
     category: "SaaS",
     format: "social",
     rating: 5,
   },
+
   {
     brand: "Suzlon",
     quote:
-      "Our founder essays outperformed every short-form experiment we had tried. The writing carried the brand.",
+      "Bhai, finally someone who doesn’t make everything sound like a LinkedIn post. The content actually felt like something a real person would say.",
     category: "Founders",
     format: "quote",
     rating: 5,
   },
+
   {
     brand: "Supertails",
     quote:
-      "Pets on LinkedIn sounded like a stretch. Seventeen creators later, it was the most human campaign we ran all year.",
+      "Loved working with the team. I could just say ‘yeh thoda off lag raha hai’ and they’d understand what I meant without making me explain everything.",
     category: "Creators",
     format: "voice",
     rating: 5,
   },
+
   {
     brand: "OFF/BEAT",
     quote:
-      "People started quoting our essays back to us in meetings. That's what thought leadership is supposed to do.",
+      "Kaafi baar agencies ko brief dene ke baad lagta hai ki ab 10 baar follow-up karna padega. Here, they just understood what we were trying to do and took it forward.",
     category: "Founders",
     format: "quote",
     rating: 5,
   },
+
   {
     brand: "Network Creator",
     quote:
-      "Clearest brief I have received from an agency, specific on the goal, hands-off on the voice.",
+      "The first few ideas themselves made it clear that they had actually looked into our brand. It didn’t feel like the usual copy-paste social media stuff.",
     category: "Creators",
     format: "social",
+    rating: 5,
+  },
+
+  {
+    brand: "Myntra",
+    quote:
+      "SocialBug se kaam karne ka best part? Mujhe har cheez micromanage nahi karni padi. I could give them the thought, and they’d take it forward.",
+    category: "Creators",
+    format: "quote",
+    rating: 5,
+  },
+
+  {
+    brand: "Lenskart",
+    quote:
+      "Somewhere between ‘yeh idea hai’ and ‘haan, this actually works’, SocialBug figured out what we were trying to say. Really liked that.",
+    category: "Creators",
+    format: "voice",
+    rating: 5,
+  },
+
+  {
+    brand: "Vivo",
+    quote:
+      "I’ve worked with a few content teams before, and honestly, this felt much more like talking to actual people than talking to an agency.",
+    category: "Creators",
+    format: "social",
+    rating: 5,
+  },
+
+  {
+    brand: "Lay’s",
+    quote:
+      "Simple cheez hai, content boring nahi tha. And for me, that’s a pretty big compliment.",
+    category: "Campaigns",
+    format: "quote",
     rating: 5,
   },
 ];
