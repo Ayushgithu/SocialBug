@@ -40,7 +40,7 @@ export default function MeetingScheduler() {
         <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sb-lime text-sb-black">
           <Check size={26} />
         </span>
-        <h3 className="font-heading mt-6 text-2xl font-semibold">Call locked in. 🐞</h3>
+        <h3 className="font-heading mt-6 text-2xl font-semibold">Call locked in.</h3>
         <p className="mt-3 max-w-sm text-sm text-sb-white/60">
           {day.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" })}{" "}
           at {selectedTime} · {duration}. A calendar invite and video link are on their way to

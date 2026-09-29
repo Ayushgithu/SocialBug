@@ -7,14 +7,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 import { contactSchema, type ContactFormValues } from "@/lib/schema";
 
-const stages = ["Idea", "Pre-launch", "Early stage", "Growth stage", "Scaling"] as const;
+const stages = ["Idea", "Pre-launch", "Early stage", "Growth stage", "Scaling", "Others"] as const;
 const helpOptions = [
   "Influencer Campaigns",
   "Product Hunt Launch",
   "SaaS Growth Campaign",
   "Content & Creative",
   "Full Managed Campaign",
-  "Something else",
+  "Others",
 ] as const;
 
 function Field({
@@ -77,7 +77,7 @@ export default function ContactForm() {
         <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sb-lime text-sb-black">
           <Check size={26} />
         </span>
-        <h3 className="font-heading mt-6 text-2xl font-semibold">We got the signal. 🐞</h3>
+        <h3 className="font-heading mt-6 text-2xl font-semibold">We got the signal.</h3>
         <p className="mt-3 max-w-sm text-sm text-sb-white/60">
           Thanks for reaching out, our team is already buzzing. Check your
           inbox for a confirmation, we&apos;ll be in touch shortly.
@@ -118,15 +118,23 @@ export default function ContactForm() {
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
+        <Field label="Mobile Number (optional)" error={errors.phone?.message}>
+          <input
+            {...register("phone")}
+            type="tel"
+            className={inputClass}
+            placeholder="+91 00000 00000"
+          />
+        </Field>
         <Field label="Company" error={errors.company?.message}>
           <input {...register("company")} className={inputClass} placeholder="Company Inc." />
-        </Field>
-        <Field label="Website" error={errors.website?.message}>
-          <input {...register("website")} className={inputClass} placeholder="yourcompany.com" />
         </Field>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
+        <Field label="Website (optional)" error={errors.website?.message}>
+          <input {...register("website")} className={inputClass} placeholder="yourcompany.com" />
+        </Field>
         <Field label="Company Stage" error={errors.stage?.message}>
           <select {...register("stage")} defaultValue="" className={inputClass}>
             <option value="" disabled>
@@ -139,6 +147,9 @@ export default function ContactForm() {
             ))}
           </select>
         </Field>
+      </div>
+
+      <div className="grid gap-6 sm:grid-cols-2">
         <Field label="What do you need help with?" error={errors.helpWith?.message}>
           <select {...register("helpWith")} defaultValue="" className={inputClass}>
             <option value="" disabled>
@@ -151,17 +162,12 @@ export default function ContactForm() {
             ))}
           </select>
         </Field>
+        <Field label="Budget Range (optional)" error={errors.budget?.message}>
+          <input {...register("budget")} className={inputClass} placeholder="e.g. $2,000 - $5,000" />
+        </Field>
       </div>
 
-      <Field label="Budget Range (optional)" error={errors.budget?.message}>
-        <input
-          {...register("budget")}
-          className={inputClass}
-          
-        />
-      </Field>
-
-      <Field label="Tell us about your project" error={errors.message?.message}>
+      <Field label="Tell us about your project (optional)" error={errors.message?.message}>
         <textarea
           {...register("message")}
           rows={5}

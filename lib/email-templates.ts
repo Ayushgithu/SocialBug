@@ -1,22 +1,22 @@
 import type { ContactFormValues } from "@/lib/schema";
 import { CLD } from "@/lib/cloudinary";
 import { business } from "@/lib/business";
+import { socialLinks } from "@/lib/data";
 
-const SITE_URL = "https://socialbugmedia.in";
+const SITE_URL = socialLinks.siteUrl;
 const LOGO_URL = CLD.logo.iconDark;
-const INSTAGRAM_URL = "https://www.instagram.com/shivam_chhirolya_97/";
-const LINKEDIN_URL = "https://www.linkedin.com/company/socialbugmedia/";
+const INSTAGRAM_URL = socialLinks.instagram;
+const LINKEDIN_URL = socialLinks.linkedinCompany;
+const PHONE = socialLinks.phone;
+const INSTAGRAM_HANDLE = "@shivam_chhirolya_97";
 
 const baseStyles = `
   body { margin:0; padding:0; background:#050505; font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing:antialiased; }
   table { border-collapse:collapse; }
   a { text-decoration:none; }
   .wrapper { width:100%; background:#050505; padding:48px 16px; }
-  .outer {
-    max-width:580px;
-    margin:0 auto;
-  }
-  .accent-bar { height:5px; border-radius:999px 999px 0 0; background:linear-gradient(90deg,#f2611f,#fc842e,#ffa45c); }
+  .outer { max-width:580px; margin:0 auto; }
+  .accent-bar { height:5px; border-radius:999px 999px 0 0; background:linear-gradient(90deg,#ef2f7a,#fc842e,#a855f7); }
   .card {
     background:linear-gradient(165deg,#141414,#0c0c0c 60%);
     border:1px solid rgba(255,255,255,0.08);
@@ -24,15 +24,8 @@ const baseStyles = `
     border-radius:0 0 24px 24px;
     padding:44px 40px;
   }
-  .logo-badge {
-    display:inline-block;
-    width:56px;
-    height:56px;
-    text-align:center;
-    line-height:56px;
-    mso-line-height-rule:exactly;
-  }
-  .logo-badge img { width:52px; height:52px; vertical-align:middle; }
+  .logo-badge { display:inline-block; width:56px; height:56px; text-align:center; line-height:56px; mso-line-height-rule:exactly; border-radius:16px; background:rgba(255,255,255,0.04); }
+  .logo-badge img { width:34px; height:34px; vertical-align:middle; }
   .wordmark { font-size:16px; font-weight:700; color:#f7f6f3; letter-spacing:0.2px; }
   .wordmark span { color:#ffa45c; }
   .eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#ffa45c; margin:32px 0 14px; font-weight:700; }
@@ -55,7 +48,7 @@ const baseStyles = `
     margin-top:26px;
     padding:14px 28px;
     border-radius:999px;
-    background:linear-gradient(90deg,#f2611f,#fc842e,#ffa45c);
+    background:linear-gradient(90deg,#ef2f7a,#fc842e,#a855f7);
     color:#0a0a0a !important;
     font-size:13px;
     font-weight:700;
@@ -63,27 +56,37 @@ const baseStyles = `
   }
   .divider { height:1px; background:rgba(255,255,255,0.08); margin:32px 0 28px; border:none; }
   .footer-text { font-size:12px; line-height:1.7; color:rgba(247,246,243,0.38); margin-top:4px; }
-  .strategy-line { font-size:11px; letter-spacing:3px; text-transform:uppercase; margin:0 0 22px; font-weight:700; }
+  .credit-text { font-size:10.5px; line-height:1.6; color:rgba(247,246,243,0.22); margin-top:14px; }
+  .strategy-line { font-size:11px; letter-spacing:3px; text-transform:uppercase; margin:0 0 24px; font-weight:700; }
   .strategy-line span.s1 { color:#ef2f7a; }
   .strategy-line span.s2 { color:#fc842e; }
   .strategy-line span.s3 { color:#a855f7; }
   .row { padding:13px 0; border-bottom:1px solid rgba(255,255,255,0.07); }
   .row-label { font-size:10.5px; text-transform:uppercase; letter-spacing:1.5px; color:rgba(247,246,243,0.4); margin:0 0 5px; font-weight:600; }
   .row-value { font-size:14.5px; color:#f7f6f3; margin:0; line-height:1.5; }
-  .social-badge {
+  .contact-card {
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:20px 22px;
+    margin-top:8px;
+  }
+  .contact-row { padding:9px 0; }
+  .contact-row a, .contact-row span.plain { font-size:13.5px; color:#f7f6f3; }
+  .contact-icon {
     display:inline-block;
-    width:34px;
-    height:34px;
+    width:30px;
+    height:30px;
     border-radius:999px;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.12);
-    color:#f7f6f3 !important;
-    font-size:11px;
-    font-weight:700;
+    background:rgba(255,164,92,0.12);
+    border:1px solid rgba(255,164,92,0.3);
+    color:#ffa45c !important;
+    font-size:10.5px;
+    font-weight:800;
     text-align:center;
-    line-height:34px;
+    line-height:30px;
     mso-line-height-rule:exactly;
-    margin-right:8px;
+    margin-right:12px;
   }
   .footer-outer { text-align:center; padding:28px 12px 0; }
 `;
@@ -119,17 +122,6 @@ function shell(bodyHtml: string) {
 
             <hr class="divider" />
             <p class="strategy-line"><span class="s1">Strategy.</span> <span class="s2">Content.</span> <span class="s3">Growth.</span></p>
-
-            <table cellPadding="0" cellSpacing="0" role="presentation">
-              <tr>
-                <td>
-                  <a class="social-badge" href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">IG</a>
-                </td>
-                <td>
-                  <a class="social-badge" href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">in</a>
-                </td>
-              </tr>
-            </table>
           </td>
         </tr>
       </table>
@@ -140,6 +132,7 @@ function shell(bodyHtml: string) {
         </p>
         <p class="footer-text">GSTIN: ${business.gstin}</p>
         <p class="footer-text">This is a transactional email sent because you contacted us.</p>
+        <p class="credit-text">Website built by <a href="https://lexicalsoftware.in" style="color:rgba(247,246,243,0.32);">lexicalsoftware.in</a></p>
       </div>
     </div>
   </body>
@@ -150,22 +143,59 @@ function firstNameOf(name: string) {
   return name.split(" ")[0];
 }
 
+/** Reusable "how to reach us" block, shown to customers in the confirmation email. */
+function contactBlock() {
+  return `
+        <div class="contact-card">
+          <table width="100%" cellPadding="0" cellSpacing="0" role="presentation">
+            <tr>
+              <td class="contact-row">
+                <span class="contact-icon">&#9742;</span>
+                <a href="tel:${PHONE.replace(/\s+/g, "")}">${PHONE}</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="contact-row">
+                <span class="contact-icon">IG</span>
+                <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">${INSTAGRAM_HANDLE}</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="contact-row">
+                <span class="contact-icon">in</span>
+                <a href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer">SocialBug Media</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="contact-row">
+                <span class="contact-icon">&#127760;</span>
+                <a href="${SITE_URL}" target="_blank" rel="noopener noreferrer">socialbugmedia.in</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+  `;
+}
+
 export function confirmationEmail(values: ContactFormValues) {
   const firstName = firstNameOf(values.name);
   const body = `
         <p class="eyebrow">Message received</p>
-        <h1 class="headline">We got the signal. &#128027;</h1>
+        <h1 class="headline">We got the signal.</h1>
         <p class="body-text">Hey ${firstName},</p>
         <p class="body-text">
           Thanks for reaching out to SocialBug Media. We've received your
-          details and our team is already buzzing.
+          details and our team is already reviewing them.
         </p>
         <p class="body-text">
-          We'll review your project and get back to you within one business
-          day. In the meantime, keep building.
+          We'll get back to you within one business day. In the meantime,
+          here's how you can reach us directly if anything's urgent.
         </p>
+
         <span class="badge">MESSAGE RECEIVED &#10003;</span>
-        <br />
+
+        ${contactBlock()}
+
         <a class="cta-button" href="${SITE_URL}" target="_blank" rel="noopener noreferrer">Explore our work &rarr;</a>
   `;
   return shell(body);
@@ -175,6 +205,7 @@ export function internalNotificationEmail(values: ContactFormValues) {
   const rows: Array<[string, string]> = [
     ["Name", values.name],
     ["Email", values.email],
+    ["Phone", values.phone || "Not provided"],
     ["Company", values.company],
     ["Website", values.website || "-"],
     ["Company Stage", values.stage],
@@ -184,7 +215,7 @@ export function internalNotificationEmail(values: ContactFormValues) {
 
   const body = `
         <p class="eyebrow">New Lead</p>
-        <h1 class="headline">&#128027; New lead &mdash; ${values.company}</h1>
+        <h1 class="headline">New lead &mdash; ${values.company}</h1>
         <table width="100%" cellPadding="0" cellSpacing="0" role="presentation">
           ${rows
             .map(
@@ -200,7 +231,7 @@ export function internalNotificationEmail(values: ContactFormValues) {
           <tr>
             <td style="padding:13px 0;">
               <p class="row-label">Project Details</p>
-              <p class="row-value">${values.message}</p>
+              <p class="row-value">${values.message || "Not provided"}</p>
             </td>
           </tr>
         </table>
