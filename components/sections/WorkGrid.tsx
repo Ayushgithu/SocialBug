@@ -51,17 +51,17 @@ export default function WorkGrid({
                 <Link
                   href={`/case-studies/${cs.slug}`}
                   data-cursor="pointer"
-                  className="group relative flex h-full flex-col rounded-[28px] bg-[#faf9f8] p-3 shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)]"
+                  className="group relative flex h-full flex-col rounded-md bg-[#faf9f8] p-3 shadow-[0_12px_40px_-14px_rgba(60,30,80,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-14px_rgba(60,30,80,0.26)]"
                 >
                   {/* image (white logo badge removed) */}
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-black/5">
+                  <div className="relative aspect-16/10 mix-blend-multiply overflow-hidden rounded-md bg-black/5">
                     {cs.image ? (
                       <Image
                         src={cs.image}
                         alt={`${cs.name} campaign`}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover mix-blend-multiply object-top transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
                       <CaseCover name={cs.name} logo={cs.logo} industry={cs.industry} />
@@ -72,7 +72,7 @@ export default function WorkGrid({
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col px-3 pb-3 pt-5 sm:px-4">
+                  <div className="flex flex-1 flex-col px-3 pb-3 pt-5 sm:px-4 mix-blend-multiply">
                     {/* brand logo (falls back to the brand name if no logo is set) */}
                     <span className="relative flex h-10 w-32 items-center">
                       {logoSrc ? (
@@ -84,7 +84,7 @@ export default function WorkGrid({
                           className="object-contain object-left"
                         />
                       ) : (
-                        <span className="truncate font-heading text-lg font-bold text-[#2b1b3d]">
+                        <span className="truncate mix-blend-multiply font-heading text-lg font-bold text-[#2b1b3d]">
                           {cs.name}
                         </span>
                       )}
@@ -116,7 +116,7 @@ export default function WorkGrid({
                       </p>
                     )}
 
-                    <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5 [margin-top:1.75rem]">
+                    <div className="mt-auto flex items-center justify-between  pt-5">
                       <span className="font-heading text-[15px] font-semibold" style={{ color: a.text }}>
                         Read the story
                       </span>

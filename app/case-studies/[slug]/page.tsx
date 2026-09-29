@@ -57,21 +57,21 @@ export default async function CaseStudyDetailPage({
   return (
     <div className="sb-light">
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-14 pt-32 sm:pt-36">
+      <section className="relative mix-blend-multiply overflow-hidden px-6 pb-14 pt-32 sm:pt-36">
         <div className="relative mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
           <Reveal direction="left">
             {/* Brand logo, big, in the empty space at the top */}
             {logoSrc && (
               <div
-                className={`mb-7 flex h-[4.5rem] w-fit items-center rounded-2xl bg-[#faf9f8] px-6 ${CARD_SHADOW}`}
+                className="mb-7 flex h-20 w-fit items-center px-6"
               >
-                <span className="relative block h-10 w-36">
+                <span className="relative h-14 w-52 sm:h-16 sm:w-64">
                   <Image
                     src={logoSrc}
                     alt={cs.name}
                     fill
                     priority
-                    sizes="144px"
+                    sizes="(min-width: 640px) 256px, 208px"
                     className="object-contain"
                   />
                 </span>
@@ -145,7 +145,7 @@ export default async function CaseStudyDetailPage({
               return (
                 <div
                   key={m.label}
-                  className={`rounded-[22px] bg-[#faf9f8] px-5 py-6 text-center sm:text-left ${CARD_SHADOW}`}
+                  className={`rounded-[22px]  px-5 py-6 text-center sm:text-left ${CARD_SHADOW}`}
                 >
                   <p className="font-display text-2xl sm:text-3xl" style={{ color: a.text }}>
                     <Counter value={m.value} />

@@ -124,9 +124,9 @@ export default function FeaturedCampaigns({
                       <p className="truncate font-heading text-[9px] uppercase tracking-[0.16em] text-sb-white/45">
                         {cs.industry}
                       </p>
-                      <h3 className="truncate font-heading text-[15px] font-semibold leading-tight">
+                      {/* <h3 className="truncate font-heading text-[15px] font-semibold leading-tight">
                         {cs.name}
-                      </h3>
+                      </h3> */}
                     </div>
                   </div>
 

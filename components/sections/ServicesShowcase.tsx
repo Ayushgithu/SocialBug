@@ -30,8 +30,7 @@ export default function ServicesShowcase({
   limit?: number;
 }) {
   const items = limit ? services.slice(0, limit) : services;
-  // On the homepage (limit set) the grid runs two-up instead of three-up.
-  const gridCols = limit ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3";
+  const gridCols = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
     <section className="sb-light relative px-6 py-16 sm:py-20 lg:py-24">
@@ -124,7 +123,7 @@ export default function ServicesShowcase({
                       </div>
                     )}
 
-                    <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5 [margin-top:1.75rem]">
+                    <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5">
                       <span className="font-heading text-[15px] font-semibold" style={{ color: a.text }}>
                         Learn more
                       </span>

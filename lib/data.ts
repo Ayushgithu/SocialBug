@@ -587,8 +587,8 @@ export const caseStudies: CaseStudy[] = [
 
   {
     slug: "hk-vitals-skin-radiance",
-    brandLogo: CLD.partners.aurm,
-    brandLogoWhite: CLD.partners.aurm,
+    brandLogo: CLD.partners.hkvital,
+    brandLogoWhite: CLD.partners.hkvital,
     slugStatus: true,
     result: { value: "2.1M", label: "Reach" },
     stats: [
@@ -1033,4 +1033,7 @@ export const partnerLogos = [
   {name:"Razor Pay",src:CLD.partners_dark.razorPay},
   {name:"Pin Lab",src:CLD.partners_dark.pinLab},
   {name:"Lens Kart",src:CLD.partners_dark.lensKart},
+  {name:"Hk Vital",src:CLD.partners_dark.hkvital},
+  {name:"Suzlon",src:CLD.partners_dark.suzlon},
+
 ];

@@ -291,7 +291,7 @@ export default async function ServiceDetailPage({
                       </p>
                       <p className="mt-2 text-[14px] leading-relaxed text-[#6b5b78]">{r.short}</p>
 
-                      <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5 [margin-top:1.5rem]">
+                      <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-5">
                         <span className="font-heading text-[15px] font-semibold" style={{ color: a.text }}>
                           Learn more
                         </span>
