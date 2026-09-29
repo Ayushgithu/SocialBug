@@ -1035,5 +1035,7 @@ export const partnerLogos = [
   {name:"Lens Kart",src:CLD.partners_dark.lensKart},
   {name:"Hk Vital",src:CLD.partners_dark.hkvital},
   {name:"Suzlon",src:CLD.partners_dark.suzlon},
+  {name:"Boat",src:CLD.partners_dark.boat},
+
 
 ];

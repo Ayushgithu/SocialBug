@@ -312,6 +312,7 @@ export default async function CaseStudyDetailPage({
                     src={cs.bodyVideo}
                     poster={cs.bodyImage}
                     controls
+                    controlsList="nodownload"
                     playsInline
                     preload="metadata"
                     className="absolute inset-0 h-full w-full object-cover"

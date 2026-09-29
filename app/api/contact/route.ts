@@ -29,41 +29,50 @@ export async function POST(request: Request) {
   // it doesn't retry, but never send real emails.
   if (values.companyWebsiteConfirm) {
     return NextResponse.json({ success: true });
+  }
 
-    if (!process.env.RESEND_API_KEY) {
-      console.error(
-        "RESEND_API_KEY is not set. Add it to your environment to send real emails.",
-        { error: "Email service is not configured." },
-        { status: 500 }
-      );
-    }
+  if (!process.env.SOCIAL_BUG_MEDIA) {
+    console.error("SOCIAL_BUG_MEDIA is not set; contact emails cannot be sent.");
+    return NextResponse.json(
+      { error: "Email service is not configured." },
+      { status: 500 }
+    );
+  }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend(process.env.SOCIAL_BUG_MEDIA);
 
-    try {
-      await Promise.all([
-        resend.emails.send({
-          from: FROM_ADDRESS,
-          to: TEAM_INBOX,
-          subject: `🐞 New SocialBug Lead, ${values.company}`,
-          html: internalNotificationEmail(values),
-          replyTo: values.email,
-        }),
-        resend.emails.send({
-          from: FROM_ADDRESS,
-          to: values.email,
-          subject: "We got the signal. 🐞",
-          html: confirmationEmail(values),
-        }),
-      ]);
+  try {
+    const results = await Promise.all([
+      resend.emails.send({
+        from: FROM_ADDRESS,
+        to: TEAM_INBOX,
+        subject: `New SocialBug Lead, ${values.company}`,
+        html: internalNotificationEmail(values),
+        replyTo: values.email,
+      }),
+      resend.emails.send({
+        from: FROM_ADDRESS,
+        to: values.email,
+        subject: "We got the signal.",
+        html: confirmationEmail(values),
+      }),
+    ]);
 
-      return NextResponse.json({ success: true });
-    } catch (error) {
-      console.error("Resend error:", error);
+    const failedResult = results.find((result) => result.error);
+    if (failedResult?.error) {
+      console.error("Resend error:", failedResult.error);
       return NextResponse.json(
         { error: "Failed to send email." },
         { status: 502 }
       );
     }
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Resend error:", error);
+    return NextResponse.json(
+      { error: "Failed to send email." },
+      { status: 502 }
+    );
   }
 }

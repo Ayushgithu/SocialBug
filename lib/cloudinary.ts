@@ -40,7 +40,7 @@ export const CLD = {
     "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-14.webp",
   ],
 // white images
-  partners: {
+  partners: { 
     amd: "https://res.cloudinary.com/q00g4kki/image/upload/v1790593103/amd_white.png",
     aurm: "https://res.cloudinary.com/q00g4kki/image/upload/v1790593104/auram_white.png",
     blackberrys: "https://res.cloudinary.com/q00g4kki/image/upload/v1790589742/blueberrys.png",
