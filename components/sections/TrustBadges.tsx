@@ -1,41 +1,46 @@
-"use client";
+import Image from "next/image";
 
-import { motion } from "framer-motion";
-import TrustBadge from "@/components/ui/TrustBadge";
-
-/**
- * Award-strip. Star ratings below are placeholders, swap in real figures /
- * verified links (Google Business, Clutch, etc.) before this goes live.
- */
 const badges = [
-  { label: "Google", filledStars: 4.5 },
-  { label: "Best Execution Team", filledStars: 4.5 },
+  {
+    label: "Google trust badge",
+    src: "https://res.cloudinary.com/q00g4kki/image/upload/f_png/v1790751764/google.svg",
+    width: 213,
+  },
+  {
+    label: "Best Execution Team trust badge",
+    src: "https://res.cloudinary.com/q00g4kki/image/upload/f_png/v1790751763/bestExecutionTeam.svg",
+    width: 222,
+  },
 ];
 
-export default function TrustBadges({ className = "" }: { className?: string }) {
+export default function TrustBadges() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative overflow-hidden rounded-xl border border-sb-orange/25 px-8 py-9 sm:px-12 ${className}`}
+    <div
+      className={`  rounded-xl border border-sb-orange/25 px-6 py-7 sm:px-12 sm:py-9`}
       style={{
         background:
           "radial-gradient(120% 160% at 0% 0%, rgba(252,132,46,0.16), transparent 60%), radial-gradient(120% 160% at 100% 100%, rgba(242,97,31,0.14), transparent 60%), #141210",
       }}
     >
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle,#fff_1px,transparent_1px)] bg-size-[20px_20px]" />
-      <div className="relative flex flex-wrap items-center justify-center gap-x-14 gap-y-8 sm:justify-between">
-        <p className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-sb-white/45">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,#fff_1px,transparent_1px)] bg-size-[20px_20px] opacity-[0.05]" />
+      <div className=" flex flex-col items-center justify-center gap-6 sm:flex-row sm:justify-between sm:gap-8">
+        <p className="text-center font-heading text-xs font-semibold uppercase tracking-[0.2em] text-sb-white/45 sm:text-left">
           Trusted &amp; recognised
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-          {badges.map((b) => (
-            <TrustBadge key={b.label} {...b} />
+        <div className="flex w-full flex-col items-center justify-center gap-5 min-[420px]:flex-row min-[420px]:gap-6 sm:w-auto sm:gap-8">
+          {badges?.map((badge) => (
+            <Image
+              key={badge.label}
+              src={badge.src}
+              alt={badge.label}
+              width={badge.width}
+              height={60}
+              sizes="(max-width: 639px) 213px, 222px"
+              className="h-auto w-full max-w-53.25 object-contain"
+            />
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -14,21 +14,19 @@ export default function RouteLoadingBar() {
   const pathname = usePathname();
   const [active, setActive] = useState(false);
   const isFirstRender = useRef(true);
-  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
-
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
     }
 
-    timers.current.forEach(clearTimeout);
+    const timers: ReturnType<typeof setTimeout>[] = [];
     setActive(true);
     const t = setTimeout(() => setActive(false), 480);
-    timers.current.push(t);
+    timers.push(t);
 
     return () => {
-      timers.current.forEach(clearTimeout);
+      timers.forEach(clearTimeout);
     };
   }, [pathname]);
 

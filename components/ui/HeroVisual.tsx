@@ -41,7 +41,8 @@ function Tile({ creator }: { creator: (typeof POOL)[number] }) {
           fill
           sizes="(max-width: 640px) 30vw, 140px"
           aria-hidden
-          loading="eager"
+          loading="lazy"
+          decoding="async"
           onError={() => setBroken(true)}
           onLoad={() => setLoaded(true)}
           className={`h-full w-full object-cover object-top grayscale transition-all duration-500 hover:grayscale-0 ${loaded ? "opacity-100" : "opacity-0"}`}

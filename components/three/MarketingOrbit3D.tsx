@@ -11,14 +11,15 @@ function FloatingShape({
   color,
   shape,
   speed,
+  offset,
 }: {
   position: [number, number, number];
   color: string;
   shape: "box" | "icosahedron" | "torus" | "octahedron";
   speed: number;
+  offset: number;
 }) {
   const ref = useRef<THREE.Mesh>(null);
-  const offset = useMemo(() => Math.random() * Math.PI * 2, []);
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
@@ -52,12 +53,12 @@ function Scene() {
   const shapes = useMemo(
     () =>
       [
-        { position: [-1.6, 0.6, 0] as [number, number, number], shape: "icosahedron" as const, speed: 0.6 },
-        { position: [1.5, -0.4, -0.6] as [number, number, number], shape: "torus" as const, speed: 0.5 },
-        { position: [0, 1.2, -1] as [number, number, number], shape: "box" as const, speed: 0.7 },
-        { position: [-0.9, -1.1, 0.4] as [number, number, number], shape: "octahedron" as const, speed: 0.55 },
-        { position: [1.3, 1.1, 0.5] as [number, number, number], shape: "box" as const, speed: 0.45 },
-        { position: [0.2, -1.4, -0.3] as [number, number, number], shape: "icosahedron" as const, speed: 0.65 },
+        { position: [-1.6, 0.6, 0] as [number, number, number], shape: "icosahedron" as const, speed: 0.6, offset: 0 },
+        { position: [1.5, -0.4, -0.6] as [number, number, number], shape: "torus" as const, speed: 0.5, offset: 0.8 },
+        { position: [0, 1.2, -1] as [number, number, number], shape: "box" as const, speed: 0.7, offset: 1.6 },
+        { position: [-0.9, -1.1, 0.4] as [number, number, number], shape: "octahedron" as const, speed: 0.55, offset: 2.4 },
+        { position: [1.3, 1.1, 0.5] as [number, number, number], shape: "box" as const, speed: 0.45, offset: 3.2 },
+        { position: [0.2, -1.4, -0.3] as [number, number, number], shape: "icosahedron" as const, speed: 0.65, offset: 4 },
       ],
     []
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, animate, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { CLD } from "@/lib/cloudinary";
@@ -27,36 +27,32 @@ const CORAL = "#fc842e";
 const HONEY = "#ffa45c";
 
 export default function SplashScreen() {
-  const [mounted, setMounted] = useState(false);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [exiting, setExiting] = useState(false);
   const [wordIndex, setWordIndex] = useState(-1);
   const [wordsDone, setWordsDone] = useState(false);
   const [count, setCount] = useState(0);
   const reducedMotion = useReducedMotion();
-  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
-    setMounted(true);
+    const timers: ReturnType<typeof setTimeout>[] = [];
 
     if (SHOW_ONCE_PER_SESSION) {
       if (sessionStorage.getItem("sb-splash-seen")) return;
       sessionStorage.setItem("sb-splash-seen", "1");
     }
 
-    setShow(true);
-
     if (reducedMotion) {
       const t = setTimeout(() => setShow(false), 500);
-      timers.current.push(t);
-      return () => timers.current.forEach(clearTimeout);
+      timers.push(t);
+      return () => timers.forEach(clearTimeout);
     }
 
     WORDS.forEach((_, i) => {
       const t = setTimeout(() => setWordIndex(i), 800 + i * 300);
-      timers.current.push(t);
+      timers.push(t);
     });
-    timers.current.push(setTimeout(() => setWordsDone(true), 800 + WORDS.length * 300));
+    timers.push(setTimeout(() => setWordsDone(true), 800 + WORDS.length * 300));
 
     const controls = animate(0, 100, {
       duration: 2.6,
@@ -64,17 +60,16 @@ export default function SplashScreen() {
       onUpdate: (v) => setCount(Math.round(v)),
     });
 
-    timers.current.push(setTimeout(() => setExiting(true), 2900));
-    timers.current.push(setTimeout(() => setShow(false), 4100));
+    timers.push(setTimeout(() => setExiting(true), 2900));
+    timers.push(setTimeout(() => setShow(false), 4100));
 
     return () => {
       controls.stop();
-      timers.current.forEach(clearTimeout);
+      timers.forEach(clearTimeout);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!mounted) return <div className="fixed inset-0 z-200 bg-sb-black" />;
   if (!show) return null;
 
   if (reducedMotion) {

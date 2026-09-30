@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,20 +13,21 @@ import { CLD } from "@/lib/cloudinary";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const scrolledRef = useRef(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 40);
+      const nextScrolled = window.scrollY > 40;
+      if (scrolledRef.current !== nextScrolled) {
+        scrolledRef.current = nextScrolled;
+        setScrolled(nextScrolled);
+      }
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-  }, [menuOpen]);
 
   return (
     <>
@@ -41,8 +42,8 @@ export default function Navbar() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className={`relative mx-4 flex w-full max-w-6xl items-center justify-between rounded-full border border-white/8 px-5 py-2 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.6)] transition-all duration-500 ${
             scrolled
-              ? "bg-sb-black/85 backdrop-blur-xl"
-              : "bg-sb-black/60 backdrop-blur-xl"
+              ? "bg-sb-black/90 backdrop-blur-none sm:bg-sb-black/85 sm:backdrop-blur-xl"
+              : "bg-sb-black/85 backdrop-blur-none sm:bg-sb-black/60 sm:backdrop-blur-xl"
           }`}
         >
           <Link href="/" data-cursor="pointer" className="sb-logo-hop flex items-center gap-1.5">

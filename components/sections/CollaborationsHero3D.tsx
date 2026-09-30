@@ -1,18 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import useMediaQuery from "@/lib/useMediaQuery";
 
 const MarketingOrbit3D = dynamic(() => import("@/components/three/MarketingOrbit3D"), {
   ssr: false,
 });
 
 export default function CollaborationsHero3D() {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    setIsDesktop(window.matchMedia("(min-width: 1024px)").matches);
-  }, []);
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   return (
     <div className="relative mx-auto h-65 w-full max-w-lg sm:h-80">

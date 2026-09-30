@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { navLinks, socialLinks } from "@/lib/data";
 import { X, Sparkles, ChevronRight } from "lucide-react";
@@ -16,15 +17,24 @@ const mobileLinks = navLinks.filter((l) => l.label !== "Testimonials");
 export default function MobileMenu({ onClose }: { onClose: () => void }) {
   const pathname = usePathname();
 
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, []);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <motion.div
-      initial={{ clipPath: "circle(0% at 92% 5%)" }}
-      animate={{ clipPath: "circle(150% at 92% 5%)" }}
-      exit={{ clipPath: "circle(0% at 92% 5%)" }}
-      transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-0 z-100 flex flex-col overflow-y-auto bg-sb-black px-5 py-6 sm:px-6 sm:py-8"
     >
       <GradientBlobs />

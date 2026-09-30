@@ -1,17 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import useMediaQuery from "@/lib/useMediaQuery";
 
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-  const [isTouch, setIsTouch] = useState(true);
+  const isTouch = useMediaQuery("(pointer: coarse)", true);
   const [hovering, setHovering] = useState(false);
   const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
-  }, []);
 
   useEffect(() => {
     if (isTouch) return;

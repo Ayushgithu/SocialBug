@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
@@ -28,7 +28,23 @@ export default function CreatorPostsMarquee({
   compact?: boolean;
 }) {
   const [openSrc, setOpenSrc] = useState<string | null>(null);
+  const [isInView, setIsInView] = useState(true);
+  const postsRowRef = useRef<HTMLDivElement>(null);
   const openPost = posts.find((p) => p.src === openSrc) ?? null;
+
+  useEffect(() => {
+    if (!window.matchMedia("(pointer: coarse)").matches || !postsRowRef.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { rootMargin: "100px 0px" },
+    );
+    observer.observe(postsRowRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!openSrc) return;
@@ -86,7 +102,12 @@ export default function CreatorPostsMarquee({
       )}
 
       <div className="posts-mask mt-6">
-        <div className="posts-row flex" style={{ ["--dur" as string]: "55s" }}>
+        <div
+          ref={postsRowRef}
+          className="posts-row flex"
+          data-paused={!isInView}
+          style={{ ["--dur" as string]: "55s" }}
+        >
           {track}
           {track}
         </div>

@@ -9,8 +9,8 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import FeaturedCampaigns from "@/components/sections/FeaturedCampaigns";
 import TestimonialPreview from "@/components/sections/TestimonialPreview";
 import FinalCTA from "@/components/sections/FinalCTA";
-import TrustBadges from "@/components/sections/TrustBadges";
 import StatementBanner from "@/components/sections/StatementBanner";
+import TrustBadges from "@/components/sections/TrustBadges";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       {/* Posts scrolling left-to-right, logos right underneath scrolling
           right-to-left, moved up near the top instead of buried at the
           bottom of the page. */}
-      <CreatorPostsMarquee compact />
+      <CreatorPostsMarquee  />
       <PartnerStrip compact />
 
       <StatementBanner />
@@ -32,7 +32,7 @@ export default function Home() {
       <CrossMarquee />
       <FeaturedCampaigns limit={3} showViewAll />
       <TestimonialPreview />
-      <section className="relative px-6 py-4">
+      <section className=" px-6 py-4">
         <div className="mx-auto max-w-6xl">
           <TrustBadges />
         </div>

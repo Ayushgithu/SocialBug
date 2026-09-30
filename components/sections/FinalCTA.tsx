@@ -50,20 +50,16 @@ export default function FinalCTA({
       <div className="relative mx-auto max-w-4xl text-center">
         {eyebrow && (
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             className="mb-4 font-heading text-xs font-semibold uppercase tracking-[0.3em] text-sb-orange"
           >
             {eyebrow}
           </motion.p>
         )}
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           className="font-display text-4xl leading-[1.02] sm:text-5xl lg:text-6xl"
         >
           {heading ?? (
@@ -78,10 +74,8 @@ export default function FinalCTA({
         </motion.h2>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
           <Button

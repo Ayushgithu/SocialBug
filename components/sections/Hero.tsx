@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
@@ -10,21 +9,12 @@ import HeroVisual from "@/components/ui/HeroVisual";
 import MarqueeTicker from "@/components/ui/MarqueeTicker";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const ROTATING = ["STRATEGY.", "IDEAS.", "CONTENT.", "DISTRIBUTION.", "CONVERSATION."];
-
 const TICKER_ITEMS = [
   "1000+ CREATORS", "22+ PLATFORMS", "PRODUCT HUNT SPECIALISTS",
   "STRATEGY FIRST", "100+ CAMPAIGNS RUN", "BUILT FOR SAAS",
 ];
 
 export default function Hero() {
-  const [index, setIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const t = setInterval(() => setIndex((i) => (i + 1) % ROTATING.length), 1800);
-  //   return () => clearInterval(t);
-  // }, []);
-
   return (
     <section className="relative flex min-h-svh flex-col justify-center overflow-hidden pt-28 pb-16">
       <GradientBlobs />
@@ -83,13 +73,13 @@ export default function Hero() {
           <div className="mt-6 flex h-10 items-center overflow-hidden font-heading text-sm font-semibold uppercase tracking-[0.25em] text-sb-white/60">
             <AnimatePresence mode="wait">
               <motion.span
-                key={ROTATING[index]}
+                key="STRATEGY."
                 initial={{ y: 24, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -24, opacity: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                {ROTATING[index]}
+                STRATEGY.
               </motion.span>
             </AnimatePresence>
           </div>

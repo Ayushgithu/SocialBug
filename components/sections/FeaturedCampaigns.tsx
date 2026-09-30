@@ -59,7 +59,7 @@ export default function FeaturedCampaigns({
           </motion.p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 sm:justify-items-stretch lg:grid-cols-3">
           {items.map((cs, i) => {
             const tint = [
               { text: "text-sb-orange", border: "border-sb-orange/40", bg: "rgba(252,132,46,0.25), rgba(255,164,92,0.05)" },
@@ -70,6 +70,7 @@ export default function FeaturedCampaigns({
             return (
             <motion.article
               key={cs.slug}
+              className="mx-auto w-full max-w-md sm:max-w-none"
               initial={{ opacity: 0, y: 42 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

@@ -5,13 +5,13 @@ import SplashScreen from "@/components/layout/SplashScreen";
 import RouteLoadingBar from "@/components/layout/RouteLoadingBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import CustomCursor from "@/components/ui/CustomCursor";
-import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/layout/BackToTop";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import NextTopLoader from 'nextjs-toploader';
 import MobileCTABar from "@/components/ui/MobileCTABar";
 import { CLD } from "@/lib/cloudinary";
+import CustomCursor from "@/components/ui/CustomCursor";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://socialbugmedia.in"),
@@ -75,6 +75,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Keep the shared Sora stylesheet in the App Router root layout. */}
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
@@ -83,7 +85,7 @@ export default function RootLayout({
       <body className="bg-noise antialiased">
         <SmoothScroll>
           <CustomCursor />
-          <ScrollProgress />
+          {/* <ScrollProgress /> */}
           <SplashScreen />
           <RouteLoadingBar />
           <NextTopLoader />

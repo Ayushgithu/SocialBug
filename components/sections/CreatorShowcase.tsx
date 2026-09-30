@@ -163,7 +163,6 @@ function CreatorModal({ creator, onClose }: { creator: Creator | null; onClose: 
 
   useEffect(() => {
     if (!creator) return;
-    setCopied(false);
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -312,7 +311,7 @@ export default function CreatorShowcase() {
         Tap any cut-out to see what they cover.
       </p>
 
-      <CreatorModal creator={selected} onClose={close} />
+      <CreatorModal key={selected?.handle ?? "closed"} creator={selected} onClose={close} />
     </div>
   );
 }

@@ -193,13 +193,16 @@ body {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: rotateBorder 5s linear infinite;
+  animation: rotateBorder 5s linear infinite paused;
   opacity: 0;
   transition: opacity .4s ease;
 }
 
-.glow-border:hover::after {
-  opacity: 0.9;
+@media (hover: hover) and (pointer: fine) {
+  .glow-border:hover::after {
+    animation-play-state: running;
+    opacity: 0.9;
+  }
 }
 
 @property --angle {
@@ -262,9 +265,14 @@ body {
   animation-direction: reverse;
 }
 
-.posts-row:hover .posts-track,
 .posts-row[data-paused="true"] .posts-track {
   animation-play-state: paused;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .posts-row:hover .posts-track {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes postsScroll {
@@ -629,6 +637,24 @@ body {
 
 .sb-col-down {
   animation: sbColDown var(--dur, 30s) linear infinite;
+}
+
+@media (pointer: coarse) {
+  .bg-noise::before {
+    background-image: none;
+  }
+
+  .sb-float {
+    will-change: auto;
+  }
+
+  .sb-line-field::after {
+    mix-blend-mode: normal;
+  }
+
+  .post-shadow {
+    filter: none;
+  }
 }
 
 @keyframes sbColUp {

@@ -28,7 +28,7 @@ export default function BackToTop() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           data-cursor="pointer"
           aria-label="Back to top"
-          className="fixed bottom-6 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-sb-black/85 text-sb-white shadow-[0_10px_30px_-8px_rgba(0,0,0,0.7)] backdrop-blur-xl transition-colors duration-300 hover:border-sb-orange hover:text-sb-orange sm:bottom-8 sm:right-8"
+          className="fixed bottom-[calc(6rem+env(safe-area-inset-bottom,0px))] right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-sb-black/85 text-sb-white shadow-[0_10px_30px_-8px_rgba(0,0,0,0.7)] backdrop-blur-xl transition-colors duration-300 hover:border-sb-orange hover:text-sb-orange sm:bottom-8 sm:right-8"
         >
           <span className="sb-btn-sheen flex h-full w-full items-center justify-center rounded-full">
             <ArrowUp size={20} />

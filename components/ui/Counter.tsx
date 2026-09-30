@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { animate, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { animate, motion, useInView, useMotionValue, useTransform } from "framer-motion";
 
 /**
  * Counts up from 0 to the number inside `value` when it scrolls into view,
@@ -26,21 +26,20 @@ export default function Counter({
   const target = raw ? Number(raw.replace(/,/g, "")) : NaN;
   const decimals = raw.includes(".") ? raw.split(".")[1].length : 0;
   const grouped = raw.includes(",");
-
-  const [display, setDisplay] = useState(raw ? (decimals ? (0).toFixed(decimals) : "0") : value);
+  const count = useMotionValue(0);
+  const display = useTransform(count, (number) => {
+    const formatted = decimals ? number.toFixed(decimals) : String(Math.round(number));
+    return grouped ? Number(formatted).toLocaleString("en-US") : formatted;
+  });
 
   useEffect(() => {
     if (!inView || Number.isNaN(target)) return;
-    const controls = animate(0, target, {
+    const controls = animate(count, target, {
       duration,
       ease: [0.16, 1, 0.3, 1],
-      onUpdate: (v) => {
-        const n = decimals ? v.toFixed(decimals) : String(Math.round(v));
-        setDisplay(grouped ? Number(n).toLocaleString("en-US") : n);
-      },
     });
     return () => controls.stop();
-  }, [inView, target, duration, decimals, grouped]);
+  }, [count, inView, target, duration]);
 
   if (Number.isNaN(target)) {
     return (
@@ -53,7 +52,7 @@ export default function Counter({
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {display}
+      <motion.span>{display}</motion.span>
       {suffix}
     </span>
   );
