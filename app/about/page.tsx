@@ -138,7 +138,7 @@ export default function AboutPage() {
       />
 
       {/* Why choose us, closes with its own embedded CTA */}
-      <div className="pb-8">
+      <div className="pb-8 sb-light">
         <WhyChooseUs />
       </div>
     </>

@@ -18,11 +18,22 @@ export default function MobileMenu({ onClose }: { onClose: () => void }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    const previousOverflow = document.body.style.overflow;
+    const { documentElement } = document;
+    const previousHtmlOverflow = documentElement.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverscrollBehavior = documentElement.style.overscrollBehavior;
+    const previousBodyOverscrollBehavior = document.body.style.overscrollBehavior;
+
+    documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
+    documentElement.style.overscrollBehavior = "none";
+    document.body.style.overscrollBehavior = "none";
 
     return () => {
-      document.body.style.overflow = previousOverflow;
+      documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      documentElement.style.overscrollBehavior = previousHtmlOverscrollBehavior;
+      document.body.style.overscrollBehavior = previousBodyOverscrollBehavior;
     };
   }, []);
 

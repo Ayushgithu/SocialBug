@@ -13,28 +13,14 @@ import { CLD } from "@/lib/cloudinary";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const scrolledRef = useRef(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    function onScroll() {
-      const nextScrolled = window.scrollY > 40;
-      if (scrolledRef.current !== nextScrolled) {
-        scrolledRef.current = nextScrolled;
-        setScrolled(nextScrolled);
-      }
-    }
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  
 
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 flex justify-center transition-all duration-500 ${
-          scrolled ? "pt-3" : "pt-6"
-        }`}
+        className={`fixed inset-x-0 top-4 z-50 flex justify-center transition-all duration-500 `}
       >
         <motion.nav
           initial={{ y: -40, opacity: 0 }}
