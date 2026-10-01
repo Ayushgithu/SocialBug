@@ -14,7 +14,7 @@ import { business } from "@/lib/business";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-sb-black-soft px-6 pt-10 pb-6">
+    <footer className="relative  overflow-hidden border-t border-white/10 bg-sb-black-soft px-6 pt-10 pb-6">
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-40" />
       <div className="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sb-orange/10 blur-[120px]" />
 

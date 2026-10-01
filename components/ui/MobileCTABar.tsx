@@ -8,7 +8,7 @@ import { Sparkles } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "@/components/ui/SocialIcons";
 
-/** Sticky bottom bar on phones: Get Started + WhatsApp. Hidden on /contact and on sm+ screens. */
+/** Fixed mobile Get Started + WhatsApp actions, with space reserved at the end of the page. */
 export default function MobileCTABar() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
@@ -20,32 +20,40 @@ export default function MobileCTABar() {
   }, []);
 
   return (
-    <AnimatePresence>
-      {visible && pathname !== "/contact" && (
-        <motion.div
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: "100%", opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-x-0 bottom-0 z-40 flex gap-3 border-t border-white/10 bg-sb-black/95 px-4 pt-3 backdrop-blur-none sm:hidden"
-          style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 12px)" }}
-        >
-          <Link
-            href="/contact"
-            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-sb-orange py-3 font-heading text-sm font-semibold text-sb-black transition-transform active:scale-95"
+    <>
+      <AnimatePresence>
+        {visible && pathname !== "/contact" && (
+          <motion.div
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "100%", opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-x-0 bottom-0 z-40 flex gap-3 border-t border-white/10 bg-sb-black/55 px-4 pt-3 backdrop-blur-xl sm:hidden"
+            style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 12px)" }}
           >
-            <Sparkles size={15} /> Get Started
-          </Link>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#25D366] py-3 font-heading text-sm font-semibold text-white transition-transform active:scale-95"
-          >
-            <WhatsAppIcon size={20} /> WhatsApp
-          </a>
-        </motion.div>
+            <Link
+              href="/contact"
+              className="flex flex-1 items-center justify-center gap-2 rounded-full bg-sb-orange py-3 font-heading text-sm font-semibold text-sb-black transition-transform active:scale-95"
+            >
+              <Sparkles size={15} /> Get Started
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#25D366] py-3 font-heading text-sm font-semibold text-white transition-transform active:scale-95"
+            >
+              <WhatsAppIcon size={20} /> WhatsApp
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {pathname !== "/contact" && (
+        <div
+          aria-hidden="true"
+          className="h-[calc(4.5625rem+env(safe-area-inset-bottom,0px))] sm:hidden"
+        />
       )}
-    </AnimatePresence>
+    </>
   );
 }

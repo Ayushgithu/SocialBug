@@ -217,7 +217,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           {/* spacer so the sticky mobile bar never covers the footer's last line */}
-          <div className="h-20 sm:hidden" aria-hidden />
+          {/* <div className="h-20 sm:hidden" aria-hidden /> */}
           <BackToTop />
           <WhatsAppButton />
           <MobileCTABar />

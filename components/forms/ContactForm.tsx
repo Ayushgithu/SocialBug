@@ -163,7 +163,7 @@ export default function ContactForm() {
           </select>
         </Field>
         <Field label="Budget Range (optional)" error={errors.budget?.message}>
-          <input {...register("budget")} className={inputClass} placeholder="e.g. $2,000 - $5,000" />
+          <input {...register("budget")} className={inputClass} placeholder=" " />
         </Field>
       </div>
 
