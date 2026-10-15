@@ -48,19 +48,19 @@ export default function Navbar() {
           </Link>
 
           <ul className="hidden items-center gap-1 lg:flex">
-            {primaryNavLinks.map((link) => (
-              <li key={link.href} className="group relative">
+            {primaryNavLinks?.map((link) => (
+              <li key={link?.href} className="group relative">
                 <Link
-                  href={link.href}
+                  href={link?.href}
                   data-cursor="pointer"
                   className="relative flex items-center gap-1.5 rounded-full px-3.5 py-2 font-heading text-[13px] font-medium text-sb-white/75 transition-all duration-300 hover:bg-white/6 hover:text-sb-white"
                 >
                   <NavIcon
-                    name={link.icon}
+                    name={link?.icon}
                     size={14}
                     className="text-sb-orange/70 transition-colors duration-300 group-hover:text-sb-orange"
                   />
-                  {link.label}
+                  {link?.label}
                   <span className="absolute inset-x-3.5 bottom-1 h-px scale-x-0 bg-linear-to-r from-sb-pink to-sb-lime transition-transform duration-300 group-hover:scale-x-100" />
                 </Link>
               </li>

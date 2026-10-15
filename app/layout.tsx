@@ -153,12 +153,8 @@ export const metadata: Metadata = {
     "SocialBug","social bug media","socialbugmedia","Mansi Gupta","Shivam Chhirolya","socialbug agency","socialbug influencer marketing",
     "socialbug creator network","socialbug case studies","socialbug services","socialbug LinkedIn agency","socialbug Product Hunt agency"
   ],
-  icons: {
-    icon: [
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-  },
+  icons: { icon: [{ url: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048396/889b0331-c88d-48e1-bafd-ce48867dc952.png", type: "image/png" }], shortcut: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048396/889b0331-c88d-48e1-bafd-ce48867dc952.png", apple: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048396/889b0331-c88d-48e1-bafd-ce48867dc952.png" },
+ 
   openGraph: {
     title: "SocialBug Media | Strategy. Content. Growth.",
     description:

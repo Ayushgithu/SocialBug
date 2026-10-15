@@ -41,7 +41,7 @@ export const CLD = {
     "https://res.cloudinary.com/q00g4kki/image/upload/v1790928304/93e69ca7-ee72-4c36-a1c2-a7e4a1f15e3c.png"
   ],
 // white images
-  partners: { 
+    partners: { 
     amd: "https://res.cloudinary.com/q00g4kki/image/upload/v1790593103/amd_white.png",
     aurm: "https://res.cloudinary.com/q00g4kki/image/upload/v1790593104/auram_white.png",
     blackberrys: "https://res.cloudinary.com/q00g4kki/image/upload/v1790589742/blueberrys.png",
@@ -64,7 +64,10 @@ export const CLD = {
     boat:"https://res.cloudinary.com/q00g4kki/image/upload/v1790595521/da06ea9f-5c1f-4e92-a4e0-dcc53380afca.png",
     suzlon:"https://res.cloudinary.com/q00g4kki/image/upload/v1790664269/ee09fb9c-989e-4d59-b3ef-2027a405bf81.png",
     zeiss: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/partners-zeiss.png",
-    hkvital :"https://res.cloudinary.com/q00g4kki/image/upload/v1790661833/bba2fb13-a2e8-465c-a33b-da036346f744.png"
+    hkvital :"https://res.cloudinary.com/q00g4kki/image/upload/v1790661833/bba2fb13-a2e8-465c-a33b-da036346f744.png",
+    kotak:"https://res.cloudinary.com/q00g4kki/image/upload/v1791990780/01e5f199-0500-4886-a83b-569acd2887cb.png",
+    pride_of_cow:"https://res.cloudinary.com/q00g4kki/image/upload/v1791990769/9cecb16a-e1f7-4347-94c2-aa5e5bcad985.png",
+    bhim:"https://res.cloudinary.com/q00g4kki/image/upload/v1791990747/4a4e80c7-157d-4fd0-adb6-3e4f251296a5.png"
   },
   // dark images
   partners_dark: {
@@ -98,7 +101,10 @@ export const CLD = {
     pinLab:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596802/eae6ced6-c472-4ee9-a8e2-2b9f0269f3ea.png",
     lensKart:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596774/adbde0f6-65e7-4c45-b55e-bc0c8f76f7f1.png",
     hkvital:"https://res.cloudinary.com/q00g4kki/image/upload/v1790661919/9e21f031-fdcc-4a63-87d0-040a91c94753.png",
-    suzlon:"https://res.cloudinary.com/q00g4kki/image/upload/v1790664506/b3d9c696-9699-4768-9629-f59fd312d209.png"
+    suzlon:"https://res.cloudinary.com/q00g4kki/image/upload/v1790664506/b3d9c696-9699-4768-9629-f59fd312d209.png",
+    kotak:"https://res.cloudinary.com/q00g4kki/image/upload/v1792048662/4da964f7-371d-47e4-8c37-0bb64e4a5db0.png",
+    bhim:"https://res.cloudinary.com/q00g4kki/image/upload/v1791991088/dfd5cf13-0afc-4578-bef5-1d2bb1d3f89f.png",
+    pride_of_cow:"https://res.cloudinary.com/q00g4kki/image/upload/v1791991085/dd937177-4d92-4281-a917-d3d5bc80e523.png",
   },
 
   work: {

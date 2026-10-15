@@ -21,6 +21,8 @@ export const navLinks = [
   { label: "Work", href: "/case-studies", icon: "briefcase" },
   { label: "Testimonials", href: "/testimonials", icon: "star" },
   { label: "Contact", href: "/contact", icon: "mail" },
+  { label: "🚀 Get Listed as a Creator ✨", href: "https://forms.gle/9cHQwBgkanQCMHEq7", icon: "network" },
+
 ];
 
 // Footer-only, legal / support pages that don't belong in the main navbar.
@@ -37,6 +39,8 @@ export const primaryNavLinks = [
   { label: "About", href: "/about", icon: "info" },
   { label: "Services", href: "/services", icon: "layers" },
   { label: "Work", href: "/case-studies", icon: "briefcase" },
+  { label: "🚀 Get Listed as a Creator ✨", href: "https://forms.gle/9cHQwBgkanQCMHEq7", icon: "network" },
+
 ];
 
 
@@ -1058,6 +1062,9 @@ export const partnerLogos = [
   {name:"Hk Vital",src:CLD.partners_dark.hkvital},
   {name:"Suzlon",src:CLD.partners_dark.suzlon},
   {name:"Boat",src:CLD.partners_dark.boat},
+  {name:"Kotak",src:CLD.partners_dark.kotak},
+  {name:"Bhim",src:CLD.partners_dark.bhim},
+  {name:"Pride of Cow",src:CLD.partners_dark.pride_of_cow}
 
 
 ];
