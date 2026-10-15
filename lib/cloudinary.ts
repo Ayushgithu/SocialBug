@@ -12,11 +12,12 @@
  */
 export const CLD = {
   logo: {
-    full: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048396/889b0331-c88d-48e1-bafd-ce48867dc952.png",
+    full: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-logo-full.png",
+
     iconDark: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-icon-dark.png",
   },
-
   ogImage: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048396/889b0331-c88d-48e1-bafd-ce48867dc952.png",
+
 
   founders: {
     divya: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575047/divya-chhiroliya.jpg",
@@ -40,8 +41,8 @@ export const CLD = {
     "https://res.cloudinary.com/q00g4kki/image/upload/v1790574954/post-14.webp",
     "https://res.cloudinary.com/q00g4kki/image/upload/v1790928304/93e69ca7-ee72-4c36-a1c2-a7e4a1f15e3c.png"
   ],
-// white images
-    partners: { 
+  // white images
+  partners: {
     amd: "https://res.cloudinary.com/q00g4kki/image/upload/v1790593103/amd_white.png",
     aurm: "https://res.cloudinary.com/q00g4kki/image/upload/v1790593104/auram_white.png",
     blackberrys: "https://res.cloudinary.com/q00g4kki/image/upload/v1790589742/blueberrys.png",
@@ -61,13 +62,13 @@ export const CLD = {
     supertails: "https://res.cloudinary.com/q00g4kki/image/upload/v1790593103/supertails_white.png",
     vivo: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/partners-vivo.png",
     xiaomi: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/partners-xiaomi.png",
-    boat:"https://res.cloudinary.com/q00g4kki/image/upload/v1790595521/da06ea9f-5c1f-4e92-a4e0-dcc53380afca.png",
-    suzlon:"https://res.cloudinary.com/q00g4kki/image/upload/v1790664269/ee09fb9c-989e-4d59-b3ef-2027a405bf81.png",
+    boat: "https://res.cloudinary.com/q00g4kki/image/upload/v1790595521/da06ea9f-5c1f-4e92-a4e0-dcc53380afca.png",
+    suzlon: "https://res.cloudinary.com/q00g4kki/image/upload/v1790664269/ee09fb9c-989e-4d59-b3ef-2027a405bf81.png",
     zeiss: "https://res.cloudinary.com/q00g4kki/image/upload/PLACEHOLDER/partners-zeiss.png",
-    hkvital :"https://res.cloudinary.com/q00g4kki/image/upload/v1790661833/bba2fb13-a2e8-465c-a33b-da036346f744.png",
-    kotak:"https://res.cloudinary.com/q00g4kki/image/upload/v1791990780/01e5f199-0500-4886-a83b-569acd2887cb.png",
-    pride_of_cow:"https://res.cloudinary.com/q00g4kki/image/upload/v1791990769/9cecb16a-e1f7-4347-94c2-aa5e5bcad985.png",
-    bhim:"https://res.cloudinary.com/q00g4kki/image/upload/v1791990747/4a4e80c7-157d-4fd0-adb6-3e4f251296a5.png"
+    hkvital: "https://res.cloudinary.com/q00g4kki/image/upload/v1790661833/bba2fb13-a2e8-465c-a33b-da036346f744.png",
+    kotak: "https://res.cloudinary.com/q00g4kki/image/upload/v1791990780/01e5f199-0500-4886-a83b-569acd2887cb.png",
+    pride_of_cow: "https://res.cloudinary.com/q00g4kki/image/upload/v1791990769/9cecb16a-e1f7-4347-94c2-aa5e5bcad985.png",
+    bhim: "https://res.cloudinary.com/q00g4kki/image/upload/v1791990747/4a4e80c7-157d-4fd0-adb6-3e4f251296a5.png"
   },
   // dark images
   partners_dark: {
@@ -90,21 +91,21 @@ export const CLD = {
     supertails: "https://res.cloudinary.com/q00g4kki/image/upload/v1790590595/supertails.png",
     vivo: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596598/b65ceaec-a59e-4108-90cf-124a62dad8fe.png",
     xiaomi: "https://res.cloudinary.com/q00g4kki/image/upload/v1790597701/794657d8-d50f-48ab-a08f-368f228f4663.png",
-    boat:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596305/dd07baa5-5826-43a0-8677-1d20078f922e.png",
+    boat: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596305/dd07baa5-5826-43a0-8677-1d20078f922e.png",
     zeiss: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596562/a5743e62-b0a1-4102-91f0-e40fda241269.png",
-    lava:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596867/c91e4e15-f663-4d80-8a06-b838ca289784.png",
-    lemonn:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596862/0215f241-5df2-4b75-a56f-2da03dcc6ac1.png",
-    pocketFM:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596847/00b04efa-1f4b-4d89-85e1-fb4c30bf4e49.png",
-    samsung:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596837/b89ea0b1-8a3d-48a3-8c41-782f9e3cdef4.png",
-    chemistAtplay:"https://res.cloudinary.com/q00g4kki/image/upload/v1790659566/e0fd8fc0-c2da-4e22-a44c-aa564a0fe025.png",
-    razorPay:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596815/2c9338a7-0bda-43ef-b887-4ec810e87e46.png",
-    pinLab:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596802/eae6ced6-c472-4ee9-a8e2-2b9f0269f3ea.png",
-    lensKart:"https://res.cloudinary.com/q00g4kki/image/upload/v1790596774/adbde0f6-65e7-4c45-b55e-bc0c8f76f7f1.png",
-    hkvital:"https://res.cloudinary.com/q00g4kki/image/upload/v1790661919/9e21f031-fdcc-4a63-87d0-040a91c94753.png",
-    suzlon:"https://res.cloudinary.com/q00g4kki/image/upload/v1790664506/b3d9c696-9699-4768-9629-f59fd312d209.png",
-    kotak:"https://res.cloudinary.com/q00g4kki/image/upload/v1792048662/4da964f7-371d-47e4-8c37-0bb64e4a5db0.png",
-    bhim:"https://res.cloudinary.com/q00g4kki/image/upload/v1791991088/dfd5cf13-0afc-4578-bef5-1d2bb1d3f89f.png",
-    pride_of_cow:"https://res.cloudinary.com/q00g4kki/image/upload/v1791991085/dd937177-4d92-4281-a917-d3d5bc80e523.png",
+    lava: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596867/c91e4e15-f663-4d80-8a06-b838ca289784.png",
+    lemonn: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596862/0215f241-5df2-4b75-a56f-2da03dcc6ac1.png",
+    pocketFM: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596847/00b04efa-1f4b-4d89-85e1-fb4c30bf4e49.png",
+    samsung: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596837/b89ea0b1-8a3d-48a3-8c41-782f9e3cdef4.png",
+    chemistAtplay: "https://res.cloudinary.com/q00g4kki/image/upload/v1790659566/e0fd8fc0-c2da-4e22-a44c-aa564a0fe025.png",
+    razorPay: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596815/2c9338a7-0bda-43ef-b887-4ec810e87e46.png",
+    pinLab: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596802/eae6ced6-c472-4ee9-a8e2-2b9f0269f3ea.png",
+    lensKart: "https://res.cloudinary.com/q00g4kki/image/upload/v1790596774/adbde0f6-65e7-4c45-b55e-bc0c8f76f7f1.png",
+    hkvital: "https://res.cloudinary.com/q00g4kki/image/upload/v1790661919/9e21f031-fdcc-4a63-87d0-040a91c94753.png",
+    suzlon: "https://res.cloudinary.com/q00g4kki/image/upload/v1790664506/b3d9c696-9699-4768-9629-f59fd312d209.png",
+    kotak: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048662/4da964f7-371d-47e4-8c37-0bb64e4a5db0.png",
+    bhim: "https://res.cloudinary.com/q00g4kki/image/upload/v1791991088/dfd5cf13-0afc-4578-bef5-1d2bb1d3f89f.png",
+    pride_of_cow: "https://res.cloudinary.com/q00g4kki/image/upload/v1791991085/dd937177-4d92-4281-a917-d3d5bc80e523.png",
   },
 
   work: {
