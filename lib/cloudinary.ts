@@ -16,7 +16,7 @@ export const CLD = {
     iconDark: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-icon-dark.png",
   },
 
-  ogImage: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-logo-full.png",
+  ogImage: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048396/889b0331-c88d-48e1-bafd-ce48867dc952.png",
 
   founders: {
     divya: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575047/divya-chhiroliya.jpg",
