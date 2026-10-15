@@ -21,8 +21,7 @@ export const navLinks = [
   { label: "Work", href: "/case-studies", icon: "briefcase" },
   { label: "Testimonials", href: "/testimonials", icon: "star" },
   { label: "Contact", href: "/contact", icon: "mail" },
-  { label: "🚀 Get Listed as a Creator ✨", href: "https://forms.gle/9cHQwBgkanQCMHEq7", icon: "network" },
-
+  { label: "🚀 Get Listed as a Creator ✨", href: "/creators/join", icon: "network" },
 ];
 
 // Footer-only, legal / support pages that don't belong in the main navbar.
@@ -39,7 +38,7 @@ export const primaryNavLinks = [
   { label: "About", href: "/about", icon: "info" },
   { label: "Services", href: "/services", icon: "layers" },
   { label: "Work", href: "/case-studies", icon: "briefcase" },
-  { label: "🚀 Get Listed as a Creator ✨", href: "https://forms.gle/9cHQwBgkanQCMHEq7", icon: "network" },
+  { label: "🚀 Get Listed as a Creator ✨", href: "/creators/join", icon: "network" },
 
 ];
 

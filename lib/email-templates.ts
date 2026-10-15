@@ -239,3 +239,41 @@ export function internalNotificationEmail(values: ContactFormValues) {
   `;
   return shell(body);
 }
+
+
+
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/** Owner-only email for a new creator listing. Every value is HTML-escaped. */
+export function creatorNotificationEmail(
+  name: string,
+  email: string,
+  rows: Array<[string, string]>
+) {
+  const body = `
+        <p class="eyebrow">New Creator</p>
+        <h1 class="headline">${escapeHtml(name)} wants to be listed</h1>
+        <table width="100%" cellPadding="0" cellSpacing="0" role="presentation">
+          ${rows
+            .map(
+              ([label, value]) => `
+          <tr>
+            <td class="row">
+              <p class="row-label">${escapeHtml(label)}</p>
+              <p class="row-value">${escapeHtml(value || "-")}</p>
+            </td>
+          </tr>`
+            )
+            .join("")}
+        </table>
+        <a class="cta-button" href="mailto:${escapeHtml(email)}" target="_blank" rel="noopener noreferrer">Reply to ${escapeHtml(firstNameOf(name))} &rarr;</a>
+  `;
+  return shell(body);
+}
