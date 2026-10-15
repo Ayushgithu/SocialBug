@@ -12,7 +12,7 @@
  */
 export const CLD = {
   logo: {
-    full: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-logo-full.png",
+    full: "https://res.cloudinary.com/q00g4kki/image/upload/v1792048396/889b0331-c88d-48e1-bafd-ce48867dc952.png",
     iconDark: "https://res.cloudinary.com/q00g4kki/image/upload/v1790575700/sb-icon-dark.png",
   },
 
