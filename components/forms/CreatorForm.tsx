@@ -27,17 +27,23 @@ function Field({
   error,
   children,
   htmlFor,
+  plain,
 }: {
   label: string;
   error?: string;
   children: React.ReactNode;
   htmlFor?: string;
+  plain?: boolean;
 }) {
   return (
     <div>
       <label
         htmlFor={htmlFor}
-        className="mb-2 block font-heading text-xs uppercase tracking-[0.15em] text-sb-white/50"
+        className={
+          plain
+            ? "mb-2 block font-heading text-sm font-semibold text-sb-white"
+            : "mb-2 block font-heading text-xs uppercase tracking-[0.15em] text-sb-white/50"
+        }
       >
         {label}
       </label>
@@ -79,6 +85,7 @@ export default function CreatorForm() {
       designation: "",
       company: "",
       age: "",
+      highlights: "",
       linkedin: { ...emptyPlatform },
       twitter: { ...emptyPlatform },
       instagram: { ...emptyPlatform },
@@ -111,11 +118,6 @@ export default function CreatorForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-      if (res.status === 409) {
-        setErrorMsg("This email is already on our creator list. Use a different email or reach out to us.");
-        setStatus("error");
-        return;
-      }
       if (res.status === 429) {
         setErrorMsg("Too many attempts from this device. Please try again in a while.");
         setStatus("error");
@@ -363,19 +365,22 @@ export default function CreatorForm() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {status === "error" && (
-          <motion.p
-            role="alert"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="text-sm text-sb-pink"
-          >
-            {errorMsg}
-          </motion.p>
-        )}
-      </AnimatePresence>
+      {/* Highlights */}
+      <Field
+        plain
+        label="Highlights you wish to mention"
+        htmlFor="highlights"
+        error={errors.highlights?.message}
+      >
+        <textarea
+          id="highlights"
+          {...register("highlights")}
+          rows={4}
+          maxLength={1000}
+          className={inputClass}
+          placeholder="Past brand collaborations, best-performing posts, awards, anything you want us to know."
+        />
+      </Field>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
         <button
@@ -397,6 +402,20 @@ export default function CreatorForm() {
         </button>
         <p className="text-xs text-sb-white/45">Takes 2 minutes. No spam, only relevant campaigns.</p>
       </div>
+
+      <AnimatePresence>
+        {status === "error" && (
+          <motion.p
+            role="alert"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="text-sm text-sb-pink"
+          >
+            {errorMsg}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </form>
   );
 }

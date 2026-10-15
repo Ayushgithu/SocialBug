@@ -1,31 +1,23 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import {
   creatorSchema,
   normalizeProfileUrl,
   normalizeWhatsapp,
   parseCount,
-  PLATFORMS,
   type PlatformKey,
 } from "@/lib/creator-schema";
-import { creatorNotificationEmail } from "@/lib/email-templates";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
-
-const FROM_ADDRESS = "SocialBug Media <hello@socialbugmedia.in>";
-const TEAM_INBOX = process.env.CONTACT_TEAM_EMAIL || "shivam@socialbugmedia.in";
 
 // Max submissions per IP per hour.
 const RATE_MAX = 5;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 
-type SheetResult = "saved" | "duplicate" | "failed";
-
-async function saveToSheet(payload: Record<string, unknown>): Promise<SheetResult> {
+async function saveToSheet(payload: Record<string, unknown>): Promise<boolean> {
   const url = process.env.CREATOR_SHEET_URL;
   const secret = process.env.CREATOR_SHEET_SECRET;
   if (!url || !secret) {
     console.error("CREATOR_SHEET_URL / CREATOR_SHEET_SECRET are not set.");
-    return "failed";
+    return false;
   }
 
   try {
@@ -38,37 +30,11 @@ async function saveToSheet(payload: Record<string, unknown>): Promise<SheetResul
       signal: AbortSignal.timeout(15000),
     });
     const data = (await res.json()) as { ok?: boolean; error?: string };
-    if (data.ok) return "saved";
-    if (data.error === "duplicate") return "duplicate";
+    if (data.ok) return true;
     console.error("Sheet rejected the row:", data.error);
-    return "failed";
+    return false;
   } catch (error) {
     console.error("Sheet request failed:", error);
-    return "failed";
-  }
-}
-
-async function emailOwner(name: string, email: string, rows: Array<[string, string]>) {
-  const key = process.env.SOCIAL_BUG_MEDIA; // same Resend key variable the contact form uses
-  if (!key) {
-    console.error("SOCIAL_BUG_MEDIA (Resend key) is not set; owner email skipped.");
-    return false;
-  }
-  try {
-    const { error } = await new Resend(key).emails.send({
-      from: FROM_ADDRESS,
-      to: TEAM_INBOX,
-      subject: `New Creator Listing, ${name}`,
-      html: creatorNotificationEmail(name, email, rows),
-      replyTo: email,
-    });
-    if (error) {
-      console.error("Resend error:", error);
-      return false;
-    }
-    return true;
-  } catch (error) {
-    console.error("Resend error:", error);
     return false;
   }
 }
@@ -120,7 +86,7 @@ export async function POST(request: Request) {
   const tw = platformData("twitter");
   const ig = platformData("instagram");
 
-  const record = {
+  const saved = await saveToSheet({
     name: v.name,
     whatsapp: normalizeWhatsapp(v.whatsapp),
     email: v.email.toLowerCase(),
@@ -138,39 +104,11 @@ export async function POST(request: Request) {
     instagramUrl: ig.url,
     instagramFollowers: ig.followers,
     instagramCost: ig.cost,
-  };
-
-  const sheet = await saveToSheet(record);
-  if (sheet === "duplicate") {
-    return NextResponse.json(
-      { error: "This email is already on our creator list." },
-      { status: 409 }
-    );
-  }
-
-  const rows: Array<[string, string]> = [
-    ["WhatsApp", record.whatsapp],
-    ["Email", record.email],
-    ["City", record.city],
-    ["Niche", record.niche],
-    ["Designation", record.designation],
-    ["Company", record.company],
-    ["Age", String(record.age)],
-  ];
-  (["linkedin", "twitter", "instagram"] as PlatformKey[]).forEach((k) => {
-    if (!v[k].enabled) return;
-    const d = k === "linkedin" ? li : k === "twitter" ? tw : ig;
-    rows.push([`${PLATFORMS[k].label} profile`, String(d.url)]);
-    rows.push([`${PLATFORMS[k].label} followers`, String(d.followers)]);
-    rows.push([`${PLATFORMS[k].label} rate`, d.cost ? `₹${d.cost}` : "Not shared"]);
+    highlights: v.highlights,
   });
-  if (sheet === "failed") rows.unshift(["Note", "Could not save to Google Sheet. This email is the only copy."]);
 
-  const emailed = await emailOwner(v.name, record.email, rows);
-
-  // Success if the lead landed in at least one place (sheet or owner inbox).
-  if (sheet === "saved" || emailed) {
-    return NextResponse.json({ success: true });
+  if (!saved) {
+    return NextResponse.json({ error: "Could not save your details." }, { status: 502 });
   }
-  return NextResponse.json({ error: "Could not save your details." }, { status: 502 });
+  return NextResponse.json({ success: true });
 }

@@ -105,6 +105,7 @@ export const creatorSchema = z
     designation: z.string().trim().max(100),
     company: z.string().trim().max(100),
     age: z.string().trim().max(3),
+    highlights: z.string().trim().max(1000, "Keep it under 1000 characters."),
     linkedin: platformSchema,
     twitter: platformSchema,
     instagram: platformSchema,
